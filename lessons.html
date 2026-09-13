@@ -39,6 +39,16 @@
       <p><b>Verifier:</b> Run the private package’s <code>test_coverage.py</code> and <code>test_local_builder.py</code>, then validate the session report with <code>course-runbook/check.py --report report.json --checkpoint course-state.json</code>. These checks validate the tooling and declared consistency; current native receipts still establish course acceptance. <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/START.md">Agent entry point (Alpha access)</a>.</p>
     </section>
 
+    <section id="native-terminal-receipts-20260914" data-control-status="documented-enforcement-pending">
+      <h2>September 14: make native terminal evidence reusable</h2>
+      <p><b>Trigger:</b> Reuse a native course operation across a later wave or course.</p>
+      <p><b>Observable failure:</b> A plan, merged change or successful process exit can be mistaken for a completed native operation.</p>
+      <p><b>Reusable control:</b> Keep the existing course-owned launcher as the mechanic and separate its three terminal boundaries: capture the prior state, execute once and read back the write, then replay the identical operation and require a zero-write receipt.</p>
+      <p><b>Acceptance evidence:</b> Each boundary must carry the packet's sealed digest, exact input fingerprint, private receipt, checkpoint and complete logs. <code>verified</code> is the population read back by that invocation; <code>writes</code> is that invocation's writes, so a resumed run may have fewer writes than verified. The replay must report zero writes and the expected verified population. This proves the native operation's idempotent readback; it does not prove cold QC, learner acceptance, activation or release.</p>
+      <p><b>Recovery:</b> A client observation timeout with a confirmed live native handle requires reattachment and terminal readback, never a restart. A terminal native refusal or failure follows the packet's recovery route and preserves its checkpoint.</p>
+      <p><b>Scope:</b> Operation receipts establish the operation's evidence boundary; they do not establish completed course QC, learner acceptance, activation or release. Each stage requires its own evidence.</p>
+    </section>
+
     <section id="morning-retro-20260910">
       <h2>September 10: put the twelve lessons into practice</h2>
       <p>Source window: the September 9–10 HumGeo two-seat retrospective, ending at the recorded stand-down. Apply these actions at existing dispatch, review, integration and release decisions. They describe next-build practice; current course standing remains on the <a href="humgeo.html">HumGeo page</a>.</p>

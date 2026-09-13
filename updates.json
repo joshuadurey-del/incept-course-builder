@@ -1,5 +1,13 @@
 [
   {
+    "ts": "2026-09-13T22:49Z",
+    "course": "All",
+    "writer": "dashboard curation",
+    "phase": "native evidence",
+    "kind": "state-change",
+    "text": "Documented a reusable native receipt boundary: capture the prior state, execute once with readback, then replay the identical operation and require zero writes with the expected verified population. Plans, merged-only changes and pending learner/release steps remain separate evidence."
+  },
+  {
     "ts": "2026-09-11T09:05Z",
     "course": "HumGeo",
     "writer": "dashboard curation",
