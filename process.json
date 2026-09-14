@@ -1,10 +1,10 @@
 {
  "schema_version": 2,
- "generated_utc": "2026-09-11T09:05:36Z",
+ "generated_utc": "2026-09-14T07:23:34Z",
  "label": "ASAP edition (2026-09-01)",
- "runbook_version": "2026-09-08.7",
- "source_sha256": "2f96703379f095a93556a6dba1b491241be31610907741f269aa63b55422ca64",
- "authority_note": "Publication runbook, ASAP edition, 2026-09-01. Version 2026-09-08.7. Requirements only; current course positions are re-earned from the per-course plans.",
+ "runbook_version": "2026-09-14.8",
+ "source_sha256": "9dad48b882a79dacf1c8093f759ea190679bf1b42489a4841890951a12b2508d",
+ "authority_note": "Publication runbook, ASAP edition, 2026-09-01. Version 2026-09-14.8. Requirements only; current course positions are re-earned from the per-course plans.",
  "route": [
   "content",
   "p3",
@@ -61,7 +61,9 @@
     "verify-live readback reconciles push bundle exactly (APES pub_stage7_verify_live.py pattern)",
     "publishStatus == testing",
     "enrollments == 0",
-    "evidence bundle README in course repo (Bio/APES format)"
+    "evidence bundle README in course repo (Bio/APES format)",
+    "every native write carries three receipts under one sealed plan digest: capture prior state (zero writes), execute with readback, replay with zero writes (restored from the cut list 2026-09-14)",
+    "one writer per course surface, enforced by the writer lock; operator PR lands before the seal PR"
    ],
    "shape": "one course holds all units (APES: unit 1 mints, later units pin --course-id)"
   },
@@ -73,6 +75,13 @@
    "repush_rules": [
     "denylist: every QC-dropped ID recorded at drop time; push tooling refuses denylisted IDs",
     "drift: never re-push a tree that mismatches last verified state (APES pub_preflight_drift.py)"
+   ],
+   "triage_classes": [
+    "content",
+    "context",
+    "checker",
+    "provider",
+    "selection"
    ],
    "receipt_required": [
     "job_id",
@@ -172,6 +181,8 @@
     "publishStatus == testing",
     "enrollments == 0",
     "evidence bundle README in course repo (Bio/APES format)",
+    "every native write carries three receipts under one sealed plan digest: capture prior state (zero writes), execute with readback, replay with zero writes (restored from the cut list 2026-09-14)",
+    "one writer per course surface, enforced by the writer lock; operator PR lands before the seal PR",
     "one course holds all units (APES: unit 1 mints, later units pin --course-id)"
    ],
    "automated": false

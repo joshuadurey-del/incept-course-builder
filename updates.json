@@ -1,5 +1,13 @@
 [
   {
+    "ts": "2026-09-14T06:40Z",
+    "course": "All",
+    "writer": "dashboard curation",
+    "phase": "p5",
+    "kind": "state-change",
+    "text": "Course Builder spec sheet published (spec.html, SPEC.md). Source contract 2026-09-14.8 restores the zero-write replay and writer lock as p5 requirements on measured HumGeo evidence and adds p6 failure triage classes; process.json regenerated. The installed package now runs a deterministic step loop (next.py) with intake bins and templates; no course acceptance is implied."
+  },
+  {
     "ts": "2026-09-14T05:01Z",
     "course": "HumGeo",
     "writer": "dashboard curation",

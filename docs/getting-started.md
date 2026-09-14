@@ -47,16 +47,18 @@ Run `incept-course-builder connect` for read-only connection checks, or `incept-
 
 ## From zero to a complete course
 
-You can start with a brief: **“Build an AP Biology course from scratch for Grade 11, aligned to the current CED, through verified publication.”** Supply the audience, standards, source materials you have, intended outcome and operating budget. The agent identifies any missing inputs and existing authority before execution.
+The builder walks four steps in a fixed order, for a new course and for an existing one alike. A script chooses the step from receipts on disk; your agent does the work the step card names and closes it with a receipt. Skipping is refused.
 
-1. **Blueprint:** establish standards, learning outcomes, units, lessons, assessment coverage and source requirements. An empty workspace starts here; a missing blueprint is work to plan, not a reason to assume the course is nearly complete.
-2. **Content:** use Content Factory’s native skills and services to generate and check the required teaching, practice and assessment content; prepare media through its owning tools. Prove one representative route before scaling independent work.
-3. **Assembly:** continuously integrate accepted content in the course repository; build native assets and bind the S3 and TimeBack delivery configuration.
-4. **Publication and proof:** run the current course-owned publication route, then verify the complete learner experience and required acceptance.
+1. **Standards, essential knowledge, assessments.** Reconcile or author the blueprint on its nine dimensions, build the coverage matrix (every essential knowledge statement has a lesson, a practice item and an assessment item), and write the media rule.
+2. **Course map.** Fill the course profile, emit the unit and topic tree, price lessons by type, and give every unit an assessment milestone.
+3. **Lessons with checks.** Prove one lesson end to end (article, five checks, judge, render). Then author the rest in complete forms with one owner each: free prescreens before every paid judge call, bank gates on one candidate SHA.
+4. **Host and present.** Publish dark with three receipts per native write, run cold course QC and sort failures by class, walk the course once on a test account, then the designated reviewer decides and enrollment is read back.
 
-An existing course starts with a fresh inventory and reuses valid completed work. Both paths follow the [agent runbook](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/START.md) and update your customized dashboard after meaningful progress. Native evidence, not the refresh timer, establishes completion.
+An existing course starts at step 0 too. At steps 1 to 3 the agent sorts what already exists into keep, modify, replace or discard, using the factory's own checks; only the replace and missing rows get new work. Templates for the mission, intake rows, articles, five-check sets, forms and titles ship in the package, so a small model fills and checks instead of designing.
 
-The complete course is the target. The builder is an agent workspace and runbook, not proof that any arbitrary course can already publish unattended. New courses still need a conforming native blueprint, validators and publication configuration. The agent resolves or plans those missing capabilities instead of reusing another course’s IDs. Current spend permissions, human walkthroughs and release decisions remain binding; setup does not grant them.
+Non-interactive hosts: run the install command with `--no-onboard`, fill `templates/mission.json`, then `incept-course-builder onboard --mission-file <path> --agent <codex|claude|hermes|prompt>`. The same loop reaches Codex through `AGENTS.md`, Claude Code through `CLAUDE.md`, and any other host through the exported prompt.
+
+The complete course is the target. Setup grants no course, spend or publication authority; the owner walk and the designated reviewer decision remain human steps. Read the [spec sheet](https://joshuadurey-del.github.io/incept-course-builder/spec.html) for each step's factory shape, tooling and closing receipt.
 
 ## Skills & factory tooling
 
