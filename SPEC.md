@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2026-09-14.8 (tracks the publication runbook contract version) |
+| **Version** | 2026-09-14.9 (package); contract 2026-09-14.8 |
 | **Status** | Working spec. Changes after the first course ships through it. |
 | **Product** | One command installs a local workspace and dashboard on macOS; any tool-capable agent then builds one course through four steps on Alpha's native factory. |
 | **Users** | The course owner first; every authorized Alpha builder next. No person names, no one user's history, no one machine's paths anywhere in the package. |
@@ -33,6 +33,7 @@ You build a course the way a good teacher does. Decide what students must know, 
 - R1.4 Receipts are written only by the script into `receipts/`. Hand edits are out of contract.
 - R1.5 The same loop is delivered to every host: the launch prompt leads with it; the workspace carries `AGENTS.md` (Codex) and `CLAUDE.md` (Claude Code) with identical text; Hermes and custom hosts receive it through the prompt file.
 - R1.6 The dashboard shows the step table and the current card from the same script. Counts come from receipts, not from prose.
+- R1.7 Asking the owner is the last resort, not a step. Every card lists `resolve_from` sources for its receipt fields: the factory file, route or precedent that holds the answer. The agent reads each at live main and cites the read. A request reaches the owner only through `next.py --request`, which returns SELF_RESOLVE until every field is cited from a live read, and never for a value the loader pins in a later step. Evidence: on 2026-09-14 an agent stopped step 2 to ask for six "owner facts" that had been committed to ap-one on 2026-08-28; it had read a stale local draft instead of live main.
 
 ### R2. Start from what exists
 
@@ -111,7 +112,8 @@ The standard: a known-bad fixture proves each gate fires.
 
 ```json
 {
-  "spec_version": "2026-09-14.8",
+  "spec_version": "2026-09-14.9",
+  "ask_rule": "resolve_from sources read at live main and cited per field before any owner request; next.py --request gates it",
   "route": ["content", "p3", "p5", "p6", "p7", "p8"],
   "route_names": {"p12": "align", "content": "content", "p3": "bank gates", "p5": "publish dark", "p6": "cold QC", "p7": "walk and accept", "p8": "demo and open"},
   "steps": ["onboard", "discover", "s1-blueprint", "s2-map", "s3-pilot", "s3-content", "p3-bank-gates", "p5-publish-dark", "p6-cold-qc", "p7-walk", "p8-release"],
