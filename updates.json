@@ -1,5 +1,13 @@
 [
   {
+    "ts": "2026-09-14T05:01Z",
+    "course": "HumGeo",
+    "writer": "dashboard curation",
+    "phase": "p5",
+    "kind": "note",
+    "text": "Runbook retro records nine HumGeo native operations with zero-write replays, the resource-type correction and separate namespace recovery requirement. Instruction-first recovery verified 1,591 components; replay is running. Checker PR #20 is merged. Three private skills are installed and validated. Final course QC, learner acceptance and release remain open."
+  },
+  {
     "ts": "2026-09-13T22:49Z",
     "course": "All",
     "writer": "dashboard curation",
