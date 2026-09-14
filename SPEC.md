@@ -2,15 +2,15 @@
 
 | | |
 |---|---|
-| **Version** | 2026-09-14.14 (package); contract 2026-09-14.8 |
-| **Direction** | The whole install is one deterministic script that acts on its inputs toward one goal, a live course. Every run with the same inputs takes the same path. A model is used only where a procedure row cannot decide, and then it reports why and proposes the next step. |
+| **Version** | 2026-09-15.1 (package); contract 2026-09-15.1 |
+| **Direction** | One typed line, a few hours, a course live on TimeBack at the full Incept bar. The front end is a 1995 terminal program. The back end is a make-style dependency graph of files: every step a target, a check and a recipe. A model is called only on a work order, as a compiler, and a script decides. No human in the loop. |
 | **Status** | Working spec. Changes after the first course ships through it. |
-| **Product** | One command installs a local workspace and dashboard on macOS; any tool-capable agent then builds one course through four steps on Alpha's native factory. |
+| **Product** | One command installs the builder on macOS, shows a numbered menu of course ids read live from the factory, takes three hidden credential strings, and builds the course through four steps on Alpha's native factory. Run it again to continue. |
 | **Users** | The course owner first; every authorized Alpha builder next. No person names, no one user's history, no one machine's paths anywhere in the package. |
 | **Not in scope** | A second generator, judge, publisher, scheduler or gate. Course, spend or release authority. Any per-user firewall or zone tooling. |
 | **Governing route** | The ASAP publication runbook, in plain names: align (blueprint, tree, pricing), content, bank gates, publish dark, cold QC, walk and accept, demo and open. Phase ids appear only in machine files. |
 
-Readers: a builder deciding whether to install; an agent deciding what to do next. Both read the same rows.
+Readers: a builder deciding whether to install; a maintainer reading `course.rules`. Both read the same rows.
 
 ## 1. The method
 
@@ -26,20 +26,21 @@ You build a course the way a good teacher does. Decide what students must know, 
 
 ## 2. Requirements
 
-### R1. Deterministic loop (agent-neutral)
+### R1. The build (no model in the loop)
 
-- R1.1 A script, not the agent, chooses the step. `next.py` reads the workspace receipts and prints one card: goal, ordered actions, files to load, skills, tools, the receipt template, and the exact close command.
-- R1.2 A step closes only through `next.py --close <step> --receipt <file>`. The receipt is validated field by field (references non-empty, hashes 64 hex, times ISO UTC, counts integers, exact literals where required). Empty templates are refused.
-- R1.3 No skipping. Closing step N while an earlier step is open returns HOLD naming the open steps.
-- R1.4 Receipts are written only by the script into `receipts/`. Hand edits are out of contract.
-- R1.5 The same loop is delivered to every host: the launch prompt leads with it; the workspace carries `AGENTS.md` (Codex) and `CLAUDE.md` (Claude Code) with identical text; Hermes and custom hosts receive it through the prompt file.
-- R1.6 The dashboard is a glance view: one strip of the five steps (done, current, upcoming), the current goal and the one next action, and a "needs you" box that appears only when the machine has composed an owner message. Tables, logs and connection rows sit under one folded Details toggle. Counts come from receipts, not from prose. Each step in the strip opens its artifact: the receipt rows for that step, and for the course map the map itself: units with period and counts by kind, topics with their gate and counts, every lesson expandable to its parts, each labeled Article, Video, Check, Writing or PowerPath 100 with its XP, unit tests, capstones and mock sections labeled as milestones. Built by `course_map.py` from the ap-one price manifest, gate map and the framework titles at live main; opens directly at `#course-map`. The "next" line is the card's first action, never the agent's free-text notes; those sit under Details as agent notes.
-- R1.7 Asking the owner is the last resort, not a step. Every card lists `resolve_from` sources for its receipt fields: the factory file, route or precedent that holds the answer. The agent reads each at live main and cites the read. A request reaches the owner only through `next.py --request`, which returns SELF_RESOLVE until every field is cited from a live read, and never for a value the loader pins in a later step. Evidence: on 2026-09-14 an agent stopped step 2 to ask for six "owner facts" that had been committed to ap-one on 2026-08-28; it had read a stale local draft instead of live main.
-- R1.8 The machine writes the owner message. When a request passes the gate, `next.py` composes `owner_message`: one sentence saying what is needed, one saying how to give it, one optional sentence of why. No ids, hashes, state codes or paths. The agent shows it word for word and adds only an answer to a question the owner asked. Connection states are translated the same way: a missing TimeBack credential becomes "run `incept-course-builder credentials`"; source, asset store and publish config are agent tasks, never owner questions.
-- R1.9 Questions and checks are drafted locally first with the templates, prescreened for free, then judged in parallel batches through the dispatcher. A paid call is a judge call, one per item. A five-item pilot never goes through a paid generation service, and one step's spend is never tied to another decision or course.
-- R1.12 Tools are interchangeable across courses. Every shared tool takes a course rules file (`--rules`: task verbs, skill-code shape, article sections, checks per article, spec-code patterns, each with its source) instead of a course name from a fixed list. The package ships rules for the known courses, step 1 writes one for a new course from its blueprint and profile, and a tool that refuses a course is a defect in the tool, never a reason to skip a gate. First case: the shared prescreen script accepted only one course; it now takes the rules file.
-- R1.11 Course facts are never hard-coded in the script. Anything that differs between courses (checks per article, option counts, form sizes, namespaces) is read from the course profile or blueprint by a procedure row; the first APWH run stopped because the template assumed HumGeo's five checks where APWH's profile says one.
-- R1.10 Every card is a literal procedure: numbered rows of run or write, each with an expected result and a fixed on-fail action. The agent follows the rows; it does not choose a route. When a row still fails after its on-fail, or something no row covers is needed, the agent writes an exception (step, row, what it saw, why the script does not cover it, suggested next step) and `next.py --exception` turns it into the plain owner message. Intelligence is spent only there, and it always says why and suggests what to do next.
+- R1.1 `make.py` reads `course.rules`, a build file in the 1995 shape: `target : prerequisites` followed by indented recipe rows. Six verbs: `ask`, `fetch`, `render`, `run`, `author`, `check`. A target is rebuilt when it is missing, older than a prerequisite, or failing its check. Run again any time; only what is missing or stale rebuilds. A prerequisite must be defined above the target that needs it, so one pass builds everything; the parser refuses a rules file that breaks this.
+- R1.2 Every value follows one order of resort, and a model is next to last: factory bytes fetched at live main and pinned by sha; derivation from those bytes (copy, select, count, render); the answer file; the owner, asked once and saved, never asked again; a model called on a work order and checked by a script, three tries; a person. Steps 0 to 2 never pass the fourth level by construction; a package test proves it on a throwaway install with no model configured.
+- R1.3 Every target carries a provenance: `fetched`, `derived`, `answered`, `authored` or `person`. The last line of every run prints the counts. `authored 0` is the normal case when the factory's bytes are complete; a rising count is the signal that bytes are missing upstream, and the work-order list says which.
+- R1.4 Receipts are built from files by `receipt.py`, never typed, and validated field by field (references non-empty, hashes 64 hex, times ISO UTC, counts integers, exact literals where required). Each of the eleven steps closes with `receipts/<step>.json`; a later step's rule names the earlier receipt as a prerequisite, so skipping is impossible by construction.
+- R1.5 Five stops and nothing else is printed to the owner: 0 the course is live; 1 a check failed (target, check, observed, expected); 2 network or sign-in (the exact command); 3 work orders open (file, what, shape, last finding); 4 an answer is needed (the one line to add). No ids, hashes or state codes outside those lines.
+- R1.6 The local page is a glance view over the same files: a progress bar, the five step groups (done, building, upcoming), the next target, the provenance counts, open work orders, and the course map with every lesson's parts labeled. It reads `make.py --status`; it never launches work or calls paid services.
+- R1.7 Typing the one command is the owner word. The build records a standing authorization (account, time, course, scope: factory spend, pull requests and merges, native writes with three receipts, publish dark, open when every receipt is valid, until the course is live) and every paid call, landing and native write cites its sha. It grants no skip of any gate.
+- R1.8 What the factory has not committed becomes a work order: `workorders/<target>.json` with every fact the artifact needs and its exact shape, sized for a local 30B model. `author.py` fills it when an author seat exists (a local OpenAI-style server on port 1234 or 11434, detected once and recorded, or any `{prompt_file}` command), the free prescreen checks the result, the paid judge decides, and a refusal re-opens the lesson for another pass, three at most. What no seat can fill waits for a person. Too big means split, never escalate.
+- R1.9 Authored content pays down intelligence debt: a judged, accepted artifact is handed to the course's producer route so the next build of the same course reads it as bytes. An authored article stays open until its disposition row lands; the build says so in one line.
+- R1.10 The walk and the open decision are mechanisms, not words. The learner-acceptance operator walks start, middle, end and the three XP cases on the profile's owner canary account and reads each back. The open decision is a rule over receipts: every receipt from bank gates through the walk valid and cold QC with zero severe failures; then the activation operator runs and reads back.
+- R1.11 Course facts are never hard-coded. Anything that differs between courses (source repository, blueprint path, checks per article, operators, canary accounts, forms) is read from the course profile, blueprint or pricing manifest at live main. The profile names its own source repository and operators, so nothing beyond the course id is asked.
+- R1.12 Tools are interchangeable across courses. Every shared tool takes `course-rules.json` (`--rules`: task verbs, skill-code shape, article sections, checks per article, spec-code patterns, each with its source). The package ships rules for the known courses; step 1 writes one for a new course. A tool that refuses a course is a defect in the tool, never a reason to skip a gate.
+- R1.13 An operator the profile marks not implemented is a factory pull request, never authored here. The build stops at that target with one line and resumes when the profile reads implemented.
 
 ### R2. Start from what exists
 
@@ -97,30 +98,27 @@ The standard: a known-bad fixture proves each gate fires.
 - R6.5 Cold QC failures are sorted into content, context, checker, provider or selection before any repair. Removal is never a passing verdict. Checker fixes are factory code and need their own review and landing.
 - R6.6 Walk and accept keeps the owner walk on one test account with three XP cases and a reload. Demo and open keeps the designated reviewer decision. Nothing automates the flip.
 
-### R7. Installer and onboarding
+### R7. Installer
 
-- R7.1 One command on macOS: installs `gh` and Python privately if missing, signs in to GitHub, verifies an alpha.school email and private-repo access, downloads the release at an exact commit with checksums.
-- R7.2 Onboarding asks for step 1 inputs in plain questions and writes `mission.json`; unknowns stay null. It reports which credential names are present (TimeBack, AWS profile, GitHub) and offers hidden entry for TimeBack into an owner-only credential file. Values never appear in settings, prompts, Git or the dashboard.
-- R7.3a `incept-course-builder credentials` enters the TimeBack credential and an optional AWS profile with hidden input into the owner-only file; every `connect`, `build` and `scan` loads that file into the environment so the connection check and the agent see the names. The file is never read by the dashboard.
-- R7.3 Non-interactive hosts: `install.sh --no-onboard`, then `incept-course-builder onboard --mission-file <filled mission.json> --agent <codex|claude|hermes|prompt>`. No prompts; the Step 0 receipt is written from the file.
-- R7.4 The GitHub sign-in must carry the `user:email` scope so the installer can verify the alpha.school address. A host without a terminal cannot add that scope itself; run `gh auth refresh -h github.com -s user:email` once in a terminal, then the agent path works. A token from the environment that lacks the scope makes the installer stop with that instruction.
-- R7.5 `incept-course-builder build` scans installed tools and skills, installs missing bundled skills without touching existing ones, writes the agent adapters into the workspace, and launches the chosen agent with the loop and the current card.
+- R7.1 One command on macOS: installs `gh` and Python privately if missing, signs in to GitHub, verifies an alpha.school email and private-repo access, downloads the release at an exact commit with checksums, and starts the build.
+- R7.2 The build asks for exactly two things and only when absent: the course id, from a numbered menu of the ap-one manifests at live main; and the TimeBack client id, client secret and organization id, with hidden input into an owner-only credential file. `--course <id>` on the install line and the names in the environment remove every prompt. The Content Factory key is asked only when an authored check needs the paid judge.
+- R7.3 `incept-course-builder` builds; `open` shows the local page; `status` prints the build as JSON; `credentials` re-enters the TimeBack strings; `stop` ends the local page. There is no onboarding, no agent choice and no settings file.
+- R7.4 The GitHub sign-in must carry the `user:email` scope so the installer can verify the alpha.school address. A host without a terminal cannot add that scope itself; run `gh auth refresh -h github.com -s user:email` once in a terminal.
+- R7.5 Re-running the install command updates the package in place; the workspace and the credential file are preserved and the next build continues where it left off.
 - R7.6 The package carries no person names, usernames, or machine or external-drive paths. A package test fails on any of them. Roles are used instead: course owner, merge approver, designated reviewer, fleet contact, platform lead.
 - R7.7 No firewall, zone classifier or personal-tooling step is part of the install.
 
-## 2b. Target architecture and what remains to rewrite
+## 2b. Where the build stands and what remains
 
-The owner's stated end state: the entire install is a deterministic script that acts on the inputs it receives toward the same goal every time, getting the course live, and uses a model only where the script cannot decide. Where the package stands against that, and the rewrite still owed:
+Measured on 2026-09-15 by running the build unattended against AP World History on a throwaway install with no model configured.
 
-| Layer | Today (2026-09-14.10) | Remaining rewrite |
+| Layer | Today (2026-09-15.1) | Remaining |
 |---|---|---|
-| Step order and closing | `next.py` orders eleven steps from receipts, refuses to skip, validates receipt shape | Validate receipt truth where a check exists: run the named oracle, judge readback or loader instead of trusting the cited ref |
-| Procedure rows | discover, step 1, step 2 and the pilot carry exact run/write rows with expect and on-fail; later steps carry sources and do-lists | Rows for every step through demo and open, including the publish operator invocations, the cold QC submit and poll, the walk readbacks |
-| Inputs | mission.json (guided or file), credential file loaded into the environment, connection references | Read the platform course id and source repository from the ap-one manifests automatically at discover; no onboarding question for anything the bytes hold |
-| Owner contact | machine-composed owner_message for requests and exceptions; connection states translated | One `next.py --status --plain` line for the terminal and dashboard: done, remaining, next, needs-you |
-| Native operators | course-specific modules per course in ap-one (HumGeo has eight; APWH has names, not code) | A generic native operation base with per-course plan producers (factory PR), so step 4 rows are the same for every course |
-| Drafting and judging | local drafting with templates, free prescreens, judge in parallel batches via the dispatcher | A single `draft-batch` and `judge-batch` row shape wired to the dispatcher's slot filler, with the receipt written by the tool, not the agent |
-| Dashboard | glance view over the step table | Read-only; no further work until the rows above land |
+| Install to course map | One menu number and three hidden strings; 41 targets fetched or derived; receipts onboard, discover, step 1 and step 2 valid; `authored 0` | none |
+| Lessons | 176 lessons: 126 articles copied from accepted disposition rows, 176 lessons with a judged check each, 176 prescreens; 50 lessons whose article the producer QC rejected stand as work orders for the author seat | the author seat fills them when a local model is present; each authored article then needs the course producer's disposition row (factory route) |
+| Bank gates | answer shape, key balance (incept-test-builder's own module), option length and QTI byte-match run on the fetched banks; 1,988 items | none |
+| Publish dark | the profile names the operators; APWH's status reads not implemented, so the build stops with one work order line | the factory's operator PR for the course; HumGeo's operators exist and run through the same rows |
+| Cold QC, walk, open | rules written against the measured fleet QC contract and the operator twins' command lines | first exercised on a course whose operators are implemented |
 
 ## 3. Evidence behind the spec
 

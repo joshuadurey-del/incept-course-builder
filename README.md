@@ -1,20 +1,20 @@
 <p align="center">
-  <img src="docs/assets/incept-banner.svg" alt="Incept Course Builder — Your agent. Alpha’s factory. One workspace." width="100%">
+  <img src="docs/assets/incept-banner.svg" alt="Incept Course Builder — One line. A few hours. A course live." width="100%">
 </p>
 
 <h1 align="center">Incept Course Builder</h1>
 
-<p align="center">Build courses with your agent, using Alpha’s native factory.</p>
+<p align="center">One typed line. A few hours later a course is live on TimeBack, at the full Incept bar.</p>
 
 <p align="center">
   <a href="#quick-start"><strong>Install</strong></a> ·
   <a href="docs/getting-started.md">Setup guide</a> ·
-  <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/START.md">Agent runbook</a> ·
+  <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/START.md">How the build works</a> ·
   <a href="https://joshuadurey-del.github.io/incept-course-builder/courses.html">Courses</a> ·
   <a href="https://joshuadurey-del.github.io/incept-course-builder/about.html">About</a>
 </p>
 
-<p align="center"><sub>macOS · Terminal onboarding · Local workspace · Alpha / Incept team access</sub></p>
+<p align="center"><sub>macOS · One command · No model in the loop · Alpha / Incept team access</sub></p>
 
 ## Quick start
 
@@ -24,19 +24,19 @@ Paste into Terminal:
 curl -fsSL https://joshuadurey-del.github.io/incept-course-builder/install.sh | bash
 ```
 
-**Sign in → Describe your course → Choose your agent → Watch progress in your customized dashboard.**
+**Sign in → pick the course from a menu → three hidden TimeBack strings → the build runs.**
 
 Use a GitHub account with a verified **@alpha.school** email and access to the [private package](https://github.com/InceptTrilogy/ap-four-course-dashboard). Setup checks your machine, reuses existing tools, and installs missing runtime components. [Access or setup help →](docs/getting-started.md)
 
 ```bash
-~/.local/bin/incept-course-builder build
+~/.local/bin/incept-course-builder
 ```
 
-Works with **Claude Code, Codex, Hermes**, and tool-capable local agents. You keep your existing model access.
+No agent is needed. The build is a 1995-style make: every step is a target file, a check and a recipe. A model is called only on a work order, as a compiler, and a script decides.
 
-Start from a course brief or resume existing work. Your agent develops the blueprint, generates and checks content through Content Factory, then assembles it for native publication and learner verification. Your local dashboard updates as the agent saves progress and stays available after Terminal closes. Reopen it at the same local address; run `incept-course-builder build` to resume the agent. [From-zero workflow and current execution requirements →](docs/getting-started.md#from-zero-to-a-complete-course)
+Every value follows one order of resort: factory bytes at live main, derivation, the answer file, you once, a model on a work order, a person. The last line of every run counts targets by provenance; `authored 0` is the normal case.
 
-The agent handles setup and execution choices. When it needs something only you can provide, it gives you a plain request, a prepared action, and access-recovery steps. Credentials are entered privately in Terminal or through native sign-in.
+Typing the one line is the owner word: a standing authorization is recorded and every paid call, landing and native write cites it. No gate is skipped because of it.
 
 ## Your course, in one customized dashboard
 
@@ -47,11 +47,15 @@ The agent handles setup and execution choices. When it needs something only you 
 
 | What you get | What it helps you do |
 | :--- | :--- |
-| **Terminal setup** | Configure the course and agent without assembling the toolchain by hand. |
-| **Bundled factory skills** | Give your agent native tools, workflow instructions, scripts and references. |
+| **One command** | Install, choose the course, and build; run it again to continue. |
+| **The factory's own tools** | Bank gates, the conformance oracle, the judge, the native operators: fetched at a pinned sha and run here. |
 | **Whole-course discovery** | Find missing populations before accepting a plan’s progress claims. |
 | **An executable runbook** | Plan independent work in parallel; keep integration and publication in order. |
-| **A persistent local dashboard** | Watch saved progress update automatically, even after the agent session ends. |
+| **A local page** | A progress bar, the four steps, the next target, the provenance counts and open work orders. |
+
+## One front end for the Alpha stack
+
+Step 2 of the build checks Content Factory, GitHub, AWS/S3 and the native TimeBack route and saves the report in the workspace.
 
 ## From brief to verified course
 
@@ -59,7 +63,7 @@ The agent handles setup and execution choices. When it needs something only you 
 | :--- | :--- | :--- | :--- |
 | Create the blueprint, or reconcile existing sources and coverage. | Author, repair and judge missing content. | Integrate accepted work into the course. | Run native publication and learner checks. |
 
-The runbook guides your agent through these stages using each course’s native tooling. Current permissions, budgets and release gates govern execution. Course completion requires verified learner-facing results.
+The build walks these stages with each course’s native tooling. Current permissions, budgets and release gates govern execution. Course completion requires verified learner-facing results.
 
 [Explore the runbook →](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/START.md) · [See reusable value & ROI →](https://joshuadurey-del.github.io/incept-course-builder/economics.html)
 
@@ -67,8 +71,8 @@ The runbook guides your agent through these stages using each course’s native 
 
 | I want to… | Open |
 | :--- | :--- |
-| Install, update, switch agents or troubleshoot sign-in | [Setup & everyday use](docs/getting-started.md) |
-| Give an agent the smallest useful starting context | [Agent entry point](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/START.md) |
+| Install, update, change the course or troubleshoot sign-in | [Setup & everyday use](docs/getting-started.md) |
+| Understand the build: targets, checks, recipes, the order of resort | [How the build works](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/START.md) |
 | Understand the product and access model | [About Incept](https://joshuadurey-del.github.io/incept-course-builder/about.html) |
 | Check published course progress | [Course workspace](https://joshuadurey-del.github.io/incept-course-builder/courses.html) |
 | Inspect evidence or improve the next build | [Claims](https://joshuadurey-del.github.io/incept-course-builder/claims.html) · [Lessons](https://joshuadurey-del.github.io/incept-course-builder/lessons.html) |
@@ -78,24 +82,30 @@ The runbook guides your agent through these stages using each course’s native 
 
 | Path | Purpose |
 | :--- | :--- |
-| [Builder application](https://github.com/InceptTrilogy/ap-four-course-dashboard) | Application code, persistent dashboard service, installer and agent runbook (team access) |
-| [install.sh](install.sh) | Public bootstrap for the private builder |
-| [index.html](index.html) · [courses.html](courses.html) · [docs.html](docs.html) · [style.css](style.css) | Dashboard pages and shared theme |
-| [data.json](data.json) · [process.json](process.json) | Published observations and process navigation |
-| [updates.json](updates.json) · [automation/](automation/) | Activity feed and its existing publisher |
-| [docs/](docs/) | Product setup guide and README assets |
+| [app.py](app.py) · [dashboard_service.py](dashboard_service.py) | Local application and persistent macOS dashboard |
+| [install.py](install.py) | Installer and managed updates |
+| [course-runbook/START.md](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/START.md) | How the build works |
+| [course-runbook/factory/](course-runbook/factory/) | Bundled native and workflow skills |
+| [course-runbook/make.py](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/make.py) · [course.rules](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/course.rules) | The build runner and the whole build on one screen |
+| [COURSE-BUILD-RUNBOOK.md](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/COURSE-BUILD-RUNBOOK.md) | Full narrative runbook |
+| [Core package](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook-core.zip) · [Full evidence package](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook.zip) | Downloadable packages |
 
 ```bash
-node --check timeline.js
-node timeline.js
-node updates.js
+python3 -B test_local_builder.py
+python3 -B test_coverage.py
+python3 -B test_connections.py
 node test_asap_ui.cjs
 ```
 
-With Playwright available, `node test_asap_ui.cjs --browser` checks navigation, keyboard controls, mobile layouts and unavailable inputs using synthetic data.
+With Playwright available, `node test_asap_ui.cjs --browser --local` checks the public reference pages and local dashboard. These checks use synthetic inputs and make no model or factory calls.
+
+```bash
+python3 course-runbook/check.py --checkpoint /path/to/workspace/course-state.json
+python3 course-runbook/check.py --report /path/to/report.json --checkpoint /path/to/workspace/course-state.json
+```
 
 </details>
 
 ---
 
-<sub>This is the public dashboard and install entry point. The builder package and agent runbook require Alpha / Incept team access; course content and local checkpoints are not included here.</sub>
+<sub>Private Alpha / Incept distribution. The public dashboard is a separate, read-only view; local course work and credentials stay out of it.</sub>

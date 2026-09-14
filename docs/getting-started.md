@@ -1,87 +1,76 @@
-# Setup & everyday use
+# Setup and everyday use
 
-[← Incept Course Builder](../README.md) · [About](https://joshuadurey-del.github.io/incept-course-builder/about.html) · [Agent runbook (team access)](https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/START.md)
+[← Incept Course Builder](../README.md) · [How the build works](../course-runbook/START.md) · [The rules file](../course-runbook/course.rules)
 
-## Before you start
+## What you need
 
-- A Mac and an internet connection for the first install.
-- A GitHub account with a **verified `@alpha.school` email** and access to the [private InceptTrilogy package](https://github.com/InceptTrilogy/ap-four-course-dashboard).
-- Your preferred agent and its model access. Setup can also produce a portable prompt for another host.
+- A Mac. The installer reuses an installed GitHub CLI and Python 3.11 or newer, and otherwise downloads its own copies into the app directory.
+- A GitHub account with a verified alpha.school email and access to the private package.
+- TimeBack credentials: client id, client secret and organization id. AWS uses your existing profile or SSO sign-in.
 
-## Install
+## The one line
 
-Paste this into Terminal:
-
-```bash
+```
 curl -fsSL https://joshuadurey-del.github.io/incept-course-builder/install.sh | bash
 ```
 
-The installer checks your machine, reuses installed tools, and downloads missing runtime components into the app directory. It requires no administrator password or shell-profile edit. Onboarding happens in Terminal: GitHub sign-in, course name, agent choice, then dashboard or agent launch.
+Four screens: your Mac is checked, GitHub is connected, the pinned release is installed, and the build starts. The build shows a numbered menu of course ids read live from ap-one and asks for the three TimeBack strings with hidden input. Then it runs. With `--course <id>` on the install line and the TimeBack names in the environment there are no prompts at all:
 
-**Watch progress in your customized dashboard.** It updates as your agent saves coverage, completed work and its next action. The dashboard runs independently through macOS: closing Terminal or navigating away does not stop it. Reopen the same local address to see saved progress. Run `incept-course-builder build` to resume the agent; the dashboard itself stays available after that session ends.
+```
+curl -fsSL https://joshuadurey-del.github.io/incept-course-builder/install.sh | bash -s -- --course ap-world-history-fall-2026-v1
+```
 
-The public Courses page is a shared reference, not your installed workspace. Local dashboard refreshes read saved progress only; they do not launch work or call paid services.
+Typing the line is the owner word. The build records a standing authorization with the account, time, course and scope until the course is live. Every paid call, landing and native write cites it. No gate is skipped because of it.
 
-## When something is needed from you
+## What the build does
 
-Your agent resolves ordinary setup, retries and workflow choices. It reuses existing access and authorization. A missing-input request must give you one concrete action, such as a hidden-input Terminal command or the existing service's browser sign-in. If you do not have access, it provides the verified retrieval steps, access owner or request channel, and a prepared message. Never paste secrets into chat or the dashboard.
+`make.py` reads `course.rules`, a build file in the 1995 shape: every step is a target file, a check and a recipe. A target is rebuilt when it is missing, older than a prerequisite, or failing its check. Run the command again any time; only what is missing or stale rebuilds. The progress lines read like a build log:
 
-The request gate checks agent reports and what appears in the local dashboard. Local agent hosts must follow the bundled instruction to run it before speaking; the builder cannot intercept every host's conversation. Native spending limits, access checks and required release approvals still apply.
+```
+  profile.json .................................. fetched
+  course-map.json ............................... derived
+  lessons/004/article.md ........................ open
+
+  STOP 3  work orders open (50)   fetched 18   derived 806   answered 2   authored 0   person 0
+```
+
+Every value follows one order of resort, and a model is next to last: factory bytes fetched at live main and pinned; derivation from those bytes; the answer file; you, asked once and saved; a model called on a work order and checked by a script; a person. The last line counts targets by provenance. `authored 0` is the normal case when the factory's bytes are complete.
+
+## Stops
+
+| Exit | Meaning | What prints |
+|---|---|---|
+| 0 | the course is live | the readback and the time |
+| 1 | a check failed | target, check, observed, expected |
+| 2 | network or sign-in | the exact command to run |
+| 3 | work orders open | file, what, shape, last finding |
+| 4 | an answer is needed | the one line to add to the answer file |
+
+Nothing else is printed to you.
+
+## Work orders
+
+What the factory has not committed becomes `workspace/workorders/<target>.json`: every fact the artifact needs and its exact shape, sized for a local 30B model. If a local OpenAI-style server answers on port 1234 or 11434 the build uses it as the author seat and records `AUTHOR_CMD` in the answer file; any `{prompt_file}` command works too. The author's output is checked by the free prescreen, then judged by the factory's paid judge, three tries. What it cannot fill waits for a person. An operator the course profile marks not implemented is a factory pull request, never authored here.
 
 ## Everyday commands
 
-```bash
-~/.local/bin/incept-course-builder          # Open your local dashboard
-~/.local/bin/incept-course-builder build    # Start your selected agent
-~/.local/bin/incept-course-builder onboard  # Change your course or agent
-~/.local/bin/incept-course-builder scan     # Inspect tools offline
-~/.local/bin/incept-course-builder connect  # Check native connections; no course work
-~/.local/bin/incept-course-builder stop     # Stop only the dashboard; preserve course work
+```
+~/.local/bin/incept-course-builder                 # build (the default); run again to continue
+~/.local/bin/incept-course-builder --course <id>   # choose or change the course without the menu
+~/.local/bin/incept-course-builder open            # open the local page
+~/.local/bin/incept-course-builder status          # the build as JSON
+~/.local/bin/incept-course-builder credentials     # enter the TimeBack strings again (hidden)
+~/.local/bin/incept-course-builder stop            # stop the local page; files stay
 ```
 
-Choose **Claude Code**, **Codex**, **Hermes**, a custom local command, or a portable prompt during onboarding. Automated execution needs an agent with filesystem and terminal tools. Keep using your existing model credentials and subscription; the builder does not provide model access.
+## The local page
 
-## Connect the native stack
+It shows where the course is: a progress bar, the four steps, the next target, the provenance counts and open work orders. Click a step for its targets and receipts; the course map shows units, topics and lessons with each part labeled. It runs locally through macOS after Terminal closes and never launches work or calls paid services.
 
-Run `incept-course-builder connect` for read-only connection checks, or `incept-course-builder build` to check and continue with your agent. The agent resolves existing course repository, AWS profile, S3 prefix and native publish configuration; only references go in `workspace/connections.config.json`. Credentials stay with their existing providers. `CONNECTIONS.json` supplies a dated connection report to the local dashboard and agent. Source coverage and learner acceptance still require their native verifiers.
+## Files
 
-## From zero to a complete course
+Everything lives under `~/.local/share/incept-course-builder/`: `workspace/` (the build), `credentials.env` (owner-only), `releases/<commit>/` (the pinned package), `current` (a link to it). The workspace files are the state; there is no other memory.
 
-The builder walks four steps in a fixed order, for a new course and for an existing one alike. A script chooses the step from receipts on disk; your agent does the work the step card names and closes it with a receipt. Skipping is refused.
+**Update:** re-run the install command. Course work and credentials are preserved; the next build continues where it left off.
 
-1. **Standards, essential knowledge, assessments.** Reconcile or author the blueprint on its nine dimensions, build the coverage matrix (every essential knowledge statement has a lesson, a practice item and an assessment item), and write the media rule.
-2. **Course map.** Fill the course profile, emit the unit and topic tree, price lessons by type, and give every unit an assessment milestone.
-3. **Lessons with checks.** Prove one lesson end to end (article, five checks, judge, render). Then author the rest in complete forms with one owner each: free prescreens before every paid judge call, bank gates on one candidate SHA.
-4. **Host and present.** Publish dark with three receipts per native write, run cold course QC and sort failures by class, walk the course once on a test account, then the designated reviewer decides and enrollment is read back.
-
-An existing course starts at step 0 too. At steps 1 to 3 the agent sorts what already exists into keep, modify, replace or discard, using the factory's own checks; only the replace and missing rows get new work. Templates for the mission, intake rows, articles, five-check sets, forms and titles ship in the package, so a small model fills and checks instead of designing.
-
-Non-interactive hosts: the GitHub sign-in must already carry the `user:email` scope (`gh auth refresh -h github.com -s user:email`, once, in a terminal). Then run the install command with `--no-onboard`, fill `templates/mission.json`, then `incept-course-builder onboard --mission-file <path> --agent <codex|claude|hermes|prompt>`. The same loop reaches Codex through `AGENTS.md`, Claude Code through `CLAUDE.md`, and any other host through the exported prompt.
-
-The complete course is the target. Setup grants no course, spend or publication authority; the owner walk and the designated reviewer decision remain human steps. Read the [spec sheet](https://joshuadurey-del.github.io/incept-course-builder/spec.html) for each step's factory shape, tooling and closing receipt.
-
-## Skills & factory tooling
-
-The private release bundles the official [Content Factory skillpack](https://content-factory.inceptstore.com/#download) and workflow skills with their scripts and references. After download, bundled skill setup works offline: missing skills are copied, custom files are preserved, and version differences are reported.
-
-Native repositories, service credentials and course configuration are resolved from current factory instructions. Installing the builder alone does not configure every course service.
-
-## GitHub sign-in
-
-The installer uses GitHub CLI’s browser OAuth flow. It requests `user:email` to check your verified work email; existing logins request this scope only when needed. Tokens and email lists are not saved in installer logs or settings.
-
-If your work email is missing, add and verify it in [GitHub email settings](https://github.com/settings/emails), then rerun the installer. It does not need to be your primary email. A verified email and access to the private repository are separate requirements.
-
-An environment token must already provide email-read and repository access. Browser consent cannot expand an externally supplied token. If GitHub sign-in succeeds but package download fails, check that the same account can open the private repository.
-
-## Update or remove
-
-**For maintainers:** skill changes ship in the private builder repository with their scripts, affected runtime consumers and rebuilt installation package. Validate both bundled resources and the installed code path; a dashboard-only edit is not a builder update. Public documentation follows the actual installable release.
-
-**Update:** the installer reuses your saved course and agent settings, preserves course work and existing skills, and reopens the dashboard. Onboarding is only repeated when you explicitly request it. Changed managed release files are left for review rather than silently overwritten.
-
-**Remove:** back up any course work, then run `incept-course-builder stop` to unregister its macOS dashboard service. Then remove the app directory at `~/.local/share/incept-course-builder` and the launcher at `~/.local/bin/incept-course-builder`. Runtime dependencies installed by this app are contained in its directory.
-
-## Privacy
-
-The public repository serves the dashboard, published observations, product documentation and install entry point. The private repository contains the builder package and agent resources. Course content, credentials and local checkpoints are not served by the public site. Agent and factory calls use the services configured for your authorized workflow.
+**Non-interactive hosts:** the GitHub sign-in must carry the `user:email` scope (`gh auth refresh -h github.com -s user:email`, once).
