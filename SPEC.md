@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2026-09-14.12 (package); contract 2026-09-14.8 |
+| **Version** | 2026-09-14.13 (package); contract 2026-09-14.8 |
 | **Direction** | The whole install is one deterministic script that acts on its inputs toward one goal, a live course. Every run with the same inputs takes the same path. A model is used only where a procedure row cannot decide, and then it reports why and proposes the next step. |
 | **Status** | Working spec. Changes after the first course ships through it. |
 | **Product** | One command installs a local workspace and dashboard on macOS; any tool-capable agent then builds one course through four steps on Alpha's native factory. |
@@ -33,7 +33,7 @@ You build a course the way a good teacher does. Decide what students must know, 
 - R1.3 No skipping. Closing step N while an earlier step is open returns HOLD naming the open steps.
 - R1.4 Receipts are written only by the script into `receipts/`. Hand edits are out of contract.
 - R1.5 The same loop is delivered to every host: the launch prompt leads with it; the workspace carries `AGENTS.md` (Codex) and `CLAUDE.md` (Claude Code) with identical text; Hermes and custom hosts receive it through the prompt file.
-- R1.6 The dashboard is a glance view: one strip of the five steps (done, current, upcoming), the current goal and the one next action, and a "needs you" box that appears only when the machine has composed an owner message. Tables, logs and connection rows sit under one folded Details toggle. Counts come from receipts, not from prose. Each step in the strip opens its artifact: the receipt rows for that step, and for the course map the map itself (units with period, topics with their gate, lesson titles, unit assessments and course-level milestones), built by `course_map.py` from the ap-one price manifest, gate map and the framework titles at live main. The "next" line is the card's first action, never the agent's free-text notes; those sit under Details as agent notes.
+- R1.6 The dashboard is a glance view: one strip of the five steps (done, current, upcoming), the current goal and the one next action, and a "needs you" box that appears only when the machine has composed an owner message. Tables, logs and connection rows sit under one folded Details toggle. Counts come from receipts, not from prose. Each step in the strip opens its artifact: the receipt rows for that step, and for the course map the map itself: units with period and counts by kind, topics with their gate and counts, every lesson expandable to its parts, each labeled Article, Video, Check, Writing or PowerPath 100 with its XP, unit tests, capstones and mock sections labeled as milestones. Built by `course_map.py` from the ap-one price manifest, gate map and the framework titles at live main; opens directly at `#course-map`. The "next" line is the card's first action, never the agent's free-text notes; those sit under Details as agent notes.
 - R1.7 Asking the owner is the last resort, not a step. Every card lists `resolve_from` sources for its receipt fields: the factory file, route or precedent that holds the answer. The agent reads each at live main and cites the read. A request reaches the owner only through `next.py --request`, which returns SELF_RESOLVE until every field is cited from a live read, and never for a value the loader pins in a later step. Evidence: on 2026-09-14 an agent stopped step 2 to ask for six "owner facts" that had been committed to ap-one on 2026-08-28; it had read a stale local draft instead of live main.
 - R1.8 The machine writes the owner message. When a request passes the gate, `next.py` composes `owner_message`: one sentence saying what is needed, one saying how to give it, one optional sentence of why. No ids, hashes, state codes or paths. The agent shows it word for word and adds only an answer to a question the owner asked. Connection states are translated the same way: a missing TimeBack credential becomes "run `incept-course-builder credentials`"; source, asset store and publish config are agent tasks, never owner questions.
 - R1.9 Questions and checks are drafted locally first with the templates, prescreened for free, then judged in parallel batches through the dispatcher. A paid call is a judge call, one per item. A five-item pilot never goes through a paid generation service, and one step's spend is never tied to another decision or course.
@@ -133,7 +133,7 @@ The owner's stated end state: the entire install is a deterministic script that 
 
 ```json
 {
-  "spec_version": "2026-09-14.12",
+  "spec_version": "2026-09-14.13",
   "procedure_rule": "rows of run|write with expect and on_fail; exceptions via next.py --exception compose the owner message with why and next step",
   "owner_message_rule": "composed by next.py: what is needed, how to give it; no ids, hashes, codes or paths",
   "drafting_rule": "draft locally, prescreen free, judge in parallel batches; paid calls are judge calls only",

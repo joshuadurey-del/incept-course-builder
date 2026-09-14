@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-09-14T11:30:16Z",
+ "generated_utc": "2026-09-14T11:42:51Z",
  "note": "sha256 over Git blobs committed at HEAD. Precommit reads the staged tree that becomes HEAD; bin/update-hashes.sh verify checks committed HEAD. Working-tree bytes are never hashed.",
  "files": [
   {
