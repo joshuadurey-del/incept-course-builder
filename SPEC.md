@@ -2,7 +2,8 @@
 
 | | |
 |---|---|
-| **Version** | 2026-09-14.9 (package); contract 2026-09-14.8 |
+| **Version** | 2026-09-14.10 (package); contract 2026-09-14.8 |
+| **Direction** | The whole install is one deterministic script that acts on its inputs toward one goal, a live course. Every run with the same inputs takes the same path. A model is used only where a procedure row cannot decide, and then it reports why and proposes the next step. |
 | **Status** | Working spec. Changes after the first course ships through it. |
 | **Product** | One command installs a local workspace and dashboard on macOS; any tool-capable agent then builds one course through four steps on Alpha's native factory. |
 | **Users** | The course owner first; every authorized Alpha builder next. No person names, no one user's history, no one machine's paths anywhere in the package. |
@@ -32,8 +33,11 @@ You build a course the way a good teacher does. Decide what students must know, 
 - R1.3 No skipping. Closing step N while an earlier step is open returns HOLD naming the open steps.
 - R1.4 Receipts are written only by the script into `receipts/`. Hand edits are out of contract.
 - R1.5 The same loop is delivered to every host: the launch prompt leads with it; the workspace carries `AGENTS.md` (Codex) and `CLAUDE.md` (Claude Code) with identical text; Hermes and custom hosts receive it through the prompt file.
-- R1.6 The dashboard shows the step table and the current card from the same script. Counts come from receipts, not from prose.
+- R1.6 The dashboard is a glance view: one strip of the five steps (done, current, upcoming), the current goal and the one next action, and a "needs you" box that appears only when the machine has composed an owner message. Tables, logs and connection rows sit under one folded Details toggle. Counts come from receipts, not from prose.
 - R1.7 Asking the owner is the last resort, not a step. Every card lists `resolve_from` sources for its receipt fields: the factory file, route or precedent that holds the answer. The agent reads each at live main and cites the read. A request reaches the owner only through `next.py --request`, which returns SELF_RESOLVE until every field is cited from a live read, and never for a value the loader pins in a later step. Evidence: on 2026-09-14 an agent stopped step 2 to ask for six "owner facts" that had been committed to ap-one on 2026-08-28; it had read a stale local draft instead of live main.
+- R1.8 The machine writes the owner message. When a request passes the gate, `next.py` composes `owner_message`: one sentence saying what is needed, one saying how to give it, one optional sentence of why. No ids, hashes, state codes or paths. The agent shows it word for word and adds only an answer to a question the owner asked. Connection states are translated the same way: a missing TimeBack credential becomes "run `incept-course-builder credentials`"; source, asset store and publish config are agent tasks, never owner questions.
+- R1.9 Questions and checks are drafted locally first with the templates, prescreened for free, then judged in parallel batches through the dispatcher. A paid call is a judge call, one per item. A five-item pilot never goes through a paid generation service, and one step's spend is never tied to another decision or course.
+- R1.10 Every card is a literal procedure: numbered rows of run or write, each with an expected result and a fixed on-fail action. The agent follows the rows; it does not choose a route. When a row still fails after its on-fail, or something no row covers is needed, the agent writes an exception (step, row, what it saw, why the script does not cover it, suggested next step) and `next.py --exception` turns it into the plain owner message. Intelligence is spent only there, and it always says why and suggests what to do next.
 
 ### R2. Start from what exists
 
@@ -93,11 +97,26 @@ The standard: a known-bad fixture proves each gate fires.
 
 - R7.1 One command on macOS: installs `gh` and Python privately if missing, signs in to GitHub, verifies an alpha.school email and private-repo access, downloads the release at an exact commit with checksums.
 - R7.2 Onboarding asks for step 1 inputs in plain questions and writes `mission.json`; unknowns stay null. It reports which credential names are present (TimeBack, AWS profile, GitHub) and offers hidden entry for TimeBack into an owner-only credential file. Values never appear in settings, prompts, Git or the dashboard.
+- R7.3a `incept-course-builder credentials` enters the TimeBack credential and an optional AWS profile with hidden input into the owner-only file; every `connect`, `build` and `scan` loads that file into the environment so the connection check and the agent see the names. The file is never read by the dashboard.
 - R7.3 Non-interactive hosts: `install.sh --no-onboard`, then `incept-course-builder onboard --mission-file <filled mission.json> --agent <codex|claude|hermes|prompt>`. No prompts; the Step 0 receipt is written from the file.
 - R7.4 The GitHub sign-in must carry the `user:email` scope so the installer can verify the alpha.school address. A host without a terminal cannot add that scope itself; run `gh auth refresh -h github.com -s user:email` once in a terminal, then the agent path works. A token from the environment that lacks the scope makes the installer stop with that instruction.
 - R7.5 `incept-course-builder build` scans installed tools and skills, installs missing bundled skills without touching existing ones, writes the agent adapters into the workspace, and launches the chosen agent with the loop and the current card.
 - R7.6 The package carries no person names, usernames, or machine or external-drive paths. A package test fails on any of them. Roles are used instead: course owner, merge approver, designated reviewer, fleet contact, platform lead.
 - R7.7 No firewall, zone classifier or personal-tooling step is part of the install.
+
+## 2b. Target architecture and what remains to rewrite
+
+The owner's stated end state: the entire install is a deterministic script that acts on the inputs it receives toward the same goal every time, getting the course live, and uses a model only where the script cannot decide. Where the package stands against that, and the rewrite still owed:
+
+| Layer | Today (2026-09-14.10) | Remaining rewrite |
+|---|---|---|
+| Step order and closing | `next.py` orders eleven steps from receipts, refuses to skip, validates receipt shape | Validate receipt truth where a check exists: run the named oracle, judge readback or loader instead of trusting the cited ref |
+| Procedure rows | discover, step 1, step 2 and the pilot carry exact run/write rows with expect and on-fail; later steps carry sources and do-lists | Rows for every step through demo and open, including the publish operator invocations, the cold QC submit and poll, the walk readbacks |
+| Inputs | mission.json (guided or file), credential file loaded into the environment, connection references | Read the platform course id and source repository from the ap-one manifests automatically at discover; no onboarding question for anything the bytes hold |
+| Owner contact | machine-composed owner_message for requests and exceptions; connection states translated | One `next.py --status --plain` line for the terminal and dashboard: done, remaining, next, needs-you |
+| Native operators | course-specific modules per course in ap-one (HumGeo has eight; APWH has names, not code) | A generic native operation base with per-course plan producers (factory PR), so step 4 rows are the same for every course |
+| Drafting and judging | local drafting with templates, free prescreens, judge in parallel batches via the dispatcher | A single `draft-batch` and `judge-batch` row shape wired to the dispatcher's slot filler, with the receipt written by the tool, not the agent |
+| Dashboard | glance view over the step table | Read-only; no further work until the rows above land |
 
 ## 3. Evidence behind the spec
 
@@ -112,7 +131,10 @@ The standard: a known-bad fixture proves each gate fires.
 
 ```json
 {
-  "spec_version": "2026-09-14.9",
+  "spec_version": "2026-09-14.10",
+  "procedure_rule": "rows of run|write with expect and on_fail; exceptions via next.py --exception compose the owner message with why and next step",
+  "owner_message_rule": "composed by next.py: what is needed, how to give it; no ids, hashes, codes or paths",
+  "drafting_rule": "draft locally, prescreen free, judge in parallel batches; paid calls are judge calls only",
   "ask_rule": "resolve_from sources read at live main and cited per field before any owner request; next.py --request gates it",
   "route": ["content", "p3", "p5", "p6", "p7", "p8"],
   "route_names": {"p12": "align", "content": "content", "p3": "bank gates", "p5": "publish dark", "p6": "cold QC", "p7": "walk and accept", "p8": "demo and open"},
