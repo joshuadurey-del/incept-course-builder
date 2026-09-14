@@ -93,9 +93,10 @@ The standard: a known-bad fixture proves each gate fires.
 - R7.1 One command on macOS: installs `gh` and Python privately if missing, signs in to GitHub, verifies an alpha.school email and private-repo access, downloads the release at an exact commit with checksums.
 - R7.2 Onboarding asks for step 1 inputs in plain questions and writes `mission.json`; unknowns stay null. It reports which credential names are present (TimeBack, AWS profile, GitHub) and offers hidden entry for TimeBack into an owner-only credential file. Values never appear in settings, prompts, Git or the dashboard.
 - R7.3 Non-interactive hosts: `install.sh --no-onboard`, then `incept-course-builder onboard --mission-file <filled mission.json> --agent <codex|claude|hermes|prompt>`. No prompts; the Step 0 receipt is written from the file.
-- R7.4 `incept-course-builder build` scans installed tools and skills, installs missing bundled skills without touching existing ones, writes the agent adapters into the workspace, and launches the chosen agent with the loop and the current card.
-- R7.5 The package carries no person names, usernames, or machine or external-drive paths. A package test fails on any of them. Roles are used instead: course owner, merge approver, designated reviewer, fleet contact, platform lead.
-- R7.6 No firewall, zone classifier or personal-tooling step is part of the install.
+- R7.4 The GitHub sign-in must carry the `user:email` scope so the installer can verify the alpha.school address. A host without a terminal cannot add that scope itself; run `gh auth refresh -h github.com -s user:email` once in a terminal, then the agent path works. A token from the environment that lacks the scope makes the installer stop with that instruction.
+- R7.5 `incept-course-builder build` scans installed tools and skills, installs missing bundled skills without touching existing ones, writes the agent adapters into the workspace, and launches the chosen agent with the loop and the current card.
+- R7.6 The package carries no person names, usernames, or machine or external-drive paths. A package test fails on any of them. Roles are used instead: course owner, merge approver, designated reviewer, fleet contact, platform lead.
+- R7.7 No firewall, zone classifier or personal-tooling step is part of the install.
 
 ## 3. Evidence behind the spec
 

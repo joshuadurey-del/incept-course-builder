@@ -56,7 +56,7 @@ The builder walks four steps in a fixed order, for a new course and for an exist
 
 An existing course starts at step 0 too. At steps 1 to 3 the agent sorts what already exists into keep, modify, replace or discard, using the factory's own checks; only the replace and missing rows get new work. Templates for the mission, intake rows, articles, five-check sets, forms and titles ship in the package, so a small model fills and checks instead of designing.
 
-Non-interactive hosts: run the install command with `--no-onboard`, fill `templates/mission.json`, then `incept-course-builder onboard --mission-file <path> --agent <codex|claude|hermes|prompt>`. The same loop reaches Codex through `AGENTS.md`, Claude Code through `CLAUDE.md`, and any other host through the exported prompt.
+Non-interactive hosts: the GitHub sign-in must already carry the `user:email` scope (`gh auth refresh -h github.com -s user:email`, once, in a terminal). Then run the install command with `--no-onboard`, fill `templates/mission.json`, then `incept-course-builder onboard --mission-file <path> --agent <codex|claude|hermes|prompt>`. The same loop reaches Codex through `AGENTS.md`, Claude Code through `CLAUDE.md`, and any other host through the exported prompt.
 
 The complete course is the target. Setup grants no course, spend or publication authority; the owner walk and the designated reviewer decision remain human steps. Read the [spec sheet](https://joshuadurey-del.github.io/incept-course-builder/spec.html) for each step's factory shape, tooling and closing receipt.
 
