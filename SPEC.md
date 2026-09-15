@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2026-09-15.6 (package); contract 2026-09-15.1 |
+| **Version** | 2026-09-15.11 (package); contract 2026-09-15.1 |
 | **Direction** | One typed line, a few hours, a course live on TimeBack at the full Incept bar. The front end is a 1995 terminal program. The back end is a make-style dependency graph of files: every step a target, a check and a recipe. A model is called only on a work order, as a compiler, and a script decides. No human in the loop. |
 | **Status** | Working spec. Changes after the first course ships through it. |
 | **Product** | One command installs the builder on macOS, shows a numbered menu of course ids read live from the factory, takes three hidden credential strings, and builds the course through four steps on Alpha's native factory. Run it again to continue. |
@@ -113,16 +113,18 @@ The standard: a known-bad fixture proves each gate fires.
 
 ## 2b. Where the build stands and what remains
 
-Measured on 2026-09-15 by running the build unattended against AP World History and AP Human Geography on throwaway installs with no model configured.
+Measured on 2026-09-15 by running the build unattended on clean throwaway installs with no model configured, after two goal-fit review rounds (Codex, then Grok) were folded in and a simplification pass ran.
 
-| Layer | Today (2026-09-15.1) | Remaining |
+| Layer | Today (2026-09-15.11) | Remaining |
 |---|---|---|
-| Install to course map | One menu number and three hidden strings; 41 targets fetched or derived; receipts onboard, discover, step 1 and step 2 valid; `authored 0` | none |
-| Lessons | 176 lessons: 126 articles copied from accepted disposition rows, 176 lessons with a judged check each, 176 prescreens; 50 lessons whose article the producer QC rejected stand as work orders for the author seat | the author seat fills them when a local model is present; each authored article then needs the course producer's disposition row (factory route) |
-| Bank gates | answer shape, key balance (incept-test-builder's own module), option length and QTI byte-match run on the fetched banks; 1,988 items | none |
-| Publish dark | the profile names the operators; APWH's status reads not implemented, so the build stops with one work order line | the factory's operator PR for the course; HumGeo's operators exist and run through the same rows |
-| Cold QC, walk, open | rules written against the measured fleet QC contract and the operator twins' command lines | first exercised on a course whose operators are implemented |
-| A second course (HumGeo) | the same rules stop at Step 0 with two owner-word work orders: the factory has no xp_price_manifest.json under its manifests, and its profile names no blueprint_path | the factory files per course are not yet uniform; the build names exactly which file each course lacks |
+| Install to Step 0 | one menu number, three hidden strings, an optional judge key; setup and discover close on bytes for APWH and HumGeo in under a minute | none |
+| Step 1, APWH | the course's own conformance oracle runs inside a pinned ap-one checkout and reports 3 FAIL rows (A-097 teaching order, A-116 stale carrier contract against write_activities.json, A-202 unadjudicated graph edges), 31 artifact-pending rows, 1 non-blocking owner decision; the build stops there and names the rows | content and contract work in apwh-blueprint-build; the build resumes when the oracle exits 0 |
+| Step 0, HumGeo | its blueprint is located by pattern; pricing needs the sealed publication plan (private corridor package) before ap-one humgeo_native_timeback_xp.py can price it; no tree tool exists; titles and coverage cannot be derived from its blueprint shape | the corridor inputs the course keeps privately |
+| Lessons (when Step 1 passes) | one process materializes every factory-accepted article and check set (APWH: 126 articles, 933 checks); the author loop fills gaps as a slot filler (draft, free prescreen with fresh factory clones, paid judge, requeue with the finding, three rounds); authored pieces stay open until the factory lands them | the producer route that lands authored pieces |
+| Bank gates | per bank, the course option count, exactly one key, the factory's own key-balance module, zero uniquely-longest keys, mock forms matched to the exam shape; PASS on APWH's 2,043 items | QTI is the factory's committed receipts, not a re-emit |
+| Publish dark, cold QC, walk, open | rules follow the operator twins' argument lists; the publish package, corridor and assets are explicit produce targets; the QC bar (pass ≥ 0.95, severe = 0 measured, cold, all checkers) sits on the QC receipt and nothing below it walks or opens | never executed on a real course; the first HumGeo run will find receipt-field mismatches, each a named check failure |
+
+Provenance of the review: Codex reproduced ten defects offline (stale targets surviving rebuilds, cached checks skipped, one check satisfying a five-check lesson, receipt-shaped content taking the factory fast path, QC below the bar opening a course, XP read from the wrong file, two keys accepted, five-option mocks rejected, mock section two waived, parallel prompts colliding); all ten are fixed and covered. Grok confirmed the folds and added the QC bar on the receipt, the missing collect step, the publish inputs as targets, per-bank key balance, the materialize step, and the screen corrections (Return no longer quits; dead options hidden; judged counts only factory-judged sets; the publisher brief only at publish).
 
 ## 3. Evidence behind the spec
 
