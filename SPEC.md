@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2026-09-15.31 (package); contract 2026-09-15.1 |
+| **Version** | 2026-09-15.32 (package); contract 2026-09-15.1 |
 | **Direction** | One typed line, a few hours, a course live on TimeBack at the full Incept bar. The front end is a 1995 terminal program. The back end is a make-style dependency graph of files: every step a target, a check and a recipe. A model is called only on a work order, as a compiler, and a script decides. No human in the loop. |
 | **Status** | Working spec. Changes after the first course ships through it. |
 | **Product** | One command installs the builder on macOS, shows a numbered menu of course ids read live from the factory, takes three hidden credential strings, and builds the course through four steps on Alpha's native factory. Run it again to continue. |
