@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2026-09-15.1 (package); contract 2026-09-15.1 |
+| **Version** | 2026-09-15.6 (package); contract 2026-09-15.1 |
 | **Direction** | One typed line, a few hours, a course live on TimeBack at the full Incept bar. The front end is a 1995 terminal program. The back end is a make-style dependency graph of files: every step a target, a check and a recipe. A model is called only on a work order, as a compiler, and a script decides. No human in the loop. |
 | **Status** | Working spec. Changes after the first course ships through it. |
 | **Product** | One command installs the builder on macOS, shows a numbered menu of course ids read live from the factory, takes three hidden credential strings, and builds the course through four steps on Alpha's native factory. Run it again to continue. |
@@ -41,6 +41,9 @@ You build a course the way a good teacher does. Decide what students must know, 
 - R1.11 Course facts are never hard-coded. Anything that differs between courses (source repository, blueprint path, checks per article, operators, canary accounts, forms) is read from the course profile, blueprint or pricing manifest at live main. The profile names its own source repository and operators, so nothing beyond the course id is asked.
 - R1.12 Tools are interchangeable across courses. Every shared tool takes `course-rules.json` (`--rules`: task verbs, skill-code shape, article sections, checks per article, spec-code patterns, each with its source). The package ships rules for the known courses; step 1 writes one for a new course. A tool that refuses a course is a defect in the tool, never a reason to skip a gate.
 - R1.13 An operator the profile marks not implemented is a factory pull request, never authored here. The build stops at that target with one line and resumes when the profile reads implemented.
+- R1.14 After every build the owner sees one screen: the course, the eleven steps each with a detail line (units, lessons, XP; articles and checks counted; gates named), WHAT IS MISSING in owner words, and WHAT YOU CAN DO as a numbered list of only what this Mac can execute now (a local model, Claude or Codex as the author seat, list the lessons, write the factory request as a file, open the page, stop). Typing the number executes it. While building, one counter line rewrites itself; no target list, stop code or path reaches the owner. The local page shows the same block.
+- R1.15 No step starts until the previous step's receipt exists. Every rule declares its step; the page and the screen group by that declaration. Setup and discover share the Step 0 gate because the setup receipt needs the course profile. A step that is open shows k of m pieces and names what is still to build.
+- R1.16 Every course carries at least one full mock exam whose section counts match the blueprint's exam form; lessons do not close without it. A file the factory has not produced for a course (a 404 at live main) or a profile field it does not carry is a work order in owner words, never a sign-in error.
 
 ### R2. Start from what exists
 
@@ -110,7 +113,7 @@ The standard: a known-bad fixture proves each gate fires.
 
 ## 2b. Where the build stands and what remains
 
-Measured on 2026-09-15 by running the build unattended against AP World History on a throwaway install with no model configured.
+Measured on 2026-09-15 by running the build unattended against AP World History and AP Human Geography on throwaway installs with no model configured.
 
 | Layer | Today (2026-09-15.1) | Remaining |
 |---|---|---|
@@ -119,6 +122,7 @@ Measured on 2026-09-15 by running the build unattended against AP World History 
 | Bank gates | answer shape, key balance (incept-test-builder's own module), option length and QTI byte-match run on the fetched banks; 1,988 items | none |
 | Publish dark | the profile names the operators; APWH's status reads not implemented, so the build stops with one work order line | the factory's operator PR for the course; HumGeo's operators exist and run through the same rows |
 | Cold QC, walk, open | rules written against the measured fleet QC contract and the operator twins' command lines | first exercised on a course whose operators are implemented |
+| A second course (HumGeo) | the same rules stop at Step 0 with two owner-word work orders: the factory has no xp_price_manifest.json under its manifests, and its profile names no blueprint_path | the factory files per course are not yet uniform; the build names exactly which file each course lacks |
 
 ## 3. Evidence behind the spec
 

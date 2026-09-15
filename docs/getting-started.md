@@ -36,6 +36,30 @@ Typing the line is the owner word. The build records a standing authorization wi
 
 Every value follows one order of resort, and a model is next to last: factory bytes fetched at live main and pinned; derivation from those bytes; the answer file; you, asked once and saved; a model called on a work order and checked by a script; a person. The last line counts targets by provenance. `authored 0` is the normal case when the factory's bytes are complete.
 
+## The screen
+
+After every build you see one screen: the course, the steps with a detail each, WHAT IS MISSING in plain words, and WHAT YOU CAN DO as a numbered list of only what this Mac can run now. Type the number and it runs.
+
+```
+  AP WORLD HISTORY: MODERN
+  ✓ Course map                    9 units · 176 lessons · 6576 XP
+  ! Lessons with checks           126 of 176 articles · 176 of 176 checks judged · 782 of 884 pieces
+  · Bank gates                    0 of 8 pieces
+
+  WHAT IS MISSING
+    50 lessons have no accepted article. The factory's own quality check rejected the ones it had.
+
+  WHAT YOU CAN DO
+    1  Write them with a local model
+    2  Write the 50 missing pieces with Claude (small model)   paid · about 50 drafting calls
+    3  Show me which lessons
+    4  Open the course page in the browser
+    5  Stop for now
+  >
+```
+
+No step starts until the previous step's receipt exists. While it builds, one counter line rewrites itself.
+
 ## Stops
 
 | Exit | Meaning | What prints |

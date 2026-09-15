@@ -24,7 +24,7 @@ Paste into Terminal:
 curl -fsSL https://joshuadurey-del.github.io/incept-course-builder/install.sh | bash
 ```
 
-**Sign in → pick the course from a menu → three hidden TimeBack strings → the build runs.**
+**Sign in → pick the course from a menu → three hidden TimeBack strings → the build runs → one screen shows what is done, what is missing, and numbered options that run when you type the number.**
 
 Use a GitHub account with a verified **@alpha.school** email and access to the [private package](https://github.com/InceptTrilogy/ap-four-course-dashboard). Setup checks your machine, reuses existing tools, and installs missing runtime components. [Access or setup help →](docs/getting-started.md)
 
