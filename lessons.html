@@ -19,6 +19,29 @@
       <strong>Reusable work, measured at its scope:</strong> The builder release packages skills, coverage checks, and repeat-setup behavior for reuse across authorized course work. These are delivered tooling capabilities; their financial value depends on measured use and your assumptions. <a href="economics.html">Explore the evidence and ROI scenario &rarr;</a>
     </div>
 
+    <section id="humgeo-postassembly-20260916">
+      <h2>September 14–16: finish the course through verified, bounded changes</h2>
+      <p>HumGeo evidence through September 16, 2026, 04:35 UTC. The completed selection and repairs below are reusable examples. Assessment recovery, final cold QC and learner acceptance remain unfinished. Repository evidence requires Alpha access. <a href="retro.html#humgeo-end-sprint-20260916">Dated results and PR history</a>.</p>
+      <h3>Test the address and the stored result</h3>
+      <p><b>Trigger:</b> Add assessments to an assembled course using a new course-specific operator.</p>
+      <p><b>Observable failure:</b> The first planning attempt called the wrong TimeBack resource collection and received a denial. The test double accepted either address, so passing offline tests missed the integration error. After that correction, execution reached a second error: the server stored a course entry but omitted empty planning fields and added a default date. Literal comparison rejected the returned record.</p>
+      <p><b>Missing control:</b> The tests did not enforce the exact resource URL or reproduce the server's stored representation.</p>
+      <p><b>Implemented control:</b> <a href="https://github.com/InceptTrilogy/ap-one/pull/1162">PR #1162</a> corrected the course operator's resource URL and added a regression that rejects the old address. The corrected read-only plan passed. The separate normalization/recovery correction is requested in <a href="https://github.com/InceptTrilogy/ap-one/issues/1153#issuecomment-5689903430">issue #1153</a> and remains pending; no shared permission or platform change is justified by the measured URL failure.</p>
+      <p><b>Verifier:</b> Keep the exact-URL regression across resource callers. The pending recovery test must accept only the measured stored equivalent, reject changes to identity, destination, ordering or meaningful content, and adopt the already-created entry without creating it again. Source tests then need the real retained-plan recovery and zero-write replay before this addition earns completion.</p>
+      <h3>Preserve partial progress instead of starting over</h3>
+      <p><b>Trigger:</b> A native operation stops after some writes have reached the server.</p>
+      <p><b>Observable failure:</b> The assessment checkpoint recorded 19 applied operations and one pending course entry; a read confirmed that pending entry already existed. A fresh plan or a repeated create would lose the relationship between the saved operation and its real side effect.</p>
+      <p><b>Missing control:</b> The assessment operator cannot yet recognize that stored equivalent during recovery.</p>
+      <p><b>Implemented control:</b> Execution stopped, the original plan and checkpoint were retained, and one course writer kept ownership. Earlier native selection and targeted repairs completed with exact readback and zero-write replay. The existing capture, execute/readback and replay skills preserve those boundaries; they do not repair the pending operator themselves.</p>
+      <p><b>Verifier:</b> Reattach when the original process is still running. After a terminal refusal, use only the admitted operator's recovery with the original plan/checkpoint. Require remaining writes to complete, all intended records to read back, and the identical completed operation to replay with zero writes. Never edit the checkpoint or clear ownership by hand.</p>
+      <h3>Refresh the finished composition before judging the course</h3>
+      <p><b>Trigger:</b> Selection, a content correction or a new assessment changes the assembled course.</p>
+      <p><b>Observable failure:</b> Before the profile correction, the live course's link and configured-XP totals differed from its profile. The completed pre-assessment capture also cannot cover assessments that have not finished publishing.</p>
+      <p><b>Missing control:</b> A prior inventory or source deployment alone does not bind every later composition change.</p>
+      <p><b>Implemented control:</b> Final selection completed with readback and zero-write replay, the affected profile was corrected, and a fresh pre-assessment C4 capture completed. Accepted content and unchanged proofs were reused. The assessment-inclusive refresh waits for completed execution and replay.</p>
+      <p><b>Verifier:</b> Reconcile the affected placements, test/resource links, public assets and configured totals against the final intended composition. Then run the required cold C5 and essential learner/grading/feedback/XP checks. A capture, a merged PR, configured XP or a deployed source version gives no learner-acceptance credit. The release switch remains prepared and unflipped.</p>
+    </section>
+
     <section id="design-assumption-article-coverage-20260912" data-control-status="documented-enforcement-pending">
       <h2>September 12: verify assumptions inherited from the original design</h2>
       <p>HumGeo · Historical evidence window: July 27–September 12, 2026. This documents a design-to-publication failure and the controls to adopt; it does not change course acceptance.</p>

@@ -1,5 +1,13 @@
 [
   {
+    "ts": "2026-09-16T04:35Z",
+    "course": "HumGeo",
+    "writer": "dashboard curation",
+    "phase": "p5",
+    "kind": "note",
+    "text": "September 14–16 lessons and retrospective: final selection completed with 2,204 readbacks and zero-write replay; targeted item/article corrections and pre-assessment C4 capture completed. PR #1162 fixed the resource URL, but assessment execution stopped on a stored-record comparison after 19 applied operations and one existing pending entry. Recovery remains in issue #1153; PR #1163 is separate offline QTI evidence. Final assessment-inclusive capture, cold C5 and learner acceptance remain open; switch prepared and unflipped."
+  },
+  {
     "ts": "2026-09-14T06:40Z",
     "course": "All",
     "writer": "dashboard curation",
