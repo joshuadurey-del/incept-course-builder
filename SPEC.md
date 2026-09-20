@@ -121,6 +121,20 @@ The standard: a known-bad fixture proves each gate fires.
 - R7.6 The package carries no person names, usernames, or machine or external-drive paths. A package test fails on any of them. Roles are used instead: course owner, merge approver, designated reviewer, fleet contact, platform lead.
 - R7.7 No firewall, zone classifier or personal-tooling step is part of the install.
 
+### R8. Landing and close-out rules learned on HumGeo (2026-09-17 to 09-20)
+
+- R8.1 The cold QC step computes the reachable ceiling before any redraft: split fails by route (redraftable choice, instrument-defect extended-text, no-topic-code), ceiling = (items - instrument fails) / items. A run within one item of the ceiling is terminal; the remaining instrument fails ride the filing, not a redraft.
+- R8.2 A single hosted run is not a trigger. New fails on untouched items need a second run before a redraft campaign (HumGeo run 7: 99 flips, run 8: none).
+- R8.3 Small remainders are redrafted in seat: the draft is written into the campaign's response.raw.txt with the drafting model recorded, then gate, emit, judge once. No paid drafting call for fewer than ten items.
+- R8.4 Every sealed operation's plan, capture, execute and replay receipts are committed to the course repository as digest-and-count files beside the findings; text that states an execution count cites that path.
+- R8.5 The review receipt binds to the exact head. A pin-only commit after an APPROVE takes one more closing slot on the new head (or lands before the review). No owner waiver is invented for it.
+- R8.6 Landing prep compares the suite's failure set on origin/main with the head's; an identical set is recorded as pre-existing on base and the landing proceeds through the merge gate with that fact in the cert, instead of refusing.
+- R8.7 Waiters count new occurrences of an exact sentinel line; a presence grep on a shared log and any substring match on a status word are refused patterns.
+- R8.8 Batch and pin scripts read the current dirnames tuple and digest map from the file with a pattern and append; copied literal anchors are refused.
+- R8.9 Video edits: a 202 is queued, not scheduled. The fixer polls finished_at against the submission time, the publish loop runs independently of the render engine, and a service-side full-disk error is recorded as the service owner's incident with no client retry storm (retries do not burn the edit cap).
+- R8.10 Resume rule: list live sessions and read the last commit on every tree the handoff names before the first write; two writers split by tree by message.
+- R8.11 After any wave that adds or removes course components, recreate every enrolled learner's lesson plan (POST lessonPlans/{id}/recreate); link and resource field edits show live without it.
+
 ## 2b. Where the build stands and what remains
 
 Measured on 2026-09-15 by running the build unattended on the owner's install after release .20 (goal-fit reviews by Codex and Grok on the make, the write layer and the graph layer were folded before each was built).
@@ -153,7 +167,7 @@ Review provenance: Codex reproduced ten defects on the make offline and all ten 
 
 ```json
 {
-  "spec_version": "2026-09-14.14",
+  "spec_version": "2026-09-20.45",
   "tool_rule": "every shared tool takes --rules <course-rules.json>; no course list in any tool",
   "procedure_rule": "rows of run|write with expect and on_fail; exceptions via next.py --exception compose the owner message with why and next step",
   "owner_message_rule": "composed by next.py: what is needed, how to give it; no ids, hashes, codes or paths",
@@ -166,6 +180,8 @@ Review provenance: Codex reproduced ten defects on the make offline and all ten 
   "intake_bins": ["keep", "modify", "replace", "discard"],
   "write_contract": ["capture", "execute_with_readback", "replay_zero_writes"],
   "triage_classes": ["content", "context", "checker", "provider", "selection"],
+  "qc_ceiling_rule": "ceiling = (items - instrument-defect fails) / items; a run within one item of it is terminal",
+  "landing_rules": ["review receipt bound to the exact head", "receipts committed as digest-and-count files", "base-red suite adjudicated not refused", "waiters count new exact sentinel lines"],
   "forbidden_in_package": ["person names", "usernames", "machine paths", "external-drive paths", "credential values", "firewall steps"]
 }
 ```

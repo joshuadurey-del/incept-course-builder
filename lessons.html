@@ -19,6 +19,23 @@
       <strong>Reusable work, measured at its scope:</strong> The builder release packages skills, coverage checks, and repeat-setup behavior for reuse across authorized course work. These are delivered tooling capabilities; their financial value depends on measured use and your assumptions. <a href="economics.html">Explore the evidence and ROI scenario &rarr;</a>
     </div>
 
+  <section id="publish-faster-20260920"><h2>September 19–20: publish a course from the platform to TimeBack faster and more deterministically</h2>
+    <p>Source: the HumGeo close-out (<a href="retro.html#humgeo-closeout-20260920">retrospective</a>). Each lesson names the practice and the builder change it asks for.</p>
+    <ul class="work-list">
+      <li><b>Compute the QC ceiling before chasing the score.</b> Split every failed item by route first: choice items with a topic code are redraftable; extended-text items judged with MCQ checks are an instrument defect (file it); items with no topic code need authored codes, not redrafts. The reachable ceiling is (items minus instrument fails) divided by items. HumGeo: 0.9805, reached on run 10. <i>Builder change:</i> the cold QC step records the ceiling and stops there; a run within noise of the ceiling is terminal.</li>
+      <li><b>One run carries noise; a second run confirms.</b> Run 7 flipped 99 untouched items; run 8 flipped none. Never redraft on a single run's new fails without a second measurement.</li>
+      <li><b>Seat drafts for single items cost nothing.</b> The last choice fail was redrafted in seat (write the draft into the campaign's <code>response.raw.txt</code> with the model recorded), gated, judged once, replaced. <i>Builder change:</i> the redraft step accepts a seat draft for small remainders instead of a paid call.</li>
+      <li><b>Execute from the local sealed commit; land the PR after.</b> Batches 10 and 11 ran and replayed before their PR existed. The platform only needs the pin in the local head. <i>Builder change:</i> already the rule; keep it.</li>
+      <li><b>Bind the review receipt to the exact head.</b> A pin-only commit after an APPROVE moves the head; the landing tool refuses on purpose. Budget one more closing slot per pin commit, or land the pin before the review. The extra slot on HumGeo found a real finding.</li>
+      <li><b>Commit the receipts you cite.</b> Digest-and-count receipts (plan, capture, execute, replay) belong in the course repository beside the findings; a reviewer cannot read the operator's private root.</li>
+      <li><b>Waiters count new sentinel lines.</b> A grep for a phrase that already exists in another lane's log passes at once; a substring like "stop" inside "stopped" aborts a follow-up. Count occurrences of an exact line and wait for the count to rise.</li>
+      <li><b>Generate pins from the file, not from a copied anchor.</b> A batch script cloned by text replacement failed on the dirnames tuple its own predecessor had changed. Read the current tuple with a pattern and append to it.</li>
+      <li><b>A 202 from the video service means queued, not scheduled.</b> After an outage the accepted edits sat for hours. Poll <code>finished_at</code> against the submission time, keep the publish loop alive independently of the engine, and budget hours for the service to drain. The full-disk error is the service owner's incident; nothing client-side drains it.</li>
+      <li><b>Base-red suites need an adjudication, not a refusal.</b> When the identical failure set is red on origin/main, a docs landing proceeds through the merge gate with that fact in the cert. <i>Builder change:</i> prep compares failure sets on base and head and records "pre-existing on base" instead of refusing.</li>
+      <li><b>Check for a live peer before the first write on any resume.</b> List sessions and read the last commit on every handoff tree; a note that says the other window is gone is intent, not state.</li>
+      <li><b>Per-learner lesson plans snapshot the graph.</b> After any wave that adds or removes components, recreate each enrolled learner's plan; link and resource edits show live without it. (Measured on APWH the same week.)</li>
+    </ul>
+    </section>
     <section id="humgeo-postassembly-20260916">
       <h2>September 14–16: finish the course through verified, bounded changes</h2>
       <p>HumGeo evidence through September 16, 2026, 04:35 UTC. The completed selection and repairs below are reusable examples. Assessment recovery, final cold QC and learner acceptance remain unfinished. Repository evidence requires Alpha access. <a href="retro.html#humgeo-end-sprint-20260916">Dated results and PR history</a>.</p>
