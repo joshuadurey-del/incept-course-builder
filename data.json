@@ -1466,18 +1466,18 @@
   ],
   "population_coverage": {
     "schema": "population-evidence/v1",
-    "observed_at": "2026-09-11T08:23:10Z",
+    "observed_at": "2026-09-20T08:47:23Z",
     "courses": {
       "humgeo": {
         "Gate MCQs": {
           "value": "2,448 MCQs · 204 forms",
           "detail": "68 gates; 612 written responses excluded from MCQs. Committed snapshot, not live acceptance.",
           "next_step": "Final-cut QC and live readback still need their own evidence.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-human-geography-fall-2026-v1/demo_gate_snapshot.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-human-geography-fall-2026-v1/demo_gate_snapshot.json",
               "sha256": "8a00094a61a7aafadc68a33a516bebb23552d645f6d0e623fc2f0f17580f3f6b"
             }
           ],
@@ -1486,18 +1486,18 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Practice": {
           "value": "3,633 keyed records",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Reconcile the required practice set and its current QC.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-human-geography-fall-2026-v1/demo_practice_keys.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-human-geography-fall-2026-v1/demo_practice_keys.json",
               "sha256": "806a0c3d583b7023bc6884ca3d660b7bb6396089c7fe6c68c96fce1503ed1e6f"
             }
           ],
@@ -1506,18 +1506,18 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Videos / media": {
           "value": "1,113 lesson mappings",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Verify required media, upload availability and playback.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-human-geography-fall-2026-v1/video_map.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-human-geography-fall-2026-v1/video_map.json",
               "sha256": "cdbb15c847e079c30d29eee83cf09144e4327032c5450e4f241dafdd604395c2"
             }
           ],
@@ -1526,18 +1526,18 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Writing activities": {
           "value": "120 activities",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Confirm final served activity coverage and scoring.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-human-geography-fall-2026-v1/write_activities.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-human-geography-fall-2026-v1/write_activities.json",
               "sha256": "120bdad8614dfafb15d42912682d1f6b175b07870ef010356faba28eba3389e3"
             }
           ],
@@ -1546,18 +1546,18 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Mock / exam forms": {
           "value": "1 assembled exam form(s)",
           "detail": "Committed mock-bank inventory; not exam acceptance.",
           "next_step": "Verify the complete exam and its learner route.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-human-geography-fall-2026-v1/mock_exam_bank.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-human-geography-fall-2026-v1/mock_exam_bank.json",
               "sha256": "f7bdfe015d96e41265d005a26a21922920eefb76a726eed55ac4ac7d2dd75772"
             }
           ],
@@ -1566,18 +1566,18 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Articles": {
           "value": "72 article overlays",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Reconcile the complete article population and acceptance.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-human-geography-fall-2026-v1/demo_articles.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-human-geography-fall-2026-v1/demo_articles.json",
               "sha256": "2bfcc976537c78117e41efea39b789f27ae126b6260f1e18f4df381288aec8ab"
             }
           ],
@@ -1586,18 +1586,18 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "PowerPath / PP100": {
           "value": "1,715 ingest inventory entries",
           "detail": "Base PP100 list; exclusions, replacements and final admission are separate inputs.",
           "next_step": "Reconcile the effective admitted set at the final cut.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/ingest/manifests/ap-human-geography-fall-2026-v1/pp100_items.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/ingest/manifests/ap-human-geography-fall-2026-v1/pp100_items.json",
               "sha256": "0518f34b18c2b15905b99daa424c96ccbadcf712705bb7707ab9ea5fb975614a"
             }
           ],
@@ -1606,18 +1606,18 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Writing scoring": {
           "value": "Historical calibration: FAIL",
           "detail": "Committed report, not a fresh calibration. A newer governing receipt must be reconciled separately.",
           "next_step": "Reconcile with current calibration and scoring evidence.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Committed report",
           "evidence": [
             {
-              "url": "https://github.com/ilmych/humgeo-rebuild/blob/c67c690b8b29528ff154e1fe37df4ecb2c437aa1/manifests/eoc-calibration/report.json",
+              "url": "https://github.com/ilmych/humgeo-rebuild/blob/c8750360f509670abb0ce792c47e15e91466d79c/manifests/eoc-calibration/report.json",
               "sha256": "c119c805c6b5fe5445785d8168a592b7ecf0be1ee5cdd3e00ae28f05fa6943b2"
             }
           ],
@@ -1626,7 +1626,7 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Train Your Eye": {
@@ -1634,11 +1634,11 @@
           "value": "34 items · 15 paired sets",
           "detail": "Paired-stimulus bank used by native host-lesson practice; not a Know A / Know B sequence or live-acceptance verdict.",
           "next_step": "Match the emitted practice package and native validation receipt to this bank.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/ingest/manifests/ap-human-geography-fall-2026-v1/paired_sets_bank.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/ingest/manifests/ap-human-geography-fall-2026-v1/paired_sets_bank.json",
               "sha256": "9ddcddb769fe60f01e0966b4a059a965afca788366e0f54463ced67c42895c65"
             }
           ],
@@ -1646,7 +1646,7 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Unit assessments": {
@@ -1654,11 +1654,11 @@
           "value": "84 forms · 7 units",
           "detail": "Stored source alternatives. The native publisher selects forms per unit separately; this is not a publication count.",
           "next_step": "Match selected forms and their accepted item receipts to the publication package.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/ingest/manifests/ap-human-geography-fall-2026-v1/cumulative_gate_forms.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/ingest/manifests/ap-human-geography-fall-2026-v1/cumulative_gate_forms.json",
               "sha256": "3dd37f2b6919767fde00e3bd798b7babe1e416b94c2939fd764a15ec2b0a52be"
             }
           ],
@@ -1666,7 +1666,7 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Embedded checks": {
@@ -1674,11 +1674,11 @@
           "value": "1,215 sync-check records",
           "detail": "Actual sync-bank records. Authored article checks and final video/article placement use additional native inputs; not combined acceptance.",
           "next_step": "Join article-check acceptance manifests and the native assets validation receipt.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/ingest/manifests/ap-human-geography-fall-2026-v1/sync_bank.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/ingest/manifests/ap-human-geography-fall-2026-v1/sync_bank.json",
               "sha256": "df1dfd9e1a23f00028189894af12d5c1963e98da577c29098b2e84a1a0321f39"
             }
           ],
@@ -1686,7 +1686,7 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         }
       },
@@ -1695,11 +1695,11 @@
           "value": "1,988 MCQs · 142 forms",
           "detail": "71 gates; 0 written responses excluded from MCQs. Committed snapshot, not live acceptance.",
           "next_step": "Final-cut QC and live readback still need their own evidence.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-world-history-fall-2026-v1/demo_gate_snapshot.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-world-history-fall-2026-v1/demo_gate_snapshot.json",
               "sha256": "6b7886764282c159ff324952b87302c3768bfb64e26bf46890e046d2987a2467"
             }
           ],
@@ -1709,18 +1709,18 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Practice": {
           "value": "645 keyed records",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Reconcile the required practice set and its current QC.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-world-history-fall-2026-v1/demo_practice_keys.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-world-history-fall-2026-v1/demo_practice_keys.json",
               "sha256": "e702a286a40370dbb4cfe5ff0617a5dd6e4cfaf103fa973f8e0532796bc33331"
             }
           ],
@@ -1730,18 +1730,18 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Videos / media": {
           "value": "171 lesson mappings",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Verify required media, upload availability and playback.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-world-history-fall-2026-v1/video_map.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-world-history-fall-2026-v1/video_map.json",
               "sha256": "230490ef379f51bb40463349359587e7b0d1c195fa5b6f2f71ef48157a5f086d"
             }
           ],
@@ -1751,19 +1751,19 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Writing activities": {
-          "value": "113 activities",
+          "value": "231 activities",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Confirm final served activity coverage and scoring.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-world-history-fall-2026-v1/write_activities.json",
-              "sha256": "deecba6ba9bb4ddf924ad486292921c9854544398238d804ec22ad35845b86a7"
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-world-history-fall-2026-v1/write_activities.json",
+              "sha256": "43fc51317a8c838d9db8a1ca87d8cc7ca1b21597994a7c3b70169c3c5427744c"
             }
           ],
           "reporting_status": "RECORDED",
@@ -1772,18 +1772,18 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Mock / exam forms": {
           "value": "1 assembled exam form(s)",
           "detail": "Committed mock-bank inventory; not exam acceptance.",
           "next_step": "Verify the complete exam and its learner route.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Source inventory",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-one/blob/83078af25e0f51c23428c1cf629b45a1a87bb2ac/services/bff/data/courses/ap-world-history-fall-2026-v1/mock_exam_bank.json",
+              "url": "https://github.com/InceptTrilogy/ap-one/blob/0811d834da98dbb1399375d133ab8c4ebe496625/services/bff/data/courses/ap-world-history-fall-2026-v1/mock_exam_bank.json",
               "sha256": "aa7cc87d482f0297abaa3cd0265bcec2563a4f705e6e7b9a588986bab099e7ca"
             }
           ],
@@ -1793,7 +1793,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "PowerPath / PP100": {
@@ -1804,7 +1804,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Unit assessments": {
@@ -1815,7 +1815,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Articles": {
@@ -1826,7 +1826,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Embedded checks": {
@@ -1837,7 +1837,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Writing scoring": {
@@ -1848,7 +1848,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Train Your Eye": {
@@ -1859,7 +1859,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         }
       },
@@ -1868,7 +1868,7 @@
           "value": "49 / 249 positions accepted",
           "detail": "200 pending in this named build-only ledger. Presence on current main does not establish it as the latest successor or prove publication.",
           "next_step": "200 positions pending in this ledger; publication remains separate.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Acceptance ledger",
           "evidence": [
             {
@@ -1881,7 +1881,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Gate MCQs": {
@@ -1891,7 +1891,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Practice": {
@@ -1901,7 +1901,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "PowerPath / PP100": {
@@ -1911,7 +1911,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Unit assessments": {
@@ -1921,7 +1921,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Mock / exam forms": {
@@ -1931,7 +1931,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Embedded checks": {
@@ -1941,7 +1941,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Videos / media": {
@@ -1951,7 +1951,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Writing activities": {
@@ -1961,7 +1961,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Writing scoring": {
@@ -1971,7 +1971,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Train Your Eye": {
@@ -1981,7 +1981,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         }
       },
@@ -1990,11 +1990,11 @@
           "value": "Unit 3: 3 FRQs matched",
           "detail": "Committed Unit 3 readback only; no fresh platform probe or full-course verdict.",
           "next_step": "Reconcile the remaining units and refresh live acceptance.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Subset readback",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-psychology-fall-2025-v1/blob/07d70d567a2857d0036700404d97c08c5ea01390/out/publish/unit_3/reports/live_qc_unit_3.json",
+              "url": "https://github.com/InceptTrilogy/ap-psychology-fall-2025-v1/blob/834f82629c1bf7112350884f98b91b928ad7c565/out/publish/unit_3/reports/live_qc_unit_3.json",
               "sha256": "f2322d5ab7d56c0536eccea3f8acd6b1faafcce1b606890095b5a6c5f460ab5c"
             }
           ],
@@ -2002,18 +2002,18 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Videos / media": {
           "value": "Unit 3: 46 image URLs checked",
           "detail": "Committed Unit 3 image check; neither current media availability nor video coverage.",
           "next_step": "Reconcile other units, video coverage and current media availability.",
-          "observed_at": "2026-09-11T08:23:10Z",
+          "observed_at": "2026-09-20T08:47:23Z",
           "level": "Subset readback",
           "evidence": [
             {
-              "url": "https://github.com/InceptTrilogy/ap-psychology-fall-2025-v1/blob/07d70d567a2857d0036700404d97c08c5ea01390/out/publish/unit_3/reports/live_qc_unit_3.json",
+              "url": "https://github.com/InceptTrilogy/ap-psychology-fall-2025-v1/blob/834f82629c1bf7112350884f98b91b928ad7c565/out/publish/unit_3/reports/live_qc_unit_3.json",
               "sha256": "f2322d5ab7d56c0536eccea3f8acd6b1faafcce1b606890095b5a6c5f460ab5c"
             }
           ],
@@ -2021,7 +2021,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "CHECKED"
         },
         "Gate MCQs": {
@@ -2030,7 +2030,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Practice": {
@@ -2039,7 +2039,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "PowerPath / PP100": {
@@ -2048,7 +2048,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Unit assessments": {
@@ -2057,7 +2057,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Mock / exam forms": {
@@ -2066,7 +2066,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Articles": {
@@ -2075,7 +2075,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Embedded checks": {
@@ -2084,7 +2084,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Writing scoring": {
@@ -2093,7 +2093,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Train Your Eye": {
@@ -2102,7 +2102,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-11T08:23:10Z",
+          "sync_checked_at": "2026-09-20T08:47:23Z",
           "sync_status": "MAPPING_REQUIRED"
         }
       }
@@ -2116,42 +2116,42 @@
   },
   "source_sync": {
     "schema": "dashboard-source-sync/v1",
-    "checked_at": "2026-09-11T08:23:10Z",
+    "checked_at": "2026-09-20T08:47:23Z",
     "status": "CHECKED",
     "repositories": {
       "InceptTrilogy/ap-one": {
-        "sha": "83078af25e0f51c23428c1cf629b45a1a87bb2ac",
-        "checked_at": "2026-09-11T08:23:10Z",
+        "sha": "0811d834da98dbb1399375d133ab8c4ebe496625",
+        "checked_at": "2026-09-20T08:47:23Z",
         "status": "CHECKED"
       },
       "InceptTrilogy/ap-psychology-fall-2025-v1": {
-        "sha": "07d70d567a2857d0036700404d97c08c5ea01390",
-        "checked_at": "2026-09-11T08:23:10Z",
+        "sha": "834f82629c1bf7112350884f98b91b928ad7c565",
+        "checked_at": "2026-09-20T08:47:23Z",
         "status": "CHECKED"
       },
       "ilmych/apush-build-outputs": {
         "sha": "98842f41d90138846ca8a584e2d60d8d54719e0f",
-        "checked_at": "2026-09-11T08:23:10Z",
+        "checked_at": "2026-09-20T08:47:23Z",
         "status": "CHECKED"
       },
       "ilmych/apush-course-build": {
         "sha": "319e0777d208601379749066f579e0f67a086cdb",
-        "checked_at": "2026-09-11T08:23:10Z",
+        "checked_at": "2026-09-20T08:47:23Z",
         "status": "CHECKED"
       },
       "ilmych/apwh-blueprint-build": {
-        "sha": "568985f605dd488f0619976d2464b75fdcd1bb31",
-        "checked_at": "2026-09-11T08:23:10Z",
+        "sha": "bffddca13dec9c3cf4ebca2f5378b694324b58d9",
+        "checked_at": "2026-09-20T08:47:23Z",
         "status": "CHECKED"
       },
       "ilmych/apwh-build-outputs": {
         "sha": "0a355d92809702d41b06e986261601ec56d5ac84",
-        "checked_at": "2026-09-11T08:23:10Z",
+        "checked_at": "2026-09-20T08:47:23Z",
         "status": "CHECKED"
       },
       "ilmych/humgeo-rebuild": {
-        "sha": "c67c690b8b29528ff154e1fe37df4ecb2c437aa1",
-        "checked_at": "2026-09-11T08:23:10Z",
+        "sha": "c8750360f509670abb0ce792c47e15e91466d79c",
+        "checked_at": "2026-09-20T08:47:23Z",
         "status": "CHECKED"
       }
     },
@@ -2178,7 +2178,7 @@
       "cross.human_review": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "9b7078f39d3a88769c9ac082a1f6f7219409931bef966d7f7c87f13c472c3e8f"
+        "claim_sha256": "d7e8ba3fa5d424106d09e0510cb1dec77c1217a3a60f5638a423c8fc3022fa66"
       },
       "humgeo.gate2.answer_shape_reopen": {
         "status": "NO_AUTOMATIC_VERIFIER",
@@ -2198,7 +2198,7 @@
       "humgeo.blueprint.audit": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "650dcde2c43f4d27905328c9251e969ad2f2b1cb53f7ce9b3dc64b59e8309d2d"
+        "claim_sha256": "fe81f7e24d95e2a5d9dda41060e648b803b9b64c33c2d4c35ad8d863d61796d6"
       },
       "humgeo.coverage.denominator": {
         "status": "NO_AUTOMATIC_VERIFIER",
@@ -2213,17 +2213,17 @@
       "apwh.blueprint.audit": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "8f1558bd640bde9e170ec379ebc7a53e71af8f357abe7a56d8db94c8dc1d2df0"
+        "claim_sha256": "dc70421ce7e6abd3c634b3a293e288ae92340ef882aafccb27a7dfc252b62afb"
       },
       "apush.blueprint.audit": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "cb9b94becba95be20ba32db3ae7f0ff9ebd9a750f6ef13f69524f1703ca43527"
+        "claim_sha256": "710be9b3fe994825e6d366693183c061b0545e6dbff90be5d423f7854312dd6a"
       },
       "psych.blueprint.audit": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "de5784cc11cb9aba0a8154604ec3e585553fcd21688d39726930272294e57a36"
+        "claim_sha256": "9d6ac5f5e94b4d85e9fea39d4ac30f29599e406a9da0a601fe7340e32ce882ed"
       },
       "cross.recovery.audit": {
         "status": "NO_AUTOMATIC_VERIFIER",
@@ -2258,7 +2258,7 @@
       "humgeo.ls_qc_ready": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "666414d4671c4deca40c3cb07d025e33b6a083feb81b435c591c99a2dfa69b3e"
+        "claim_sha256": "75b9fc796ec34dbd06537c05e5139b452598579f38a104967073cd417bd625a3"
       },
       "humgeo.eoc": {
         "status": "NO_AUTOMATIC_VERIFIER",
@@ -2268,7 +2268,7 @@
       "humgeo.release": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "289d0bb1d3e0323cb8986476018cc8cf93b6be761a02a2f3c53f572172887a1f"
+        "claim_sha256": "6543b3d3c34e5bad906e42f1b378aeb5386671c8415fd39284c0eb2d6120fbe7"
       },
       "apwh.sweep.pack": {
         "status": "NO_AUTOMATIC_VERIFIER",
@@ -2293,7 +2293,7 @@
       "apwh.ls_qc_ready": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "244badb2e7d3d65959dd6b880a0903e9c24fbc3c55f4e6c1ce23ceccff58ba06"
+        "claim_sha256": "a55d9387ae3dc091f8234032b51b6f1b82a0972b6edaec9aa06e8c1e54a9c666"
       },
       "apush.ledger.mixed": {
         "status": "NO_AUTOMATIC_VERIFIER",
@@ -2318,7 +2318,7 @@
       "apush.ls_qc_ready": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "e9d71179dbcc080ab2e77503d7ebb3427a39096604065c072ef521aa572b7661"
+        "claim_sha256": "89629e9db8a112bb696fed23720cd823b2a3d17c70da791b8eac0ae9ab530b79"
       },
       "apush.platform": {
         "status": "NO_AUTOMATIC_VERIFIER",
@@ -2353,16 +2353,16 @@
       "psych.ls_qc_ready": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "141a4d2c8cddf87273ed175060b1f76deed09369e09ce51539c1fa2a594b57b8"
+        "claim_sha256": "c0aecee45edd792a362c771795d23127d10ad1ec73070b582b1762b4322bd85d"
       },
       "psych.registration": {
         "status": "NO_AUTOMATIC_VERIFIER",
         "checks": [],
-        "claim_sha256": "e5cca5c4490a6c9c49ea50fdee48560cf3130c9d9143d8b502c5e4910009fdcf"
+        "claim_sha256": "4b1da886396b10a2522d301ba7611221884df1fb2dfd2aa2439110398a6cdc70"
       }
     },
     "workflow_url": "https://github.com/InceptTrilogy/ap-four-course-dashboard/actions/workflows/dashboard-repo-poll.yml",
-    "run_url": "https://github.com/InceptTrilogy/ap-four-course-dashboard/actions/runs/34577492187",
+    "run_url": "https://github.com/InceptTrilogy/ap-four-course-dashboard/actions/runs/35500500059",
     "scope": "Configured source files on remote main only. Unmapped populations and claims remain unverified; unchanged bytes do not renew QC or learner acceptance."
   }
 }
