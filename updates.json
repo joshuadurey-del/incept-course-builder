@@ -8,7 +8,7 @@
   {
     "ts": "2026-09-16T06:10Z",
     "course": "APWH",
-    "writer": "Fable",
+    "writer": "dashboard curation",
     "phase": "p5",
     "kind": "note",
     "text": "Course Builder 2026-09-15.44 (private main 6a2506ba, installed): native writes recover instead of rebuilding (durable operator records, refusals repeated never retried, a held lock is a live exclusion, resume only through the operator's own contract, coverage by exact ids); cold QC binds to the published composition read by the course's own verifier before and after the job, one paid job per composition, one closing rule at the course's shipped bar (HumGeo 1.0; APWH and APUSH await the owner's number); the release boundary prepares and stops (exit 6, PREPARED, UNFLIPPED) unless a release word bound to the run is recorded. Plan reconciled with Codex (15 findings) and Grok (12 findings); twelve offline proofs. Spec rows R1.1, R1.4, R1.7, R1.10, R1.11, R1.13, R1.16, R5, R6.1, R6.4, R6.6 updated; machine summary names make.py."

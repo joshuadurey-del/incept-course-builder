@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-09-16T04:38:59Z",
+ "generated_utc": "2026-09-20T08:40:16Z",
  "note": "sha256 over Git blobs committed at HEAD. Precommit reads the staged tree that becomes HEAD; bin/update-hashes.sh verify checks committed HEAD. Working-tree bytes are never hashed.",
  "files": [
   {
@@ -13,6 +13,11 @@
    "bytes": 18276
   },
   {
+   "path": "agents/AP-FOUR-COURSE-STANDINGS-2026-09-20.md",
+   "sha256": "71841ed163cf4f76353035a2097a2fa17ad7aa31f52849b202b8391c3dc9be4d",
+   "bytes": 7085
+  },
+  {
    "path": "agents/COMPANION-RECEIPTS-20260817.md",
    "sha256": "baf9b7771e089235f25415ba120c90e4719ba24b00b98f22d88e6192814572f9",
    "bytes": 11080
@@ -24,28 +29,28 @@
   },
   {
    "path": "agents/NOTES.md",
-   "sha256": "9400ca977aa031755f1e4d2e59369f31da291346bd4f0314b8f0e8bb80dffea3",
-   "bytes": 3105
+   "sha256": "ce3f70058d448bc3a605075e782d60ee57dba4d331850ff976da951390d1dcb6",
+   "bytes": 4051
   },
   {
    "path": "data.json",
-   "sha256": "4cccf028e2e2330e1023348807cd18c99f8549f58080a78991a539db7cb13f41",
-   "bytes": 112978
+   "sha256": "3971d7226f5ab6b5ed017a9d0c60f6e3a32f49a8d576dd670a52cfe60bf24105",
+   "bytes": 112948
   },
   {
    "path": "needs-human.json",
-   "sha256": "8f853a87c382a1570309ac86f51a4808524dc1a5e36c8868422e25835c71b286",
-   "bytes": 2284
+   "sha256": "4177840bd214885da2772ac0df1c3ef4b89fe900e4015fbe583117a453f12042",
+   "bytes": 1152
   },
   {
    "path": "process.json",
-   "sha256": "654fca667699d879514f11ce01da3854421eef405b64f175d8ebb30666d7feb8",
-   "bytes": 13244
+   "sha256": "914e85c25846a58c1f86c73224541b7d7cb07c4a068b0b07bd4015805728a29e",
+   "bytes": 14684
   },
   {
    "path": "updates.json",
-   "sha256": "5395109cca0d14129ccefceb7e83fd3497c9bdffceda6fec72a614bff3abdbb9",
-   "bytes": 1221883
+   "sha256": "c2e046e1e10224f89843776bc45a3aa6d3cedd60b3ddbbf0e8be5641def236c2",
+   "bytes": 1223414
   }
  ]
 }
