@@ -1,5 +1,11 @@
 [
   {
+    "ts": "2026-09-20T09:02Z",
+    "course": "All",
+    "writer": "dashboard curation",
+    "text": "Public copy: snapshot and current_event fields projected with the repo's sync_course_state rule so the public snapshot label matches the private dashboard. Source evidence was mirrored from the private repository by hand because the workflow's public publish leg fails on its token (needs-human item bfa7ba6a99bc03ec)."
+  },
+  {
     "ts": "2026-09-20T08:47Z",
     "course": "All",
     "writer": "repository-event automation",
