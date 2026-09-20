@@ -93,7 +93,12 @@ if ! python3 automation/poll_repositories.py validate-needs-human; then
   exit 1
 fi
 
-if [ -z "$SKIP_CLAIMS_LINT" ] \
+# The feed-row rule is for people. The automation projection (DASHBOARD_AUTOMATION_PROJECTION=1)
+# proves below that formal claims are byte-identical, and its own "Source sync checked" feed row
+# is keyed to the minute (sync_sources.write), so a second check inside one minute changes
+# data.json stamps only and adds no row. Two runs in one minute (a dispatch landing seconds before
+# a scheduled run) made runs 35500811976 and 35516981556 (#1809) fail here on 2026-09-20.
+if [ -z "$SKIP_CLAIMS_LINT" ] && [ "$DASHBOARD_AUTOMATION_PROJECTION" != "1" ] \
    && echo "$STAGED" | grep -qx 'data.json' \
    && ! echo "$STAGED" | grep -qx 'updates.json'; then
   echo "pre-commit: BLOCKED — data.json changed but updates.json has no new entry."
