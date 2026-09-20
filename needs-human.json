@@ -1,5 +1,5 @@
 {
- "generated_ts": "2026-09-20T08:31:41Z",
+ "generated_ts": "2026-09-20T08:53:11Z",
  "open": [
   {
    "course": "apush",
@@ -32,6 +32,14 @@
    "kind": "decision",
    "title": "APWH s6: Train Your Eye dialect = inline (3 pairs stay in host lessons, no Know A/B carriers)? Yes/no?",
    "ts": "2026-09-08T08:01:34Z"
+  },
+  {
+   "course": "cross",
+   "deadline": "",
+   "id": "bfa7ba6a99bc03ec",
+   "kind": "credential",
+   "title": "publish_public leg: EVIDENCE_REPO_WRITE_TOKEN 403 on push to the public site repo (run 35500291983); needs Contents write",
+   "ts": "2026-09-20T08:53:11Z"
   }
  ],
  "schema": "needs-human-public/v1"
