@@ -1,5 +1,5 @@
 {
-  "snapshot": "2026-09-11T09:05:36Z",
+  "snapshot": "2026-09-20T08:12Z",
   "claims": [
     {
       "claim_id": "cross.process.authority",
@@ -282,11 +282,11 @@
       ],
       "evidence_access": "PRIVATE_GITHUB+SCOPED_LOCAL_RECEIPTS",
       "current_event": {
-        "ts": "2026-09-20T05:52Z",
-        "phase": "p6",
-        "kind": "merged",
-        "writer": "INCEPT event projection",
-        "text": "InceptTrilogy/ap-one PR #1184 merged by squash 05:50Z (head e18083bf): HumGeo native v3 operators, item replacement pins batches 3-11, FRQ Technique pin, 189-article XP measurement; suite 13,344 passed; owner line 2026-09-20: Go on both PRs."
+        "ts": "2026-09-16T04:35Z",
+        "phase": "p5",
+        "kind": "note",
+        "text": "September 14–16 lessons and retrospective: final selection completed with 2,204 readbacks and zero-write replay; targeted item/article corrections and pre-assessment C4 capture completed. PR #1162 fixed the resource URL, but assessment execution stopped on a stored-record comparison after 19 applied operations and one existing pending entry. Recovery remains in issue #1153; PR #1163 is separate offline QTI evidence. Final assessment-inclusive capture, cold C5 and learner acceptance remain open; switch prepared and unflipped.",
+        "writer": "dashboard curation"
       },
       "repository_event": {
         "ts": "2026-09-10T02:03Z",
@@ -602,11 +602,11 @@
         "gate": "Owner 24-hour authorization of 2026-09-20 (until 2026-09-21 about 06:4xZ); every gate still runs"
       },
       "current_event": {
-        "ts": "2026-09-20T07:54Z",
+        "ts": "2026-09-16T06:10Z",
         "phase": "p5",
-        "kind": "state-change",
-        "writer": "INCEPT event projection",
-        "text": "APWH: video is now the first row of every lesson on the native course (owner ruling 2026-09-20). Operator apwh_timeback_sublesson_order_repair, digest 1aeee8a7: plan 342 rows (171 lessons, video 2 to 1, read 1 to 2; 850 already equal), capture 342, execute 342 writes read back, replay zero-write."
+        "kind": "note",
+        "text": "Course Builder 2026-09-15.44 (private main 6a2506ba, installed): native writes recover instead of rebuilding (durable operator records, refusals repeated never retried, a held lock is a live exclusion, resume only through the operator's own contract, coverage by exact ids); cold QC binds to the published composition read by the course's own verifier before and after the job, one paid job per composition, one closing rule at the course's shipped bar (HumGeo 1.0; APWH and APUSH await the owner's number); the release boundary prepares and stops (exit 6, PREPARED, UNFLIPPED) unless a release word bound to the run is recorded. Plan reconciled with Codex (15 findings) and Grok (12 findings); twelve offline proofs. Spec rows R1.1, R1.4, R1.7, R1.10, R1.11, R1.13, R1.16, R5, R6.1, R6.4, R6.6 updated; machine summary names make.py.",
+        "writer": "dashboard curation"
       },
       "repository_event": {
         "ts": "2026-09-08T06:29Z",
@@ -691,11 +691,11 @@
       ],
       "evidence_access": "PRIVATE_GITHUB+SCOPED_LOCAL_RECEIPTS",
       "current_event": {
-        "ts": "2026-09-20T05:06Z",
-        "phase": "p5",
-        "kind": "landed",
-        "writer": "INCEPT event projection",
-        "text": "Course Builder 2026-09-15.64 landed on main (028da439), installed: FRQ grader guard on the lean route (every FRQ ExternalApiScore must be the sanctioned ap-grader lane and AI_ONLY_READY must be True). APUSH (ap-us-history True) passes."
+        "ts": "2026-09-11T09:05Z",
+        "phase": "content",
+        "kind": "state-change",
+        "text": "Standing re-observed from unmoved sources: 49 accepted and 200 pending across 249 ledger positions at apush-build-outputs 98842f41; units 4, 6, 7 and 8 have zero accepted records. Content stage unchanged.",
+        "writer": "dashboard curation"
       },
       "repository_event": {
         "ts": "2026-09-10T01:15Z",
@@ -758,11 +758,11 @@
       ],
       "evidence_access": "PRIVATE_GITHUB+SCOPED_LOCAL_RECEIPTS",
       "current_event": {
-        "ts": "2026-09-18T11:37Z",
-        "phase": "p7",
-        "kind": "note",
-        "writer": "INCEPT event projection",
-        "text": "Review found every published Psych FRQ points ExternalApiScore at the banned cs-autograder (Ilma 2026-08-10); the sanctioned ap-grader has ap-psychology AI_ONLY_READY=False. Findings F-017 (rewire, Jayesh) and F-018 (cert, factory-side) added; F-006 battery sequenced after both."
+        "ts": "2026-09-11T09:05Z",
+        "phase": "p5",
+        "kind": "state-change",
+        "text": "Standing advanced: partial publication now extends through Unit 4 (tree pushed from commit ab3db64b, 234 created, 0 failed; PR #128). Unit 5 is generated and gated through phase 3b (PR #137) but not published. Whole-course readback and acceptance remain UNMEASURED.",
+        "writer": "dashboard curation"
       },
       "repository_event": {
         "ts": "2026-09-09T16:36Z",
