@@ -1,3 +1,10 @@
+# Inputs for 4-course standings report (2026-09-20)
+- Owner dispositions typed 2026-09-20 (session incept-38): APWH windows open now; APUSH plan ready, build starts when APWH is done; Psych waiting on Jayesh's response to the findings but technically ready for LS review; HumGeo ready for LS review.
+- Peer-window reports to incept-38 (APWH windows A, B, C; 07:5x-08:0xZ): native course live-equal receipts, operator counts, hosted QC job ids, ap-one branch and PR state.
+- GitHub reads (08:0xZ): humgeo-rebuild main c8750360 and run10/summary.json; ap-one main 0811d834, PRs #1184 (merged) and #1183 (open); apwh-blueprint-build main bffddca1; apush-build-outputs 98842f41 ledger counts; apush-course-build 319e0777; ap-psychology-fall-2025-v1 main 834f8262 publish_audit.jsonl.
+- INCEPT/events.jsonl rows since 2026-09-11 (241 at read time), ids cited per claim in data.json.
+- Narrative: AP-FOUR-COURSE-STANDINGS-2026-09-20.md (this folder).
+
 # Inputs for 4-course standings report (2026-08-17)
 ## HumGeo (this window, live 12:40 KST)
 - 451/474 seal-ready (463 accepted in state; 12 stale pre-amendment pins fail the official check); no runner alive as of 2026-08-18 04:2x KST

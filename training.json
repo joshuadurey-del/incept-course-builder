@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "generated_utc": "2026-09-15T03:33:02Z",
+ "generated_utc": "2026-09-20T08:12:46Z",
  "what_this_is": "Register of training and eval corpora for the course-build model program: the catalog, never the data.",
  "boundary": "No corpus file is ever published to this site. A SHA-256 here lets a holder of the private bytes verify identity.",
  "assets": [

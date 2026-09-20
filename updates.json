@@ -1,5 +1,11 @@
 [
   {
+    "ts": "2026-09-20T08:12Z",
+    "course": "All",
+    "writer": "dashboard curation",
+    "text": "Standings refresh from live sources and owner dispositions, 2026-09-20: HumGeo at the hosted QC ceiling (0.9805 severe, run 10) and ready for LS review; APWH native course live dark with the lesson-shape upgrade running under a 24-hour authorization; APUSH build planned, starts after APWH; Psych ready for LS review, waiting on Jayesh for F-017 and F-018. Local event dispatch re-pointed at the private receiver so held rows replay."
+  },
+  {
     "ts": "2026-09-16T06:10Z",
     "course": "APWH",
     "writer": "Fable",

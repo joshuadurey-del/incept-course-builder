@@ -34,7 +34,7 @@ main() {
   else
     printf '  INCEPT\n'
   fi
-  printf '\n  COURSE BUILDER / macOS\n  Your course factory. On your Mac.\n\n'
+  printf '\n  COURSE BUILDER / macOS\n  One line. A few hours. A course live on TimeBack.\n\n'
 
   verify() {
     local actual
@@ -103,7 +103,7 @@ main() {
     printf '\n  Your GitHub account needs access to InceptTrilogy/ap-four-course-dashboard.\n  Sign in with your authorized Alpha account, then rerun the installer.\n' >&2; exit 1
   fi
   [[ "$commit" =~ ^[0-9a-f]{40}$ ]] || { echo 'Invalid release identity.' >&2; exit 1; }
-  printf '    ✓ Private repository accessible\n\n  [3/4] Installing your local dashboard\n'
+  printf '    ✓ Private repository accessible\n\n  [3/4] Installing the course builder\n'
   "$gh_bin" api -H 'Accept: application/vnd.github.raw+json' "repos/InceptTrilogy/ap-four-course-dashboard/contents/install.py?ref=$commit" > "$temp/install.py"
   if [[ "$tty_available" == 1 ]]; then
     "$python_bin" -B "$temp/install.py" --root "$root" --commit "$commit" "$@" </dev/tty

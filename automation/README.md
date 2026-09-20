@@ -23,14 +23,14 @@ Required Actions secrets:
 Set each secret interactively; never place its value on a command line:
 
 ```sh
-gh secret set SOURCE_REPO_READ_TOKEN -R joshuadurey-del/incept-course-builder
-gh secret set SOURCE_REPOSITORY_INVENTORY_JSON -R joshuadurey-del/incept-course-builder
+gh secret set SOURCE_REPO_READ_TOKEN -R InceptTrilogy/ap-four-course-dashboard
+gh secret set SOURCE_REPOSITORY_INVENTORY_JSON -R InceptTrilogy/ap-four-course-dashboard
 ```
 
 After all three secrets exist, enable the workflow:
 
 ```sh
-gh variable set DASHBOARD_AUTOMATION_ENABLED --body true -R joshuadurey-del/incept-course-builder
+gh variable set DASHBOARD_AUTOMATION_ENABLED --body true -R InceptTrilogy/ap-four-course-dashboard
 ```
 
 Set that variable to `false` for the kill switch. The workflow explicitly

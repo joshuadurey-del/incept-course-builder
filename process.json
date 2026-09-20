@@ -1,6 +1,6 @@
 {
  "schema_version": 2,
- "generated_utc": "2026-09-15T03:33:02Z",
+ "generated_utc": "2026-09-20T08:12:46Z",
  "label": "ASAP edition (2026-09-01)",
  "runbook_version": "2026-09-15.1",
  "source_sha256": "5de7939b33a121f2aca872019c32f2e6c0ecc7bd67e35f834c18b38855470d9d",
@@ -343,34 +343,34 @@
  "courses": {
   "humgeo": {
    "label": "AP Human Geography",
-   "current_stage": "p5",
-   "state": "ASSEMBLE / DARK RUN STOPPED, OWNER DECISION OPEN",
-   "as_of": "2026-09-11T09:05:36Z",
-   "detail": "Dark publication execute stopped on 2026-09-10T21:55:02Z when TimeBack returned HTTP 422 for resource metadata type web_application. 9,654 of 12,552 planned rows were written (course, class, components, QTI items and tests, 204 QTI resources); 1,201 web_application resources and 1,551 links are unwritten. Since the stop, the v3 native namespace re-cut and digest seal landed (humgeo-rebuild #93, ap-one #1083) and a bounded read-only publication preflight landed (ap-one #1084). The owner decision on the 422 stop (undo and re-run under v3, a platform ask, or a one-row probe) is open. No live course acceptance is established.",
+   "current_stage": "p7",
+   "state": "PROVE / HOSTED QC AT CEILING, READY FOR LS REVIEW (OWNER, 2026-09-20)",
+   "as_of": "2026-09-20T08:12:46Z",
+   "detail": "The v3 native TimeBack course carries every HumGeo lesson. Hosted Course QC run 10 (job_faded9b2324a4364975c36753c52143e, 2026-09-19) reads pass rate 0.9802 and severe pass rate 0.9805 over 2,978 unique items; 58 of the 59 remaining fails are extended-text items judged with MCQ checks (instrument filing ap-complete-qc-system #25), so 0.9805 is the reachable ceiling. Item replacement batches 3 to 11 (462 items), the article XP repair, the FRQ Technique rebuild and the video shape repair are live with zero-write replays. Findings and receipts merged in humgeo-rebuild #103 (c8750360) and the operators in ap-one #1184 (0811d834), both 2026-09-20. 170 of 187 presenter videos are re-rendered and published; 17 still serve the previous render until the video service drains. Owner disposition 2026-09-20: ready for Learning Science review. Open: the owner's hand steps (LS notice, enrollment, student walk, activation, release flip).",
    "priority": 1
   },
   "apwh": {
    "label": "AP World History",
-   "current_stage": "p3",
-   "state": "GATE BANK PASS / PUBLICATION PREP ON OWNER DECISIONS",
-   "as_of": "2026-09-11T09:05:36Z",
-   "detail": "The final gate-bank and mock update landed in ap-one #1037 on 2026-09-08 and staging serves it. No APWH source repository has moved since: apwh-blueprint-build main is still 568985f6 (2026-09-08). Publication preparation (s6) waits on four open owner decisions: the one-boundary-check-per-article profile rule, funding the 176 boundary-check package or publishing dark without embedded checks, the inline Train Your Eye dialect, and opening the ap-one PR for the offline asset emitter and publication planner. Full p3 completion, dark publication, cold QC and learner acceptance are not established.",
+   "current_stage": "p5",
+   "state": "ASSEMBLE / NATIVE COURSE LIVE DARK; LESSON-SHAPE UPGRADE RUNNING",
+   "as_of": "2026-09-20T08:12:46Z",
+   "detail": "The native TimeBack course ap-world-history-native-202608-v1 (publishStatus testing) carries the whole course: the builder checkpoint was re-bound to the folded first-cut producer with 8,659 rows verified live-equal and zero writes on 2026-09-19 18:20Z. On 2026-09-20 the 50 producer-rejected lessons received the AP One article body (50 writes, replay 0) and every lesson now opens with its video (342 rows re-ordered, read back, replay 0). Three windows run the lesson-shape upgrade under the owner's 24-hour authorization: a 3-lesson pilot of HumGeo-style article pages with embedded checks, then all 176 lessons, then a cold hosted QC. The last hosted QC on record (job_55359534677242b1b5f2bee58fe82480, 2026-09-18) read 0.584 on the 1,988 gate items only and is stale; a new cold baseline (job_bae0235ae09a45efa2e58cbcb6d0cf15) was submitted 07:56Z and is running. ap-one main 0811d834; branch apwh/gateundo-20260918 remote head 144d359f with local commits not yet pushed; PR #1183 open. Three owner decisions on the needs-human ledger stay open (boundary-check rule, boundary-check funding, Train Your Eye dialect). Target: walkable by the owner on 2026-09-21.",
    "priority": 2
   },
   "apush": {
    "label": "AP US History",
    "current_stage": "content",
-   "state": "SYNTHESIZE / ACCEPTANCE AND RELEASE HOLDS",
-   "as_of": "2026-09-11T09:05:36Z",
-   "detail": "APUSH remains in content synthesis. Re-read on 2026-09-11 with both source repositories unmoved: the article-acceptance ledger at apush-build-outputs 98842f41 records 49 accepted (36 by legacy dual review, 13 by server strict mode) and 200 pending across 249 positions; units 4, 6, 7 and 8 have zero accepted records. PIPELINE.md at apush-course-build 319e0777 retains pre-publication status. The prior release/admission holds remain visible; they do not remove APUSH from the content stage.",
+   "state": "SYNTHESIZE / BUILD PLANNED, STARTS AFTER APWH (OWNER, 2026-09-20)",
+   "as_of": "2026-09-20T08:12:46Z",
+   "detail": "APUSH stays in content synthesis with both source repositories unmoved: apush-build-outputs main 98842f41 (ledger 49 accepted, 200 pending of 249 positions; units 4, 6, 7 and 8 have zero accepted) and apush-course-build main 319e0777 (PIPELINE.md pre-publication). The build plan of 2026-09-20 (APUSH-BUILD-PLAN.md; lean route, the course repo holds the bytes; builder release 2026-09-15.64 installed) fans out every content lane in parallel (249 articles, MCQ seating, FRQs, 249 presenter videos) and ends in one typed builder line. Owner sequencing 2026-09-20: the build starts when APWH is done. The builder's dry run stops at publish/lean-package.json with seven content work orders.",
    "priority": 3
   },
   "psych": {
    "label": "AP Psychology",
-   "current_stage": "p5",
-   "state": "PARTIAL PUBLICATION THROUGH UNIT 4",
-   "as_of": "2026-09-11T09:05:36Z",
-   "detail": "Committed receipts now extend partial publication through Unit 4. The Unit 4 component tree was pushed to TimeBack from commit ab3db64b (234 created, 0 failed in publish_audit.jsonl; PR #128). Unit 3 render fixes U3-46 and U3-47 were re-pushed on 2026-09-10. Unit 5 is generated and gated through phase 3b (PR #137, 2026-09-11) but its README states nothing in it is published. Full-course dark readback, enrollment state, cold QC and learner acceptance remain UNMEASURED.",
+   "current_stage": "p7",
+   "state": "PROVE / OWNER REVIEW DONE, WAITING ON JAYESH; READY FOR LS REVIEW (OWNER, 2026-09-20)",
+   "as_of": "2026-09-20T08:12:46Z",
+   "detail": "Jayesh's handoff of 2026-09-16 (build, publish and QC done; repo main 834f8262, PR #194) put the course on TimeBack; the publish audit at that commit carries rows for units 1 through 5. The owner ruled the acceptance bar on 2026-09-17: independent review plus verified fixes, with the cold Course-QC run as a receipt, not a gate. The review's findings sheet holds 11 rows plus F-017 and F-018 from 2026-09-18: every published FRQ points its ExternalApiScore at the banned cs-autograder, and the sanctioned ap-grader lists ap-psychology as not AI-only ready. F-017 (rewire, Jayesh) and F-018 (grader certification, factory side) await Jayesh's response. Owner disposition 2026-09-20: technically ready for Learning Science review as is.",
    "priority": "parallel"
   }
  }

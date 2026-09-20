@@ -1,5 +1,5 @@
 {
- "generated_ts": "2026-09-10T21:56:58Z",
+ "generated_ts": "2026-09-19T04:14:16Z",
  "open": [
   {
    "course": "apush",
@@ -32,38 +32,6 @@
    "kind": "decision",
    "title": "APWH s6: Train Your Eye dialect = inline (3 pairs stay in host lessons, no Know A/B carriers)? Yes/no?",
    "ts": "2026-09-08T08:01:34Z"
-  },
-  {
-   "course": "humgeo",
-   "deadline": "",
-   "id": "f1e8d775a1a058f0",
-   "kind": "approval",
-   "title": "HumGeo landing: Josh declined 68's read of Codex's pilot-8 manifest (~01:2x KST); the 8-slot S4 apply stays unapplied until his word",
-   "ts": "2026-09-08T16:25:44Z"
-  },
-  {
-   "course": "humgeo",
-   "deadline": "",
-   "id": "87c0f9cab83dcbc9",
-   "kind": "approval",
-   "title": "HumGeo landing: 68 (source integrator), 50 and d0 are paused on cancelled tool calls in their windows; integration waits for your word",
-   "ts": "2026-09-08T17:28:20Z"
-  },
-  {
-   "course": "apwh",
-   "deadline": "",
-   "id": "8f1b9bde959a4737",
-   "kind": "approval",
-   "title": "APWH s6: go to open the ap-one PR for the offline asset emitter + publication planner (5 files, 0 runtime importers)? Merge stays your line.",
-   "ts": "2026-09-10T03:32:03Z"
-  },
-  {
-   "course": "humgeo",
-   "deadline": "",
-   "id": "3ca7dc5d8d841bde",
-   "kind": "decision",
-   "title": "HumGeo dark run stopped: TimeBack 422 rejects resource type web_application; choose undo+-v3, platform ask, or one-row probe",
-   "ts": "2026-09-10T21:56:57Z"
   }
  ],
  "schema": "needs-human-public/v1"
