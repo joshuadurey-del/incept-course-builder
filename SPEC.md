@@ -205,6 +205,54 @@ The standard: a known-bad fixture proves each gate fires.
 - R9.66 Write the content bar (exam shape of the mock, stimulus share, lesson row order, article format) into the course profile before generation, and show the owner one rendered lesson before the bank is generated. (cause C12, the one change for the next build)
 - R9.67 Every decision row carries a deadline and a default; every work order names a closing owner; superseded destinations close with a pointer the day the route changes. (cause C13, the one change for the next build)
 
+### R10. Rules learned on HumGeo not yet in R8 or R9 (2026-09-17 to 09-20)
+
+- R10.1 Cite private evidence by identity and hash; secure rubrics, answer keys, credentials and signed report URLs never enter the course record. (H2)
+- R10.2 Report unique-item counts and occurrence counts separately; raw finding counts overlap within items and are never summed as repair counts. (H3)
+- R10.3 An instrument defect is ruled per finding class with item and check fingerprints, source evidence and a reviewer; it is never a blanket exemption. (H5)
+- R10.4 Every failed item gets one of four decisions (repair, drop candidate, retain-with-ruling, defer); a ruling clears zero QC points, a defer keeps the defect, and any changed input reopens the ruling. (H8)
+- R10.5 Read the floor per pool from the course's own blueprint and manifests, never from another course; land a floor verifier that censuses every lesson and gate form, counts a moved-and-dropped item once and goes red on a forced known-bad before the first drop. (H11)
+- R10.6 A render check row whose page never mounted its root is not content evidence; uncaptured FRQs stay unmeasured; a render run never stands in for grading, result isolation or XP checks. (H16)
+- R10.7 Bind test identity, the permitted capture and submission behavior and the secure-content boundary before launching a render capture, because the capture workflow can submit answers. (H17)
+- R10.8 Compare QC numbers only under the same check scope; another course's percentage with checks disabled is not this course's acceptance, and missing reviews, unresolved findings and local rulings are reported as separate facts. (H18)
+- R10.9 Filter a rewrite worklist by question type and pre-screen the live shape before any drafting spend; an MCQ redraft can never replace an extended-text item. (H22)
+- R10.10 Review every not-taught finding against the topic's teaching text with one quoted evidence sentence before redrafting; a taught item is a false reject and stays as served. (H25)
+- R10.11 A render run where no row mounted its root is an instrument null; freeze it and run render checks after the replacements land, never before. (H26)
+- R10.12 Record a deferred defect class once with its census, its route and the expectation that it keeps failing every run; change embedded checks by editing the authored source, rebuilding assets and republishing to the new key. (H28)
+- R10.13 Pilot each drafting model on a handful of items and pick by its measured structural pass rate before spending on the full run. (H33)
+- R10.14 Treat the factory item judge as the gate and the hosted run as the acceptance; a judge pass can still fail the hosted reader, and the run's cache-miss count shows which items it judged fresh. (H37)
+- R10.15 Report the Faultless Bar's sign-off gates apart from its automated checks; a red sign-off gate is a pending signature, not a content failure. (H38)
+- R10.16 Wire one visible mastery-gate form per topic; the blueprint's extra forms are alternates for rotation, not extra gates. (H41)
+- R10.17 Every renumbering pass checks for sort-order collisions with the passes before it; sub-lessons run instruction, practice, gate with no duplicate positions. (H42)
+- R10.18 Rule ordering findings by class (assessment-only lessons, title heuristics, real prerequisite drift), state the residue the ruling predicts, and confirm it on the next run. (H45)
+- R10.19 Shard redraft loop inputs so no command line carries the whole worklist; a hung loop is stopped and its items recorded as fails, not waited on. (H52)
+- R10.20 Where the render instrument cannot reach a resource kind, accept it as presentation-unverified by the instrument and record the owner's walk as an enrolled student once as the evidence. (H53)
+- R10.21 A hosted FAIL opens a queue row, not a verdict: keep the raw verdict, record the review decision and the live action in separate columns, and keep independent rows moving while one is blocked. (H4; amends lessons.html#publish-faster-20260920)
+- R10.22 A provider error or an oversized context is a missing verdict, not a fail: retry inside a bounded, supported envelope; never rerun the whole pool blind, swap the model automatically or truncate the teaching text. (H6; amends retro.html#humgeo-native-publication-20260914)
+- R10.23 Prove a defect class with one canary and one unchanged control per rendering path, then sweep every member; a ruled false alarm leaves the raw score unchanged. (H7; amends lessons.html#design-assumption-article-coverage-20260912)
+- R10.24 Triage every fail on two axes before ruling: its pool (which fixes the floor and whether a drop is even possible) and its class (which fixes the route); run the floor checker with the drops list before any drop lands. (H9; amends lessons.html#publish-faster-20260920)
+- R10.25 A drop suppresses the item from publication and keeps its bank record, id and ordinal; every serving reference is rebuilt on both sides of a move and read back; deletion is a separate admitted operation, and unlinking never authorizes it. (H12; amends lessons.html#review-28-rounds)
+- R10.26 Record the hosted job id the moment it exists and never invent one; freeze its configuration, input fingerprints, reports and email state in the run folder; define the changed set as payload, stimulus, placement pointer and judging context together. (H13; amends lessons.html#apwh-qc-cache-is-instrument-20260921, lessons.html#publish-faster-20260920)
+- R10.27 Account for every run in four parts: denominator changes, repaired-item gains, provider errors and movement on untouched controls; explain any denominator change before comparing two runs. (H14; amends lessons.html#publish-faster-20260920)
+- R10.28 Quote every hosted number with its cache state; the cold run is a receipt for where the course stands, not a gate, and the cold population is measured and disclosed before any paid run. (H15; amends lessons.html#apwh-qc-cache-is-instrument-20260921)
+- R10.29 A missing shared capability holds only the action that depends on it; every other row keeps moving, and the course record never authorizes a platform change, a release or a timer. (H19; amends lessons.html#apwh-fallback-in-same-issue-20260921)
+- R10.30 Verify every factory repair before it lands: clear of the original class, no new structural fail, stem unchanged; a repair that still echoes a stem word or adds an absolute term is rejected and joins the rewrite worklist. (H20; amends lessons.html#apwh-fails-feed-next-round-20260921)
+- R10.31 Census where each item's text lives before picking a replacement route (standalone item, video check in a static document, article check, writing slot); one operator reaches one shape. (H21; amends lessons.html#apwh-census-ids-before-embed-20260921)
+- R10.32 Compose every redraft with the campaign item rules, the lesson's own teaching text and the QC findings; a rewrite that changes the stem routes through the judge and a full-item replacement, not the choice-text operator. (H23; amends lessons.html#apwh-fails-feed-next-round-20260921)
+- R10.33 When a render or QC walker fails a whole kind of resource, read how it resolves ids and check the syllabus before calling it an outage; a walker that parses only URL test ids misses ids carried in the sourcedId. (H27; amends lessons.html#apwh-read-reader-first-20260921)
+- R10.34 Certify a repair by byte-level readback of the served XML; a row the render instrument never reached is recorded as presentation-unverified with a named decision for a person. (H29; amends lessons.html#native-terminal-receipts-20260914)
+- R10.35 Never rewrite judge records while a judge run is open; back up the judged records first and restore unchanged ones byte for byte, because the judge drops a verdict whose record changed between send and write. (H30; amends lessons.html#review-28-rounds)
+- R10.36 Quote the target EK's own CED description into every redraft prompt as a hard constraint; the EK code and the judge's reasons alone left six items failing for five rounds. (H32; amends lessons.html#apwh-fails-feed-next-round-20260921)
+- R10.37 When one check fires on nearly every item, report the content result with that check set aside, read the reader's code for the cause, prove the class on a fleet course with the same shape, then file it with the blast radius. (H36; amends lessons.html#apwh-read-reader-first-20260921, lessons.html#apwh-file-mismatch-day-one-20260921)
+- R10.38 Census every quiz resource against a working sibling course's shape (vendor, host, id prefix, url, title) before students see it; a row with no url or a bare id will not open. (H39; amends lessons.html#apwh-live-facts-become-rules-20260921)
+- R10.39 Diagnose a student-facing complaint from the live course tree, expect more than one cause, and keep owner-approved removals recorded where the next diagnosis will read them. (H40; amends lessons.html#apwh-lesson-shape-two-readers-20260921)
+- R10.40 Expect the platform to merge resource metadata on PUT: a candidate that drops a key never reads back, the player labels a row from activityType, and an escaped ampersand in an iframe src breaks the page. (H48; amends retro.html#humgeo-closeout-20260920)
+- R10.41 When a rendering difference is explained by a field whose renderer rule was never read in bytes, record it as a correlation and leave the owner's choice open; never write it as the cause. (H49; amends retro.html#humgeo-closeout-20260920)
+- R10.42 Read an operator's refusal as a readback of live state: a re-plan that refuses because the candidate is already live, or an enrollment that refuses because the learner already has the course, confirms the state without a write. (H54; amends lessons.html#publish-faster-20260920)
+- R10.43 Write technique checks as exam-form questions with the technique taught in the explanation, because the judge reads a which-response-earns-the-point stem as a meta-question; page checks inside an article do not move the hosted score. (H56; amends retro.html#humgeo-closeout-20260920)
+- R10.44 For a wording class on items that already pass, change only the flagged option and measure that stem, key and other options are byte-identical; a redraft that fails the judge leaves the served item as it stands. (H58; amends lessons.html#apwh-own-defect-classes-20260921)
+- R10.45 Treat a rewrite of passing items as a regression risk: it clears no old fails, so read each new fail as a real regression or reader variance before the next redraft. (H59; amends lessons.html#publish-faster-20260920)
+
 ## 2b. Where the build stands and what remains
 
 Measured on 2026-09-15 by running the build unattended on the owner's install after release .20 (goal-fit reviews by Codex and Grok on the make, the write layer and the graph layer were folded before each was built).
@@ -237,7 +285,7 @@ Review provenance: Codex reproduced ten defects on the make offline and all ten 
 
 ```json
 {
-  "spec_version": "2026-09-21.46",
+  "spec_version": "2026-09-22.47",
   "tool_rule": "every shared tool takes --rules <course-rules.json>; no course list in any tool",
   "procedure_rule": "rows of run|write with expect and on_fail; exceptions via next.py --exception compose the owner message with why and next step",
   "owner_message_rule": "composed by next.py: what is needed, how to give it; no ids, hashes, codes or paths",
