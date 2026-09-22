@@ -1,6 +1,6 @@
 {
  "schema_version": 2,
- "generated_utc": "2026-09-20T08:12:46Z",
+ "generated_utc": "2026-09-22T10:44:45Z",
  "label": "ASAP edition (2026-09-01)",
  "runbook_version": "2026-09-15.1",
  "source_sha256": "5de7939b33a121f2aca872019c32f2e6c0ecc7bd67e35f834c18b38855470d9d",
@@ -63,7 +63,10 @@
     "enrollments == 0",
     "evidence bundle README in course repo (Bio/APES format)",
     "every native write carries three receipts under one sealed plan digest: capture prior state (zero writes), execute with readback, replay with zero writes (restored from the cut list 2026-09-14)",
-    "one writer per course surface, enforced by the writer lock; operator PR lands before the seal PR"
+    "one writer per course surface, enforced by the writer lock; operator PR lands before the seal PR",
+    "every assessment link and resource carries a lessonType from the fleet enum (quiz, powerpath-100, unit-test, test-out, placement, map-adaptive, alpha-read-article); section components under a mock exam carry the mock_section kind; checked by diffing against a fleet course the owner can see (HumGeo Final row-shape repair, 2026-09-22)",
+    "getAssessmentProgress returns a question count equal to the QTI test's item count for every assessment link, before the phase closes (a toolProvider or launchUrl left on a QTI resource returns zero questions)",
+    "a re-point overwrites or nulls every OneRoster launch-shape key (toolProvider, launchUrl); a PUT merges metadata and cannot drop a key by omitting it"
    ],
    "shape": "one course holds all units (APES: unit 1 mints, later units pin --course-id)"
   },
@@ -108,7 +111,8 @@
    "verify": [
     "factory walkthrough PASS on the staging deployment after the reversible flag PR (answers save; feedback choice-specific, non-leaking; keys unskewed)",
     "one human pass: start/middle/end + longest reading + each writing geometry",
-    "XP spot-check: <80%=0, >=80%=base once, 100%=1.25x once, reload adds nothing"
+    "XP spot-check: <80%=0, >=80%=base once, 100%=1.25x once, reload adds nothing",
+    "recreate receipt lists every enrolled learner across all classes; no-plan learners noted"
    ],
    "account": "ONE owner test account, enrolled additively"
   },
@@ -183,6 +187,9 @@
     "evidence bundle README in course repo (Bio/APES format)",
     "every native write carries three receipts under one sealed plan digest: capture prior state (zero writes), execute with readback, replay with zero writes (restored from the cut list 2026-09-14)",
     "one writer per course surface, enforced by the writer lock; operator PR lands before the seal PR",
+    "every assessment link and resource carries a lessonType from the fleet enum (quiz, powerpath-100, unit-test, test-out, placement, map-adaptive, alpha-read-article); section components under a mock exam carry the mock_section kind; checked by diffing against a fleet course the owner can see (HumGeo Final row-shape repair, 2026-09-22)",
+    "getAssessmentProgress returns a question count equal to the QTI test's item count for every assessment link, before the phase closes (a toolProvider or launchUrl left on a QTI resource returns zero questions)",
+    "a re-point overwrites or nulls every OneRoster launch-shape key (toolProvider, launchUrl); a PUT merges metadata and cannot drop a key by omitting it",
     "one course holds all units (APES: unit 1 mints, later units pin --course-id)"
    ],
    "automated": false
@@ -223,6 +230,7 @@
     "factory walkthrough PASS on the staging deployment after the reversible flag PR (answers save; feedback choice-specific, non-leaking; keys unskewed)",
     "one human pass: start/middle/end + longest reading + each writing geometry",
     "XP spot-check: <80%=0, >=80%=base once, 100%=1.25x once, reload adds nothing",
+    "recreate receipt lists every enrolled learner across all classes; no-plan learners noted",
     "ONE owner test account, enrolled additively"
    ],
    "automated": false
