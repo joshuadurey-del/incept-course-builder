@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2026-09-15.38 (package); contract 2026-09-15.1 |
+| **Version** | 2026-09-15.67 (package); contract 2026-09-15.1 |
 | **Direction** | One typed line, a few hours, a course live on TimeBack at the full Incept bar. The front end is a 1995 terminal program. The back end is a make-style dependency graph of files: every step a target, a check and a recipe. A model is called only on a work order, as a compiler, and a script decides. No human in the loop. |
 | **Status** | Working spec. Changes after the first course ships through it. |
 | **Product** | One command installs the builder on macOS, shows a numbered menu of course ids read live from the factory, takes three hidden credential strings, and builds the course through four steps on Alpha's native factory. Run it again to continue. |
@@ -97,19 +97,27 @@ You build a course the way a good teacher does. Decide what students must know, 
 | Write task | shape, rubric row tags inside the allowed set, the oracle's row-wording rules and co-tag rule, documents shipped and labelled, declaration exact; then the factory judge | at authoring, before landing |
 | Graph typing and bridge | enums, rationale on every judged field, scale where the template requires it; three full beats or a typed refusal class | at authoring, before the join count |
 | Video | the video skill's free battery | before upload |
-| Publish batch | capture, execute with readback, replay with zero writes | every write |
+| Publish batch (apone route) | capture, execute with readback, replay with zero writes | every write |
+| Published course (lean route) | replay identity and readback; confirmed lesson-plan recreation | before cold QC |
+| Cold QC burndown | policy-directed split, redraft, replacement and remeasurement; stop on instrument-only or unchanged failures, or the run cap | after publication |
 | Published course | cold course QC at the bar; walk and XP | before release |
 
 The standard: a known-bad fixture proves each gate fires.
 
 ### R6. Publication contract (publish dark through demo and open)
 
-- R6.1 Every native write is one sealed operation with three receipts: capture prior state (zero writes), execute once with readback (verified and writes counts), replay the identical operation (writes zero). One plan digest per operation.
+- R6.1 Every sealed AP One native write is one sealed operation with three receipts: capture prior state (zero writes), execute once with readback (verified and writes counts), replay the identical operation (writes zero). One plan digest per operation.
 - R6.2 Operator code lands in its own PR; the plan digest and constants land in a separate seal PR.
 - R6.3 One writer per course surface, enforced by the writer lock. A refusal is correct and is never cleared by hand.
 - R6.4 Interrupted execute: classify the pending row read-only and resume through the operator's admission path. Never resend.
 - R6.5 Cold QC failures are sorted into content, context, checker, provider or selection before any repair. Removal is never a passing verdict. Checker fixes are factory code and need their own review and landing.
 - R6.6 Walk and accept keeps the owner walk on one test account with three XP cases and a reload. Demo and open keeps the designated reviewer decision. Nothing automates the flip.
+
+- R6.7 The cold QC burndown follows `qc_burndown.py` and the course rules. `qc_burndown_max_runs` caps runs; instrument-only and unchanged failure sets stop the loop.
+- R6.8 Two routes reach `COURSE-LIVE`: `apone` uses sealed AP One operators; `lean` uses the course repository publisher. `@step` resets route filtering, so the release decision and activation rows are shared. `native_roles.activation.mode` selects the operator or PUT. Every `ask` and the human walk stay unchanged.
+- R6.9 Lean Step 3 uses the shared materialize, author, prescreen, judge, forms and completion tools. The map joins `out/publish/unit_N/course_subtree.json` article resource IDs to `article_stim_manifest.json`; curriculum codes are read, never inferred from IDs. `publish.inventory` declares course-relative JSON paths for `articles` (disposition rows), `questions` (accepted handoff items), `blueprint`, `mock_bank`, `gate_bank`, `pricing`, `coverage`, and `qti_receipts`, retaining the existing tools' schemas. Missing content opens work orders; missing pricing, coverage or QTI evidence reports UNMEASURED and cannot close its check.
+- R6.10 Lean bank gates read exactly `publish.bank_path` for every ruled unit under `.make/src`. Candidate identity binds source revision, paths and bytes. Answer shape, key balance, option length and QTI checks bind that candidate. Each report binds the candidate, option rules and checker bytes, plus its QTI evidence or factory checker dependency; target checks rebuild stale reports and receipt validation rejects them; QTI receipts cover the declared bank identities and source hashes. Inventory-only receipts no longer close content or bank gates.
+- R6.11 Lean replay repeats the existing publisher's documented idempotent upserts and readback, binding the original push, course ID, source revision and tree digest. AP One retains zero-write replay; upsert counts are not zero-write evidence. `publish/lesson-plans.json` confirms recreation or the existing personalized-plan exclusion with results preserved and successful learner enumeration before cold QC. Listing failures, malformed active-student records or a population at the existing query limit leave enumeration incomplete. Both routes use the same row and receipt validator. Recreation requires boolean success; canonical progress fingerprints must match before and after, following the native projection (omitted results means empty; null or malformed results refuse). Enrollment role/status must be classifiable under OneRoster. Operations and progress list fields must be present before recreation. The walk-time recreate remains.
 
 ### R7. Installer
 
