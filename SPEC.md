@@ -135,6 +135,76 @@ The standard: a known-bad fixture proves each gate fires.
 - R8.10 Resume rule: list live sessions and read the last commit on every tree the handoff names before the first write; two writers split by tree by message.
 - R8.11 After any wave that adds or removes course components, recreate every enrolled learner's lesson plan (POST lessonPlans/{id}/recreate); link and resource field edits show live without it.
 
+### R9. Rules learned on APWH (2026-08-04 to 09-21)
+
+- R9.1 Name the student destination and every object kind (videos, practice, checks, mock, writing, XP) in the course profile before the first hand-off. (L1; amends lessons.html, unanchored section "Lessons — the 24 hours after the Psych sync", item 1)
+- R9.2 Publish the whole shape and diff source against live, object by object, before calling publish done. (L2; amends lessons.html#humgeo-postassembly-20260916)
+- R9.3 Fix the content bar (mock shape, stimulus share, practice cap) in the course profile before the bank is generated. On APWH the mock ruling arrived on day 38 and retired 2,172 items. (L3)
+- R9.4 Decide the lesson shape with both the student player and the QC reader in view; never reshape the live course for a reader. (L4; amends retro.html#humgeo-closeout-20260920)
+- R9.5 The acceptance instrument (the Faultless Bar) must run from a pushed ref before any content work depends on its verdicts; the step 1 oracle gate fails closed when it does not. (L5)
+- R9.6 Run the structural prerequisites (rationales, skill codes) before any paid judge sweep; the order is generate, tag, rationales, verdict, bank. (L6; amends lessons.html#morning-retro-20260910, dispatch card)
+- R9.7 Every served item carries a factory judge verdict on its served bytes; the bank gate refuses one without it. (L7; amends lessons.html, unanchored section "What changed")
+- R9.8 Read the hosted QC reader's code (checks.py, timeback_reader.py) and run one small hosted job before any structural write; ship the hidden article-text block, static check XML and the stimulus in every judge payload from the first publish. (L8)
+- R9.9 Once a namespace publish exists, cold QC judges the native course id, never the source course id. (L9)
+- R9.10 The hosted verdict cache is part of the instrument: its key is prompt version, course, question and lesson context, with no cold flag; above about 2,000 items the job record reads FAILED and no email is sent, so the loop polls on report presence. (L10)
+- R9.11 Measure the whole item population before quoting a ceiling; a gate-only score hides the largest class. (L12; amends lessons.html#publish-faster-20260920)
+- R9.12 Judge fails feed the next generation at once; stop redrafting a code that returns no reasoning after a zero-pass round. (L13; amends lessons.html#morning-retro-20260910, retry card)
+- R9.13 Read the stored fatal codes before any paid re-judge; never call the judge poster with an empty slot file, because it judges the whole pool. (L14)
+- R9.14 Name the course's own defect classes from its own bytes before reusing another course's scanner; a fixed-string class gets a free scanner before any model critic; a zero from a filter needs a positive control. (L15)
+- R9.15 Budget a source fold and re-pin beside every live item wave; a live rewrite breaks the publication envelope, so each wave needs a source landing plus a republish (about 2,300 writes, about 65 minutes on APWH). (L16)
+- R9.16 Any write-activity change lands with the source re-pin in the same pull request, or CI is red whatever the content; every course ships a re-pin script. (L17)
+- R9.17 Census live ids before any operator embeds items by id; normalize static check XML before publishing it as an asset; verify rendering with a browser click-through against a live hybrid article. (L18)
+- R9.18 Video comes first in every lesson; articles carry headings, bold key ideas and a table or figure; a producer rejection is not a content verdict. (L20; amends lessons.html#design-assumption-article-coverage-20260912)
+- R9.19 Run every unattended publish detached; re-bind on a recut mismatch instead of stopping; shard operators at about 400 rows. (L21; amends lessons.html#humgeo-postassembly-20260916)
+- R9.20 Every step reads the committed factory profile at live main before it may ask the owner anything. (L22; amends lessons.html, unanchored section "Factory-canonical operating rules")
+- R9.21 A platform fact learned live becomes a builder rule the same day; the next course reads the list before its first live write. (L23; amends lessons.html#humgeo-postassembly-20260916)
+- R9.22 Owner grants are standing authority until the course is live, recorded once in a grant file every window reads; every gate still runs; no clock on the owner's words. (L24)
+- R9.23 Local gates are never stronger than the factory's, the certification gate excepted; every local gate runs in shadow; progress is stated only in the runbook's phase names. (L25)
+- R9.24 Keep the landing ceremony at its floor: two review rounds at most, no drafts, no merge before the BFF check finishes, recover a capped report from disk. (L26; amends lessons.html#review-28-rounds)
+- R9.25 Every review finding carries a tested, deterministic, class-closing fix; a validator is one total rule with a mutation test. (L27; amends lessons.html#review-28-rounds)
+- R9.26 Budget platform CI: the suite uses most of the 25-minute cap; never fork a process pool inside an xdist worker; use a small-course fixture; test under CI's Python version before pushing. (L29)
+- R9.27 A shared Course Builder install is one surface: land on main first, message the other lane with the sha, never install a branch build into the shared root. (L30)
+- R9.28 Fan out content lanes (videos, articles, items, FRQs) as parallel shards; scripts and per-item files before agents; every workflow agent carries a fixed-task line. (L32)
+- R9.29 Every decision row carries a deadline and a default; every work order names a closing owner; a superseded destination closes with a pointer the day the route changes. (L33; amends lessons.html#coverage-first-builder-20260910)
+- R9.30 When the close bar sits in another team's write corridor, file the fallback route in the same issue; ask for the capability, not the token; check a fork is current before declaring code unreachable. (L34)
+- R9.31 Measure the queue place on the shared pool before every paid step and write the wait into the estimate; each course gets its own controller lease and lock. (L35; amends lessons.html#morning-retro-20260910, report card)
+- R9.32 Repair the measurement layer on intake day: a committed report is a claim, a regenerated report must be shown to have changed, and MISSING never becomes PASS. (L36; amends lessons.html, unanchored section "Lessons — the 24 hours after the Psych sync", item 6)
+- R9.33 A zero returned by a filter is not evidence until a positive control shows the filter can hit. (L37; amends lessons.html, unanchored section "Lessons — the 24 hours after the Psych sync", item 6)
+- R9.34 Check the recorded diagnosis and the spec premise against bytes before building the fix. (L38; amends lessons.html#morning-retro-20260910, retry card)
+- R9.35 Read the factory's answer from bytes first; walk the false-absence ladder before declaring a tool missing. (L39; amends lessons.html, unanchored section "Factory-canonical operating rules")
+- R9.36 Never present a mechanism choice to the owner when a live course holds the precedent; a named blocker needs an exhaustion receipt. (L40; amends lessons.html, unanchored section "Factory-canonical operating rules")
+- R9.37 Persist full request and response bodies at capture; bind the consumer contract before spend; never re-judge a deterministic fail. (L41; amends lessons.html#morning-retro-20260910, retry card)
+- R9.38 Every status view pairs the current hold with a 'landed so far' line fed from receipts; the event log points at a receiver that exists, and a dispatch nobody receives is an error. (L42)
+- R9.39 Size paid checks from recorded per-batch durations; outward estimates use the cautious end. (L43; amends lessons.html#morning-retro-20260910, report card)
+- R9.40 A high-severity automated security finding at merge time gets a written disposition on the pull request before the merge. (L44)
+- R9.41 Link every out-of-GitHub review round from the pull request so wait and rework are countable. (L45)
+- R9.42 File instrument-contract mismatches on day one with a reproduction; keep acceptance evidence in a repository that will not be recreated. (L46; amends lessons.html#publish-faster-20260920)
+- R9.43 A frozen blueprint is still a document with errors: reconcile it against the authoritative rubric in week one and register a measurable oracle predicate for every requirement at the start. (L47)
+- R9.44 Describe QA work in QA terms; write worker prompts through the codex-prompt skill with the shortest read path; owner asks are two plain sentences. (L49)
+- R9.45 Defer nothing: no deferred findings in a pull request; a plan date is an intent, not a state. (L50)
+- R9.46 Never freeze an expectation of factory behavior; suspect our own environment before calling another repository's tests broken. (L51; amends lessons.html, unanchored section "Lessons — the 24 hours after the Psych sync", item 2)
+- R9.47 Commit the status file, the publication runbook and a per-phase module inventory to the course repository at intake. (L52; amends retro.html#humgeo-closeout-20260920)
+- R9.48 The lever on elapsed time is the wait between landings, not the review round count. (L53; amends lessons.html#review-28-rounds)
+- R9.49 Before a render wave, read the video service's queue for the shared principal and clear stale rows; budget against the service's measured state. (L54; amends lessons.html#publish-faster-20260920)
+- R9.50 Mock forms carry the real exam's option count and everything else carries four; the count is read from the course profile, never converted after generation. (L55)
+- R9.51 Articles from a source that needs a license are excluded; the course writes its own; a provenance scan runs before any outside body enters a keep or import column. (L56)
+- R9.52 A contributor's activity on a course repository is a coordination fact, never ownership or permission; ownership is read from the profile and the remote at intake. (L57)
+- R9.53 Cap attempts at the factory's own bounds, then rebuild: one tagging pass per item ended a retry loop; an exhaustion receipt ended a re-post loop that spent about 75 candidates for 0 accepted. (period 2 lesson, not in the 57-row table)
+- R9.54 Rule at the plan stage on any step whose evidence the factory does not hold; never hold on it. The grader-evidence hold ran 66.4 hours for receipts the factory does not produce. (period 3 lesson, not in the 57-row table)
+- R9.55 Name the student destination and the full object inventory in the course profile before the first hand-off; when the close bar sits in another team's write corridor, file the fallback route in the same issue. (cause C1, the one change for the next build)
+- R9.56 Run the acceptance instrument from a pushed ref on a 200-question slice in the first week; read checks.py and timeback_reader.py before any structural write; carry the reader's known needs from the first publish. (cause C2, the one change for the next build)
+- R9.57 Give each course its own controller lease, lock locator and install root; measure the queue place before every paid step and write the wait into the ETA. (cause C3, the one change for the next build)
+- R9.58 Standing authority until the course is live, recorded once in a grant file every window reads; gates still run; no clock on the owner's words; an open decision blocks the publish step or carries a typed default. (cause C4, the one change for the next build)
+- R9.59 State progress only in the publication runbook's phase names; every local gate runs in shadow except the certification gate; a base-red suite gets an adjudication row, not a refusal. (cause C5, the one change for the next build)
+- R9.60 Make the re-pin a step of the item-campaign operator (plan, seal, execute, replay, re-pin) and keep the publisher's checkpoint in the repository so a re-pin republishes only what changed. (cause C6, the one change for the next build)
+- R9.61 Re-derive every quoted number from the live remote in the same turn; assert that a regenerated report changed; pair every hold with a 'landed so far' line; point the event log at a receiver that exists. (cause C7, the one change for the next build)
+- R9.62 Every review finding returns with a deterministic, tested fix; a capped lane writes its report file first; PRs post ready-for-review; a small-course fixture keeps the suite under the CI cap; out-of-GitHub rounds are linked from the PR. (cause C8, the one change for the next build)
+- R9.63 Commit the publication runbook and a per-phase module inventory (exists or missing) to the course repository on intake day; plan from that inventory, never from an assumed pipeline. (cause C9, the one change for the next build)
+- R9.64 Run every unattended chain detached with progress visible from its checkpoint; refusal identity includes release and operator bytes with a retry budget; one install root per lane; free-space preflight before any sealed execute. (cause C10, the one change for the next build)
+- R9.65 Pilot one lesson, verify on the rendered course and one QC read, then scale; keep the operator's undo ready; a step that needs evidence the factory does not hold is ruled at the plan stage, not held. (cause C11, the one change for the next build)
+- R9.66 Write the content bar (exam shape of the mock, stimulus share, lesson row order, article format) into the course profile before generation, and show the owner one rendered lesson before the bank is generated. (cause C12, the one change for the next build)
+- R9.67 Every decision row carries a deadline and a default; every work order names a closing owner; superseded destinations close with a pointer the day the route changes. (cause C13, the one change for the next build)
+
 ## 2b. Where the build stands and what remains
 
 Measured on 2026-09-15 by running the build unattended on the owner's install after release .20 (goal-fit reviews by Codex and Grok on the make, the write layer and the graph layer were folded before each was built).
@@ -167,7 +237,7 @@ Review provenance: Codex reproduced ten defects on the make offline and all ten 
 
 ```json
 {
-  "spec_version": "2026-09-20.45",
+  "spec_version": "2026-09-21.46",
   "tool_rule": "every shared tool takes --rules <course-rules.json>; no course list in any tool",
   "procedure_rule": "rows of run|write with expect and on_fail; exceptions via next.py --exception compose the owner message with why and next step",
   "owner_message_rule": "composed by next.py: what is needed, how to give it; no ids, hashes, codes or paths",
