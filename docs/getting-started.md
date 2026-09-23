@@ -1,100 +1,63 @@
 # Setup and everyday use
 
-[← Incept Course Builder](../README.md) · [How the build works](../course-runbook/START.md) · [The rules file](../course-runbook/course.rules)
+[← Incept Course Builder](../README.md) · [Build contract](../SPEC.md#r7-installer)
 
 ## What you need
 
-- A Mac. The installer reuses an installed GitHub CLI and Python 3.11 or newer, and otherwise downloads its own copies into the app directory.
-- A GitHub account with a verified alpha.school email and access to the private package.
-- TimeBack credentials: client id, client secret and organization id. AWS uses your existing profile or SSO sign-in.
+- A Mac and a GitHub account with a verified **@alpha.school** email and access to the private package.
+- For the real test: your TimeBack account email, client ID, client secret and organization ID; Content Factory and AlphaVideo access; and AWS access to the media bucket through your existing profile or SSO sign-in.
+- The native test tools use `uv`, the AWS CLI and FFmpeg/ffprobe. The Builder installs the pinned TimeBack SDK in a runtime inside the test run. Missing tools or access leave the dependent step open.
 
-## The one line
+## Install and choose a build
 
-```
+```bash
 curl -fsSL https://joshuadurey-del.github.io/incept-course-builder/install.sh | bash
 ```
 
-Four screens: your Mac is checked, GitHub is connected, the pinned release is installed, and the build starts. The build shows a numbered menu of course ids read live from ap-one and asks for the three TimeBack strings with hidden input. Then it runs. With `--course <id>` on the install line and the TimeBack names in the environment there are no prompts at all:
+Setup checks your Mac, connects GitHub, installs the pinned package and opens the startup menu, including after an update:
 
-```
-curl -fsSL https://joshuadurey-del.github.io/incept-course-builder/install.sh | bash -s -- --course ap-world-history-fall-2026-v1
-```
+1. **Start a new course build** — enter a title, subject, learners, curriculum and goals. The Builder saves the brief, mission and native blueprint-design work order. This route currently pauses for design; the platform identity remains unset.
+2. **Create a new test course** — use the default title *Automated Test Course 01* or supply your own, enter your TimeBack account email, and choose the credential file. This starts the small real-service workflow described below.
+3. **Resume a course built here** — choose a saved Builder-created draft or test run. It retains its original workspace and receipts.
 
-Typing the line is the owner word. The build records a standing authorization with the account, time, course and scope until the course is live. Every paid call, landing and native write cites it. No gate is skipped because of it.
+Existing TimeBack courses are not imported or monitored. Supplying an existing course ID cannot adopt it into this Builder or authorize changes to it.
 
-## What the build does
+## Run the complete small test
 
-`make.py` reads `course.rules`, a build file in the 1995 shape: every step is a target file, a check and a recipe. A target is rebuilt when it is missing, older than a prerequisite, or failing its check. Run the command again any time; only what is missing or stale rebuilds. The progress lines read like a build log:
+The test menu offers **Continue this build**, **Show scope, status and costs**, and **Configure service connections**. Configure the connections before continuing. Secret input is hidden; Return keeps each saved value.
 
-```
-  profile.json .................................. fetched
-  course-map.json ............................... derived
-  lessons/004/article.md ........................ open
+The course contains one instructional lesson, one article, one video, five article checks, four MCQs allocated to placement, mastery, unit and final assessments, and one written response with native grading. These small populations exercise the real pipeline; they do not establish AP curriculum coverage.
 
-  STOP 3  work orders open (50)   fetched 18   derived 806   answered 2   authored 0   person 0
-```
+Continue works through these stages:
 
-Every value follows one order of resort, and a model is next to last: factory bytes fetched at live main and pinned; derivation from those bytes; the answer file; you, asked once and saved; a model called on a work order and checked by a script; a person. The last line counts targets by provenance. `authored 0` is the normal case when the factory's bytes are complete.
+1. **Bind your account and approve costs.** TimeBack resolves your account and organization. Supply a supported estimate covering generation, rendering, QC and storage, then approve that exact envelope. An unknown price stays unmeasured. The Builder cannot enforce the entered dollar limit within external services.
+2. **Generate and judge content.** The Builder runs the native services, records each hosted job ID and keeps complete responses. It reads the shared video queue before a new render. Only exact jobs you explicitly confirm as abandoned may be canceled; other work is preserved.
+3. **Watch and review the video.** Watch the complete saved render before upload. The Builder uploads only a new media object, runs native video QC and shows the report for your disposition.
+4. **Create the new course.** Review the small course goals and publication plan. The native adapter mints new identities, refuses active or deleted identity collisions, creates the course and enrolls your bound owner account. It reads the created objects back.
+5. **Walk and launch.** Use that account to read the article, play the video, complete the checks and assessments, and submit the written response. Verify grading, feedback, XP, progress and completion. Record the results in the Builder, accept the learner checks and approve launch. Activation can update only this run's newly created course.
 
-## The screen
-
-After every build you see one screen: the course, the steps with a detail each, WHAT IS MISSING in plain words, and WHAT YOU CAN DO as a numbered list of only what this Mac can run now. Type the number and it runs.
-
-```
-  AP WORLD HISTORY: MODERN
-  ✓ Course map                    9 units · 176 lessons · 6576 XP
-  ! Lessons with checks           126 of 176 articles · 176 of 176 checks judged · 782 of 884 pieces
-  · Bank gates                    0 of 8 pieces
-
-  WHAT IS MISSING
-    50 lessons have no accepted article. The factory's own quality check rejected the ones it had.
-
-  WHAT YOU CAN DO
-    1  Write them with a local model
-    2  Write the 50 missing pieces with Claude (small model)   paid · about 50 drafting calls
-    3  Show me which lessons
-    4  Open the course page in the browser
-    5  Stop for now
-  >
-```
-
-No step starts until the previous step's receipt exists. While it builds, one counter line rewrites itself.
-
-## Stops
-
-| Exit | Meaning | What prints |
-|---|---|---|
-| 0 | the course is live | the readback and the time |
-| 1 | a check failed | target, check, observed, expected |
-| 2 | network or sign-in | the exact command to run |
-| 3 | work orders open | file, what, shape, last finding |
-| 4 | an answer is needed | the one line to add to the answer file |
-
-Nothing else is printed to you.
-
-## Work orders
-
-What the factory has not committed becomes `workspace/workorders/<target>.json`: every fact the artifact needs and its exact shape, sized for a local 30B model. If a local OpenAI-style server answers on port 1234 or 11434 the build uses it as the author seat and records `AUTHOR_CMD` in the answer file; any `{prompt_file}` command works too. The author's output is checked by the free prescreen, then judged by the factory's paid judge, three tries. What it cannot fill waits for a person. An operator the course profile marks not implemented is a factory pull request, never authored here.
+If a service is unavailable, independent lanes can continue. A timed-out or ambiguous submission retains its receipt and hosted ID for readback; it is not blindly resubmitted. A finished process, generated file or successful upload is not proof that the course passed its learner checks.
 
 ## Everyday commands
 
+```bash
+~/.local/bin/incept-course-builder              # create a course or resume your build
+~/.local/bin/incept-course-builder status       # selected build's saved status as JSON
+~/.local/bin/incept-course-builder open         # open the local page
+~/.local/bin/incept-course-builder credentials  # configure service connections
+~/.local/bin/incept-course-builder stop         # stop the local page; files stay
 ```
-~/.local/bin/incept-course-builder                 # build (the default); run again to continue
-~/.local/bin/incept-course-builder --course <id>   # choose or change the course without the menu
-~/.local/bin/incept-course-builder open            # open the local page
-~/.local/bin/incept-course-builder status          # the build as JSON
-~/.local/bin/incept-course-builder credentials     # enter the TimeBack strings again (hidden)
-~/.local/bin/incept-course-builder stop            # stop the local page; files stay
-```
 
-## The local page
+Use the startup menu to resume a test. `--course <id>` cannot import an outside course or connect a design draft to a legacy publisher.
 
-It shows where the course is: a progress bar, the four steps, the next target, the provenance counts and open work orders. Click a step for its targets and receipts; the course map shows units, topics and lessons with each part labeled. It runs locally through macOS after Terminal closes and never launches work or calls paid services.
+The local page reads the selected Builder-owned workspace. It does not start generation or paid calls. A menu exit can return success without launching a course; launch status comes from the native readback and recorded owner acceptance.
 
-## Files
+## Saved files and updates
 
-Everything lives under `~/.local/share/incept-course-builder/`: `workspace/` (the build), `credentials.env` (owner-only), `releases/<commit>/` (the pinned package), `current` (a link to it). The workspace files are the state; there is no other memory.
+The installation lives under `~/.local/share/incept-course-builder/`. Its `workspaces/` directory holds separate drafts and test runs, `workspace.json` records the selection, and `releases/<commit>/` holds the pinned package. The chosen credential file is owner-only.
 
-**Update:** re-run the install command. Course work and credentials are preserved; the next build continues where it left off.
+Each test's `test-run/` folder freezes its configuration, tools, requests, approvals, source responses and actual hosted IDs. Keep these files when a step is held; they are the evidence for safe continuation.
 
-**Non-interactive hosts:** the GitHub sign-in must carry the `user:email` scope (`gh auth refresh -h github.com -s user:email`, once).
+To update, rerun the install command. Workspaces and credentials are preserved, and the startup menu reopens. Never install a branch build into a shared installation; use a merged release.
+
+On a non-interactive host, GitHub sign-in needs the `user:email` scope. Add it once in a terminal with `gh auth refresh -h github.com -s user:email`.

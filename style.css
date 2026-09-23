@@ -1859,3 +1859,6 @@ footer { border-top: 1px solid var(--line); }
 }
 
 .workspace-page .course-summary-card[hidden] { display: none; }
+
+#spec-sheet { min-width: 0; overflow-wrap: anywhere; }
+#spec-sheet pre { max-width: 100%; overflow-x: auto; }

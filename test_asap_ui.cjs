@@ -53,8 +53,16 @@ for (const code of [0, 9, 10, 31]) {
 assert(!fs.readFileSync(path.join(__dirname, 'timeline.js')).includes(0), 'JavaScript source contains a literal NUL');
 console.log('ASAP mapping, unknown/stale/mixed scope, subset acceptance and title validation passed.');
 
+function playwrightRuntime() {
+  try { return require('playwright'); }
+  catch (error) {
+    if (error.code !== 'MODULE_NOT_FOUND') throw error;
+    return require('playwright-core');
+  }
+}
+
 async function browserCheck() {
-  const { chromium } = require('playwright');
+  const { chromium } = playwrightRuntime();
   const browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || 'chrome', headless: true });
   try {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
@@ -87,10 +95,14 @@ async function browserCheck() {
     await page.setViewportSize({width:1280,height:900});
     await page.locator('#copy-install').click();
     await page.waitForFunction(() => document.querySelector('#copy-install-status').textContent.length > 0);
-    assert.equal(await page.locator('.preview-link img').evaluate(img => img.complete && img.naturalWidth > 0), true);
+    assert.equal(await page.locator('a[href="courses.html"]').count(), 0, 'Home must not promote monitoring unrelated courses');
+    assert.match(await page.locator('.home-preview').textContent(), /Start a new course build.*pauses at design.*Create a new test course.*Resume a course built here/s);
     if (process.env.UI_SCREENSHOT_DIR) await page.screenshot({path:path.join(process.env.UI_SCREENSHOT_DIR,'home-desktop.png'),fullPage:true});
-    await page.getByRole('link', {name: 'View example courses'}).click(); await ready();
-    assert.equal(new URL(page.url()).pathname, '/courses.html');
+    await page.getByRole('link', {name: 'Open setup guide'}).click();
+    assert.equal(new URL(page.url()).pathname, '/about.html');
+    assert.equal(new URL(page.url()).hash, '#install');
+    assert.match(await page.locator('#install').textContent(), /Review the costs/);
+    await page.goto('https://asap.test/courses.html'); await ready();
     assert.equal(await page.locator('.population-coverage').count(), 0, 'Full population table belongs on each course');
     assert(await page.locator('#course-release-timeline').evaluate(el => el.offsetTop < document.querySelector('#needs-human-strip').offsetTop));
     await page.getByText('Source sync and verification', {exact:true}).click();
@@ -160,9 +172,10 @@ async function browserCheck() {
       await page.setViewportSize({width, height:844});
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, 'Long update receipt overflows on mobile');
     }
-    for (const filename of fs.readdirSync(__dirname).filter(name => name.endsWith('.html'))) {
+    for (const filename of fs.readdirSync(__dirname).filter(name => name.endsWith('.html') && name !== 'builder.html')) {
       await page.goto(`https://asap.test/${filename}`);
-      assert.deepEqual(await page.locator('nav[aria-label="Main navigation"] > a').allTextContents(), ['Courses','Docs','Impact'], filename);
+      const expectedNav = ['index.html', 'about.html'].includes(filename) ? ['Get started','Docs','Spec'] : ['Courses','Docs','Impact'];
+      assert.deepEqual(await page.locator('nav[aria-label="Main navigation"] > a').allTextContents(), expectedNav, filename);
       assert.equal(await page.locator('footer a[href="about.html"]').count(), 1, filename);
       const links = await page.locator('a[href]').evaluateAll(links => links.map(a => a.getAttribute('href')).filter(h => !/^(https?:|mailto:|#)/.test(h)));
       for (const href of links) { const target=href.split(/[?#]/)[0]; if(target) assert(fs.existsSync(path.join(__dirname,target)), `${filename} has broken local link: ${href}`); }
@@ -194,3 +207,142 @@ async function browserCheck() {
   } finally { await browser.close(); }
 }
 if (process.argv.includes('--browser')) browserCheck().catch(error => { console.error(error); process.exitCode = 1; });
+
+async function localBuilderCheck() {
+  const { chromium } = playwrightRuntime();
+  const browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || 'chrome', headless: true });
+  try {
+    const page = await browser.newPage({ viewport: { width: 1280, height: 1000 } });
+    const errors = []; page.on('pageerror', error => errors.push(error.message));
+    // Match app.local_state and screen.summary, rather than the retired checkpoint dashboard.
+    let state = {course: 'Fixture course built here', command: "/tmp/Builder's bin/incept-course-builder",
+      local: true, revision: 'fixture-revision', version: '0.fixture',
+      build: {live: false, next: 'lessons/001/article.md', open: [{target: 'lessons/001/article.md'}],
+        counts: {fetched: 1, derived: 1, answered: 1, authored: 0, person: 0}, targets: [
+          {step: 'onboard', target: 'Owner account', state: 'done', provenance: 'own-run identity receipt'},
+          {step: 's1-blueprint', target: 'blueprint.json', state: 'done', provenance: 'fetched'},
+          {step: 's2-map', target: 'course-map.json', state: 'done', provenance: 'derived'},
+          {step: 's3-content', target: 'lessons/001/article.md', state: 'open', provenance: 'factory verdict pending'},
+          {step: 'p7-walk', target: 'Owner learner acceptance', state: 'todo', provenance: 'UNMEASURED'},
+          {step: 'p8-release', target: 'Launch', state: 'todo', provenance: 'UNMEASURED'},
+        ]},
+      screen: {next_step: 's3-content', rows: [{step: 's3-content', label: 'Lessons with checks', detail: '0 of 1 articles accepted'}],
+        missing: [{text: 'One lesson has no accepted article.', lessons: [{n: 1, unit: 1, topic: '1.1', code: 'fixture-lesson', title: 'Map skills'}]}],
+        options: [{label: 'Continue this build', note: 'Review the next action in Terminal'}]},
+      receipts: {'s3-content': {step: 's3-content', accepted: 0, result: '<script>bad()</script> pending verdict'}},
+      course_map: {units: [{unit: 1, title: 'Map skills', lesson_count: 1, kind_counts: {Article: 1},
+        topics: [{code: '1.1', title: 'Reading maps', kind_counts: {Article: 1}, lessons: [{title: 'Map skills', xp: 0, items: [{kind: 'Article', title: 'Map article', xp: 0}]}]}]}],
+        kind_counts: {Article: 1}, total_xp: null, course_milestones: [], unassigned: 0}};
+    let failState = false, reads = 0;
+    const requests = [];
+    await page.route('**/*', route => {
+      const request = route.request(), url = new URL(request.url());
+      requests.push([request.method(), url.origin, url.pathname]);
+      assert.equal(url.origin, 'https://builder.test', 'Local page must not contact external or paid services');
+      assert.equal(request.method(), 'GET', 'The local dashboard is read-only');
+      const filename = url.pathname.slice(1) || 'builder.html';
+      if (filename === 'local-state.json') {
+        reads++;
+        return route.fulfill(failState ? {status: 503, body: 'temporarily unavailable'} : {contentType: 'application/json', body: JSON.stringify(state)});
+      }
+      if (!['builder.html', 'builder.css', 'builder.js', 'builder-mark.svg'].includes(filename)) return route.fulfill({status: 404, body: ''});
+      return route.fulfill({contentType: filename.endsWith('.js') ? 'text/javascript' : filename.endsWith('.css') ? 'text/css' : filename.endsWith('.svg') ? 'image/svg+xml' : 'text/html', body: fs.readFileSync(path.join(__dirname, filename))});
+    });
+    const waitFor = condition => page.waitForFunction(condition, null, {timeout: 12000});
+    const tableRows = () => page.locator('#target-rows tr');
+    await page.goto('https://builder.test');
+    await waitFor(() => document.querySelector('#course').textContent === 'Fixture course built here');
+    assert.equal(await page.locator('#revision').textContent(), 'LOCAL · 0.fixture');
+    assert.match(await page.locator('#bar').textContent(), /3 \/ 6$/);
+    assert.equal(await page.locator('#status').textContent(), 'WORK ORDERS OPEN');
+    assert.match(await page.locator('#glance-now').textContent(), /Lessons with checks/);
+    assert.equal(await page.locator('#glance-next').textContent(), '0 of 1 articles accepted');
+    assert.match(await page.locator('#provenance').textContent(), /fetched 1 · derived 1 · answered 1 · authored 0 · person 0/);
+    assert.equal(await page.locator('#step-strip li').count(), 5);
+    assert.equal(await page.locator('#step-strip li.done').count(), 3);
+    assert.equal(await page.locator('#step-strip li.current').count(), 1);
+    assert.match(await page.locator('#needs-list').textContent(), /no accepted article.*Lesson 1.*Map skills.*Continue this build/s);
+    assert.equal(await page.locator('input, textarea, form').count(), 0, 'Credentials and work remain in Terminal');
+    assert.equal(await page.locator('a[href="courses.html"], [data-course-card], #population-course').count(), 0, 'No foreign-course monitoring or course switcher');
+
+    await page.locator('details.details > summary').click();
+    assert.equal(await tableRows().count(), state.build.targets.length);
+    assert.deepEqual(await page.locator('.targets th').allTextContents(), ['Step', 'Target', 'State', 'Provenance']);
+    assert.match(await tableRows().nth(3).textContent(), /Lessons with checks.*article.md.*open.*factory verdict pending/);
+    assert.match(await tableRows().nth(4).textContent(), /Owner learner acceptance.*todo.*UNMEASURED/);
+    await page.locator('#step-strip li').nth(3).focus(); await page.keyboard.press('Enter');
+    assert.equal(await page.locator('#step-panel').isVisible(), true);
+    assert.match(await page.locator('#panel-title').textContent(), /Lessons with checks/);
+    assert.match(await page.locator('#panel-body').textContent(), /factory verdict pending.*accepted0.*<script>bad\(\)<\/script>/s);
+    assert.equal(await page.locator('#panel-body script').count(), 0, 'Receipt text must not execute markup');
+    await page.locator('#panel-close').click();
+    assert.equal(await page.locator('#step-panel').isVisible(), false);
+    await page.locator('#step-strip li').nth(2).focus(); await page.keyboard.press('Space');
+    assert.match(await page.locator('#panel-body').textContent(), /1 units · 1 lessons · total XP UNMEASURED/);
+    await page.locator('.map-topic > summary').click(); await page.locator('.map-lesson > summary').click();
+    assert.match(await page.locator('.map-lesson ul').textContent(), /Map article · 0 XP/);
+    await page.locator('#panel-close').click();
+
+    state.connections = {observed_at: '2026-09-22T00:00:00Z', live_checks: true, checks: [
+      {id: 'factory', label: 'Content Factory', state: 'CURRENT', detail: '<script>bad()</script> descriptor only'},
+      {id: 'publication', label: 'TimeBack and AP One', state: 'SELECT_PUBLISH_CONFIG', detail: 'Native course configuration required'},
+    ]};
+    state.build.targets[3] = {...state.build.targets[3], state: 'done', provenance: 'own-run accepted receipt'};
+    state.build.next = 'Owner learner acceptance'; state.build.open = [];
+    state.screen = {next_step: 'p7-walk', rows: [{step: 'p7-walk', label: 'Walk and accept', detail: 'Owner walkthrough remains unmeasured'}],
+      missing: [{text: 'Confirm this new course in the learner view.'}], options: [{label: 'Continue this build'}]};
+    await waitFor(() => document.querySelector('#glance-next').textContent === 'Owner walkthrough remains unmeasured');
+    assert.ok(reads >= 2, 'Progress must refresh without a reload');
+    assert.match(await page.locator('#bar').textContent(), /4 \/ 6$/);
+    assert.equal(await tableRows().count(), 6, 'Polling must replace target rows, not duplicate them');
+    assert.equal(await page.locator('#step-strip li').count(), 5, 'Polling must replace step controls');
+    assert.equal(await page.locator('#status').textContent(), 'BUILDING', 'Partial receipts must not claim the course is live');
+    assert.equal(await page.locator('#connection-list li').count(), 2);
+    assert.match(await page.locator('#connection-list').textContent(), /Content Factory.*current.*<script>bad/s);
+    assert.equal(await page.locator('#connection-list script').count(), 0);
+    assert.match(await page.locator('#connections-note').textContent(), /Native checks observed 2026-09-22/);
+    await page.goto('about:blank'); await page.goBack();
+    await waitFor(() => document.querySelector('#course')?.textContent === 'Fixture course built here');
+    assert.equal(await tableRows().count(), 6);
+    assert.equal(await page.locator('#connection-list li').count(), 2);
+    assert.deepEqual(await page.locator('section.outcomes h2').allTextContents(), ['Targets']);
+    assert.equal(await page.locator('#start-command').textContent(), "'/tmp/Builder'\\''s bin/incept-course-builder'");
+    await page.locator('#copy-command').focus(); await page.keyboard.press('Enter');
+    await waitFor(() => document.querySelector('#copy-status').textContent.length > 0);
+    assert.equal(await page.locator('#copy-command').isEnabled(), true);
+    for (const width of [320, 375]) {
+      await page.setViewportSize({width, height: 812});
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, 'Local mobile document overflows');
+    }
+    if (process.env.BUILDER_SCREENSHOT) await page.screenshot({path: process.env.BUILDER_SCREENSHOT, fullPage: true});
+
+    failState = true;
+    await waitFor(() => document.querySelector('#live-status').textContent.includes('Reconnecting'));
+    assert.equal(await page.locator('#glance-next').textContent(), 'Owner walkthrough remains unmeasured');
+    assert.equal(await tableRows().count(), 6, 'Transient failure must preserve the last measured state');
+    failState = false; state.command = null;
+    const beforeInvalid = reads;
+    await page.waitForResponse(response => response.url().endsWith('local-state.json') && response.status() === 200, {timeout: 12000});
+    await waitFor(() => document.querySelector('#live-status').textContent.includes('Reconnecting'));
+    assert.ok(reads > beforeInvalid, 'The malformed response must actually be read');
+    assert.equal(await page.locator('#glance-next').textContent(), 'Owner walkthrough remains unmeasured');
+    assert.equal(await tableRows().count(), 6);
+
+    // app.local_state deliberately returns an empty build for a workspace not built here.
+    state = {course: null, command: '/tmp/incept-course-builder', local: true, version: '0.fixture',
+      build: {targets: [], live: false}, workorders: [], receipts: {}};
+    await waitFor(() => document.querySelector('#course').textContent === 'not chosen yet');
+    assert.equal(await page.locator('#status').textContent(), 'NOT STARTED');
+    assert.match(await page.locator('#bar').textContent(), /0 \/ 0$/);
+    assert.equal(await tableRows().count(), 0);
+    assert.equal(await page.locator('#connection-list li').count(), 0, 'A new empty workspace must not show old connection rows');
+    assert.equal(await page.locator('#needs-you').isVisible(), false);
+    assert.equal(await page.locator('#provenance').textContent(), '');
+    assert.match(await page.locator('#live-status').textContent(), /^Live/);
+    assert.doesNotMatch(await page.locator('main').textContent(), /Fixture course built here|Owner learner acceptance|own-run accepted receipt/);
+    assert(requests.every(([method, origin]) => method === 'GET' && origin === 'https://builder.test'));
+    assert.deepEqual(errors, []);
+    console.log('Local browser PASS: own-run Targets/progress, unmeasured acceptance and XP, safe receipt text, native connections, polling/no duplicates, failed/malformed-state recovery, empty workspace isolation, keyboard panels/copy, literal command, read-only requests and mobile.');
+  } finally { await browser.close(); }
+}
+if(process.argv.includes('--local'))localBuilderCheck().catch(error=>{console.error(error);process.exitCode=1;});

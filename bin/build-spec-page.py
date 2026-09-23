@@ -55,6 +55,7 @@ def render(markdown):
 def main():
     retro = (ROOT / 'retro.html').read_text()
     head = retro.split('<main id="main-content" tabindex="-1">')[0]
+    head = re.sub(r'href="style\.css(?:\?[^"]*)?"', 'href="style.css?v=20260922-spec-containment"', head)
     head = head.replace('<title>Publication runbook retro</title>', '<title>Course Builder spec sheet</title>')
     head = head.replace('<a href="spec.html">Spec sheet</a><a href="retro.html" aria-current="page" class="active">Runbook</a>',
                         '<a href="spec.html" aria-current="page" class="active">Spec sheet</a><a href="retro.html">Runbook</a>')
