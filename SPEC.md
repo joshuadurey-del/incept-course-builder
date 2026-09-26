@@ -265,6 +265,19 @@ The standard: a known-bad fixture proves each gate fires.
 - R10.44 For a wording class on items that already pass, change only the flagged option and measure that stem, key and other options are byte-identical; a redraft that fails the judge leaves the served item as it stands. (H58; amends lessons.html#apwh-own-defect-classes-20260921)
 - R10.45 Treat a rewrite of passing items as a regression risk: it clears no old fails, so read each new fail as a real regression or reader variance before the next redraft. (H59; amends lessons.html#publish-faster-20260920)
 
+### R12. Rules learned on the APWH repairs (2026-09-21 to 09-26)
+
+- R12.1 A data-file PR merges only after its pytest job finishes green on that exact head; the pre-push gate does not replace it; push once per head. (NEW-COURSE rule 31; ap-one #1248, #1250, #1251)
+- R12.2 Freeze the done list at the start, and give it a content-accuracy row or state that accuracy is outside done. (rule 32)
+- R12.3 Check each claim in articles, tables, items, scorer examples and captions against a named outside authority before done; scan served text for authoring notes first. (rule 33)
+- R12.4 Only a hosted QC run closes a hosted QC fail; a `/v1/qc` pass does not predict it; quote each hosted score with its cache hits. (rule 34)
+- R12.5 A walk finding closes only on the walker's own recheck (`CLOSURE.json`); a finding shared by every course is player behavior, recorded and filed, not repaired. (rule 35)
+- R12.6 Every reference in a task (passage, document, model, response, prompt) resolves inside the same item or page. (rule 36)
+- R12.7 Scoring text quotes the current official rubric; an exercise's own constraint is labeled as such; each student criterion still names the task and the reasoning after the scorer split. (rule 37)
+- R12.8 Readability rewrites are for practice; an item on any exam form keeps exam difficulty. (rule 38)
+- R12.9 A class fix starts from a census of the whole live population: active rows only, stock text counted as missing, every item ref resolved, video narration scanned. (rule 39)
+- R12.10 The student's player is the only preview: check item layout with the render harness before a wave; same-key video swaps carry `Cache-Control: no-cache`. (rule 40)
+
 ## 2b. Where the build stands and what remains
 
 Measured on 2026-09-15 by running the build unattended on the owner's install after release .20 (goal-fit reviews by Codex and Grok on the make, the write layer and the graph layer were folded before each was built).
@@ -297,7 +310,7 @@ Review provenance: Codex reproduced ten defects on the make offline and all ten 
 
 ```json
 {
-  "spec_version": "2026-09-22.47",
+  "spec_version": "2026-09-26.48",
   "tool_rule": "every shared tool takes --rules <course-rules.json>; no course list in any tool",
   "procedure_rule": "rows of run|write with expect and on_fail; exceptions via next.py --exception compose the owner message with why and next step",
   "owner_message_rule": "composed by next.py: what is needed, how to give it; no ids, hashes, codes or paths",
