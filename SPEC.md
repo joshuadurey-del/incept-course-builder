@@ -278,6 +278,19 @@ The standard: a known-bad fixture proves each gate fires.
 - R12.9 A class fix starts from a census of the whole live population: active rows only, stock text counted as missing, every item ref resolved, video narration scanned. (rule 39)
 - R12.10 The student's player is the only preview: check item layout with the render harness before a wave; same-key video swaps carry `Cache-Control: no-cache`. (rule 40)
 
+### R13. Rules learned on the HumGeo student-review record, second pass (2026-09-26)
+
+- R13.1 A new services/ingest module needs the import-safety test run by name, and a LIBRARY_MODULES entry if it has no CLI; ap-one #1258's first head went red on this, fixed before the merge. (rule 41)
+- R13.2 Push once, with the final rebased head, only when given the merge slot; merge-gate checks the PUSHED head, not a local-only rebase. (rule 42)
+- R13.3 Name pytest's test files literally in the command; the guard is a PreToolUse hook that reads the command string before the shell expands a variable. (rule 43)
+- R13.4 Lane clones get the pre-push gate from the global `core.hooksPath`; don't let `scripts/ship.py`'s local override beat it. (rule 44)
+- R13.5 A same-key rewrite of a page's stimulus must rebuild the hidden article-text block, not only the visible one, or hosted Course QC cannot see the new content. (rule 45)
+- R13.6 Check a writing bank carries `lo_codes`, `skill_codes` and a `model_answer` before sending it to `/v1/qc`; where it never has (HumGeo), use that course's own writing judge on a before-and-after pair, with the deployed grader confirming identical scores. (rule 46)
+- R13.7 Read a page through its current href, not a saved crawl — a moved object key can make a stale-URL search report real content as missing. (rule 47)
+- R13.8 A definition padded to clear a reading-grade floor still has to read like a sentence; read every generated definition as a student would before it ships. (rule 48)
+- R13.9 A table's title must not share a header cell with its column label. (rule 49)
+- R13.10 A question naming a map, chart or scatterplot needs a real rendered image, not a text description. (rule 50)
+
 ## 2b. Where the build stands and what remains
 
 Measured on 2026-09-15 by running the build unattended on the owner's install after release .20 (goal-fit reviews by Codex and Grok on the make, the write layer and the graph layer were folded before each was built).
@@ -310,7 +323,7 @@ Review provenance: Codex reproduced ten defects on the make offline and all ten 
 
 ```json
 {
-  "spec_version": "2026-09-26.48",
+  "spec_version": "2026-09-26.49",
   "tool_rule": "every shared tool takes --rules <course-rules.json>; no course list in any tool",
   "procedure_rule": "rows of run|write with expect and on_fail; exceptions via next.py --exception compose the owner message with why and next step",
   "owner_message_rule": "composed by next.py: what is needed, how to give it; no ids, hashes, codes or paths",

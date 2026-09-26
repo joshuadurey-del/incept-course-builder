@@ -11,6 +11,113 @@
   <p class="sub">Installed Course Builder release 2026-09-15.66 (dashboard main 9636d23d), checked 2026-09-22. Two publication routes since .63 (see Current route). Version .8 restored two write controls the 2026-09-01 cut list had removed, on measured HumGeo evidence: every native write now carries a capture, an execute-with-readback and a zero-write replay receipt under one sealed digest, with one writer per course surface. The current model cuts ceremony while preserving quality bars. Current course positions are re-earned from the dated plans; historical execution language is retained only as an explicit mapping in <a href="crosswalk.json">crosswalk.json</a>.</p>
   <section><h2>Coverage-first execution</h2><p>The installer now includes verified factory and workflow skills. Every session measures each required population before trusting a plan position; the local dashboard puts remaining scope first. <a href="lessons.html#coverage-first-builder-20260910">Implemented controls and runnable checks</a>. Native content and publication requirements remain authoritative.</p></section>
   <section><h2>September 10 operating improvements</h2><p><a href="lessons.html#morning-retro-20260910">Eight implementation actions cover the twelve morning-retro lessons</a>: selected-source inventory, complete-group delivery, substantive review, failure diagnosis, exact integration, early release preparation, evidence-based reporting and resumable handoff. Each action names its owner, existing tool and acceptance evidence. The private runbook carries the agent decision cards; course standing comes from the current claim rows below.</p></section>
+  <section id="humgeo-student-review-second-pass-20260926"><h2>HumGeo, September 26 (second pass): acronym hovers, a review screen fixed, and a reading-grade floor that read stilted</h2>
+    <p>Evidence window: 2026-09-26 02:27 UTC to 08:55 UTC, continuing the student-review window closed out in Course
+    Builder release .74. Course: AP Human Geography, native TimeBack course <code>ap-human-geography-native-202608-v3</code>,
+    still dark. The window fixed a Codex walk finding, built acronym hovers to an owner spec agreed with the APWH and
+    APUSH windows, and formatted the Technique Drill and FRQ screens. Sources: the retrospective, the finish
+    criteria and wind-down files, the lane folders, and the ap-one pull requests named below. This entry names
+    mechanisms, not people. <a href="lessons.html#humgeo-retro2-lessons-20260926">Lessons into practice</a>.</p>
+    <h3>What landed</h3>
+    <ul class="work-list">
+      <li><b>Three ap-one pull requests merged.</b> <a href="https://github.com/InceptTrilogy/ap-one/pull/1255">#1255</a> (writing-layout template and rubric
+      rows; 327 of 327 writing items already served), <a href="https://github.com/InceptTrilogy/ap-one/pull/1257">#1257</a> (the cumulative-FRQ successor fix
+      for the review-screen finding below), and <a href="https://github.com/InceptTrilogy/ap-one/pull/1258">#1258</a> (the acronym-hover gate code, pushed
+      three times: a first head that went red, a fix, then a final rebase). The owner's push-once rule arrived
+      partway through the window and governed each PR's final push from then on: rebase onto current main, run the
+      gate and the reading test files by hand, push once, wait for the merge slot.</li>
+      <li><b>A review screen that showed a score but no answers, fixed.</b> Two completed cumulative-FRQ attempts
+      showed in the gradebook, but every question panel in their review read "(no response)". The operator that
+      repoints a test's items had kept the test's id while swapping its three item references, so an old attempt's
+      stored answers had no question id to attach to. The fix copies the successor-identity pattern AP Lit and APWH
+      already use: a changed test gets a new id bound to the new items, the old id keeps the old items, and a new
+      guard refuses the old in-place swap once any attempt exists.</li>
+      <li><b>Acronym hovers, wave 1 and wave 2 live.</b> Following an owner spec agreed with the APWH and APUSH
+      windows (every acronym inside a lesson gets a hover with the full words; exam forms carry none; a page's
+      acronym list gives a sourced definition the first time and the full words only after that), wave 1 put hovers
+      on 25 article checks, 7 video checks and 30 article pages (265 hovers plus the page list), and wave 2 put them
+      on 207 PowerPath practice items. Both waves read back equal to their candidates, and both replays wrote 0.</li>
+      <li><b>A 29-acronym definitions file, drafted and checked.</b> Each definition is sourced from the course's own
+      text or, for FAO/USDA/GPS, the organization's own source; Gemini's accuracy check caught and fixed two errors
+      (GNP's citizenship and location reversed; GPS credited to the wrong service); four definitions were trimmed so
+      they do not give away an answer on their own page.</li>
+    </ul>
+    <h3>What failed, why, and the correction that worked</h3>
+    <ul class="work-list">
+      <li><b>A new PR's first head went red on a mechanical gap, caught before the merge.</b> <a href="https://github.com/InceptTrilogy/ap-one/pull/1258">#1258</a>
+      added two new <code>services/ingest</code> modules with no CLI. The repository's import-safety test reads
+      every module under that folder by glob, but pytest only runs the test files a command names, so a local run
+      that named only the touched files never included it, and the PR's first head went red on two tests.
+      Correction: list a CLI-less module in <code>LIBRARY_MODULES</code> with a reason before the merge, and the
+      pre-push gate now runs that test itself whenever a <code>services/ingest</code> file changes (builder rule 41).</li>
+      <li><b>A local rebase does not count until it is pushed.</b> merge-gate's freshness check reads the PUSHED
+      head, not the local one. A lane rebased its branch locally and ran the gate before pushing that commit, so the
+      gate still read the old, unpushed remote head and refused it as behind main. Correction: when given the merge
+      slot, rebase onto <code>origin/main</code>, run the gate and the tests that read the change, then push that
+      commit once and wait for its CI (builder rule 42); each push restarts a roughly 25-30 minute CI run and a
+      second push mid-run cancels it.</li>
+      <li><b>A hand-typed pytest command hid its own file names from the guard.</b> The pytest guard is a Claude
+      Code PreToolUse hook: it reads the command string before the shell runs it, so it never sees what a shell
+      variable expands to. A command that built a variable of test file paths and passed the variable to
+      <code>pytest</code> showed the guard the variable's literal name, not a <code>.py</code> path, and it blocked
+      as "no test file named". Correction: type the file paths directly in the command (builder rule 43).</li>
+      <li><b>A standalone lane clone's push skipped the shared pre-push chain.</b> A clone under
+      <code>~/repos/incept-scratch/</code> with its own <code>.git</code> had no <code>core.hooksPath</code> set, so
+      four early pushes reached GitHub without running the chain at all. Correction: <code>core.hooksPath</code> is
+      now set globally, so every clone on the machine runs it; one caveat found the same day, <code>scripts/ship.py</code>
+      sets a local override that beats the global (builder rule 44).</li>
+      <li><b>A same-key page rewrite left the hosted QC reader blind to its own new content.</b> Wave 1 wrote 30
+      pages with a same-key S3 PUT that changed only the visible acronym list. The hosted Course QC reader reads a
+      hidden text block inside the stimulus, not the rendered page, and that block was not rebuilt, so the reader
+      still saw the old page. Correction: the page-write route now rebuilds the hidden block on every page it
+      touches (builder rule 45).</li>
+      <li><b>The factory's writing-item judge cannot score HumGeo's writing bank.</b> Before spending on it, a lane
+      read the factory's own check code and found the FRQ check needs three fields (learning-objective codes, skill
+      codes, a graded model answer) that HumGeo's writing bank has never carried, so every call would have failed on
+      request shape, not content. Correction: use the course's own writing judge instead — for HumGeo, the W8 judge
+      on a before-and-after pair, counting a new finding against the change only when it quotes text the change
+      added, with the deployed FRQ grader giving identical scores before and after (builder rule 46).</li>
+      <li><b>A false alarm from a stale crawl.</b> A report that two live pages had lost their acronym list turned
+      out to be a byte search against page URLs from an earlier crawl; wave 1 had already moved both pages to new
+      object keys, so the search read orphaned copies. Correction: re-read the live page index for the current href
+      before reporting a page defect (builder rule 47).</li>
+      <li><b>Definitions written to clear the reading-grade floor read garbled to a person.</b> All 29 drafted
+      definitions passed the automated grade-8 check, but a human read of every row as a student would caught one
+      garbled definition (an exam-question type described as "graded in prose rather than essay format") and four
+      more that named "this course" instead of stating the fact plainly. Correction: read every generated definition
+      as a student would before it ships, and never let course-referencing filler stand in for the fact (builder
+      rule 48).</li>
+      <li><b>A ledger-backstop flag was a false positive on quoted item data.</b> A duration-sounding phrase ("women
+      spent 34 hours on unpaid work, compared with 12 for men") tripped a receipt-claim scan; it is an answer
+      rationale quoting an item's own chart, byte-identical to the live course, not an unsourced duration claim, so
+      it was left as it was written.</li>
+    </ul>
+    <h3>What remains open</h3>
+    <ul class="work-list">
+      <li>Definitions are final: 29 written, 25 placed (24 on pages and 1 on a writing task, by the first-list rule
+      that a definition appears once per course, in course order).</li>
+      <li>Acronym page rebuild is in progress: 28 pages plus 5 held pages get their definitions and their hidden
+      text block rebuilt together; writing-task hovers are next.</li>
+      <li>The table-title fix is LIVE: 7 pages and 8 checks, all 15 read back equal to their candidates.</li>
+      <li>Map images are in progress: 148 places, 285 visuals, 22 of them on exam forms; two free rendering routes
+      run in parallel at roughly 100 to 130 images an hour each.</li>
+      <li>The Technique Drill and FRQ layout is FINISHED: all 327 writing items carry the template
+      (<a href="https://github.com/InceptTrilogy/ap-one/pull/1255">#1255</a> merged).</li>
+      <li>The final hosted Course QC run, after all of the above, is still to come.</li>
+      <li>The course stays dark. No enrollment or activation changed.</li>
+    </ul>
+    <h3>How the next course reuses this</h3>
+    <ul class="work-list">
+      <li>The ten rules are <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/NEW-COURSE.md">NEW-COURSE.md rules 41 to 50</a> in Course Builder release 2026-09-15.76,
+      and entries on <a href="lessons.html#humgeo-retro2-lessons-20260926">the lessons page</a>.</li>
+      <li>The short version: run the import-safety test by name for any new ingest module; push once, with the
+      final rebased head, when given the merge slot; name pytest files literally; keep every lane clone on the
+      shared hooks path; rebuild a page's hidden text block on every in-place rewrite; check a writing bank's
+      fields before paying for a factory judge call; read a page through its current href; read a generated
+      definition as a student would; keep a table's title out of its header cell; and render a described map or
+      chart as a real image.</li>
+    </ul>
+  </section>
   <section id="apwh-repairs-20260921-20260926"><h2>APWH, September 21–26: repairing a dark course from three student walks and an accuracy review</h2>
     <p>Evidence window: 2026-09-21 05:10 UTC (the cut of the R9 record) to 2026-09-26 08:45 UTC. Course: AP World History, native TimeBack course <code>ap-world-history-native-202608-v1</code>, still dark. The work began from a Codex student walk on 09-23 that reported six findings, plus three owner reports. Sources: the run log, the frozen definition of done and its check, the lane folders, the Codex walks and rechecks of 09-23, 09-25 and 09-26, and the 09-26 accuracy review, all in the private run folders; and the ap-one pull requests named below. This entry names mechanisms, not people. <a href="lessons.html#apwh-repairs-lessons-20260926">Lessons into practice</a>.</p>
     <h3>What landed</h3>
