@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2026-09-15.70 (package); contract 2026-09-15.1 |
+| **Version** | 2.0.0 (package); contract 2026-09-15.1 |
 | **Direction** | Create and launch new courses through native factory tools. The small test exercises the real TimeBack pipeline with bounded content. Paid calls, course creation, learner acceptance and launch have explicit owner decisions; elapsed time and live success are measured per run. |
 | **Status** | Working spec. Changes after the first course ships through it. |
 | **Product** | One command installs the builder on macOS and creates and launches new courses, offers a small full-pipeline test, and resumes only its own builds. Existing courses are never imported or monitored. |
@@ -291,6 +291,22 @@ The standard: a known-bad fixture proves each gate fires.
 - R13.9 A table's title must not share a header cell with its column label. (rule 49)
 - R13.10 A question naming a map, chart or scatterplot needs a real rendered image, not a text description. (rule 50)
 
+### R14. Rules learned on the night of 2026-09-26 to 27 (compute and four windows' retros); release 2.0.0
+
+- R14.1 A kit emits a landing manifest the builder checks; one pin-table writer per course; the after-landing gate runs in the merge step. (rules 51-53)
+- R14.2 Watchers are durable; owner rulings live on one bus every lane reads at start. (rules 54-55)
+- R14.3 The push step ships the red-CI classes from day one; no push- or merge-path hook change without a real-sha run and a heads-up. (rules 56-57)
+- R14.4 Merge only when the pytest job has finished green on the exact head; the one exception is the owner's own written no-wait, recorded in the merge receipt. (rule 58)
+- R14.5 Exam-form membership from the course function; every write records its reason class; teach-before-test scan before publish, fixed by teaching. (rules 59-61)
+- R14.6 Every artifact swap writes a receipt and publish refuses without a PASS visual verdict; leak scan and dropped-heading rule before any page write. (rules 62-64)
+- R14.7 Scanner exclusions carry a per-reason count; every gate change ships with a control and a mutant; frozen lists stay frozen and accept every closing disposition. (rules 65-67)
+- R14.8 No quote credited to an unnamed source; every quoted source names its edition; no excerpt cut at an abbreviation. (rules 68-69)
+- R14.9 Bank edits run one judge loop; article rebuild and push-what-changed are single verbs; record writers skip unchanged bytes; chains use the gate's exit code. (rules 70-74)
+- R14.10 Page or definition writes re-price XP, re-run the served-page check from the combined tree, and trigger the hosted-QC burndown; live fixes name the repository copies that follow. (rules 75-77)
+- R14.11 No key in argv, no -x trace; a watchdog on any lane silent for 30 minutes. (rules 78-79)
+- R14.12 Two local cores per window as governor slots, every heavy tool capped, every scan scoped, CI as the test bar; hours per step measured against a budget with remote waits in parallel. (rules 80-81)
+- R14.13 A new course design compiles from the factory framework with DOK floors and zero orphans; unresolved dimensions are written UNRESOLVED, never invented; the factory analyzer checks unit count, names and weights, and the course oracle certifies the built course at step 1. (rule 82)
+
 ## 2b. Where the build stands and what remains
 
 Measured on 2026-09-15 by running the build unattended on the owner's install after release .20 (goal-fit reviews by Codex and Grok on the make, the write layer and the graph layer were folded before each was built).
@@ -310,6 +326,22 @@ Measured on 2026-09-15 by running the build unattended on the owner's install af
 
 Review provenance: Codex reproduced ten defects on the make offline and all ten are fixed; on the write layer Codex and Grok converged on placement by list keys, no declaration without a record check and a receipt, row 8 never earlier, the judge fed through the factory's shape, a restart-safe retry cap and two-repository recovery; on the graph layer both refused any replayed typing and asked for a whole recount, path flags and work orders before the merge. Every finding is in the code; the plans and reviews sit beside this spec in the course-builder packet.
 
+## 2c. Version 2.0.0: hours to a live course from zero
+
+Measured on 2026-09-27 against the four windows' time ledgers and the compute record, kept in the private record folder on the build machine.
+
+| What 2.0.0 adds | Why | Check |
+|---|---|---|
+| `genesis.py`: the design compiles from the factory framework for the subject (units, topics, learning objectives, essential knowledge, exam shape) into `design/course_map.json`, `design/dok_floors.json`, `design/coverage_matrix.json`, `design/volume_estimates.json`, `blueprint.json` (sixteen keys), `coverage.json`, `titles.json`, `receipts/genesis.json` | Version 1 stopped a new course at a blueprint work order for a person; the factory already ships the framework for twenty AP subjects | APUSH: 9 units, 105 topics, 105 learning objectives, 291 essential-knowledge rows, 0 orphans, under a second; the factory analyzer returned PASS on unit count, names and weights |
+| The new-course path in the app runs genesis right after the brief; what the framework cannot resolve stays in the work order, named | No step hidden behind a person that a script can do | `test_genesis.py` |
+| `clock.py`: hours per step from the receipts against `hours_to_live_budget` (default 14 h; a course rule overrides) | The goal is stated in hours, so every build measures them | selftest; the row for genesis reads its elapsed seconds |
+| NEW-COURSE.md rules 51-82 | Thirty-two lessons from one night, each with its receipt | rules present, sources cited |
+| Compute rules in the package (rule 80): two cores per window as slots, `--cores 2` for a `pytest -n 2`, thread caps, scoped scans, CI as the bar | The local drains were our own tools; each fix has a number | compute handover rows |
+
+Where the hours go today, measured: BFF CI 26-30 minutes per ap-one PR; hosted Course QC 20-30 minutes a run; a Codex student walk about an hour and a recheck about 3 minutes of browser time; video renders 25-34 minutes (one sat 151); judge rounds by the remote queue; local builds about a second per unit; the pre-push gate 4-5 s on a known tree, about 290 s on a new one. CPU idle read 40-64% in the sampled load spikes. The path to "hours" is parallel remote waits, one landing shape, no hand steps, and no repeated run, not a faster test runner.
+
+Not in 2.0.0, named: creating the course repository from `design/` is still the builder's next verb (today the design seeds the repository's `conformance/` files by hand); canon dimensions the framework cannot resolve need a same-species blueprint passed with `--canon`; an evidence harvester over released exam materials waits on a rights review (the factory's framework projection withholds official wording pending clearance); the shared install on the build machine moves to 2.0.0 only after main carries it and every course window has been told.
+
 ## 3. Evidence behind the spec
 
 - Nine sealed native operations on the HumGeo v3 course, 2026-09-12 to 2026-09-14, each with capture, execute and zero-write replay receipts; the final census capture listed every replay receipt as a precondition.
@@ -323,7 +355,7 @@ Review provenance: Codex reproduced ten defects on the make offline and all ten 
 
 ```json
 {
-  "spec_version": "2026-09-26.49",
+  "spec_version": "2.0.0",
   "tool_rule": "every shared tool takes --rules <course-rules.json>; no course list in any tool",
   "procedure_rule": "rows of run|write with expect and on_fail; exceptions via next.py --exception compose the owner message with why and next step",
   "owner_message_rule": "composed by next.py: what is needed, how to give it; no ids, hashes, codes or paths",
@@ -331,7 +363,7 @@ Review provenance: Codex reproduced ten defects on the make offline and all ten 
   "ask_rule": "resolve_from sources read at live main and cited per field before any owner request; next.py --request gates it",
   "route": ["content", "p3", "p5", "p6", "p7", "p8"],
   "route_names": {"p12": "align", "content": "content", "p3": "bank gates", "p5": "publish dark", "p6": "cold QC", "p7": "walk and accept", "p8": "demo and open"},
-  "steps": ["onboard", "discover", "s1-blueprint", "s2-map", "s3-pilot", "s3-content", "p3-bank-gates", "p5-publish-dark", "p6-cold-qc", "p7-walk", "p8-release"],
+  "steps": ["genesis", "onboard", "discover", "s1-blueprint", "s2-map", "s3-pilot", "s3-content", "p3-bank-gates", "p5-publish-dark", "p6-cold-qc", "p7-walk", "p8-release"],
   "loop": ["next.py", "do the card", "fill the receipt template", "next.py --close <step> --receipt <file>", "repeat"],
   "intake_bins": ["keep", "modify", "replace", "discard"],
   "write_contract": ["capture", "execute_with_readback", "replay_zero_writes"],

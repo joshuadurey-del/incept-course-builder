@@ -6,6 +6,94 @@
 <header class="site-header"><a class="site-identity" href="index.html"><img src="incept-mark.svg" width="36" height="36" alt=""><strong>INCEPT <span>Course Builder</span></strong></a><div class="site-header-actions"><a href="https://github.com/joshuadurey-del/incept-course-builder">GitHub ↗</a><a href="about.html#install" class="header-install">Install <span aria-hidden="true">↗</span></a></div></header>
 <nav aria-label="Main navigation"><a href="courses.html">Courses</a><a href="docs.html" class="active">Docs</a><a href="economics.html">Impact</a></nav><nav class="section-nav" aria-label="Documentation navigation"><a href="docs.html">Docs home</a><a href="about.html#install">Quickstart</a><a href="spec.html">Spec sheet</a><a href="retro.html" aria-current="page" class="active">Runbook</a><a href="lessons.html">Lessons</a><a href="agents.html">Agent data</a></nav>
 <main id="main-content" tabindex="-1">
+  <section id="compute-and-four-windows-20260927"><h2>September 26 to 27: where the machine's hours went, three courses' retros and the landing guard's in one night, and the 2.0 compiler</h2>
+    <p>Evidence window: 2026-09-26 13:00 UTC to 2026-09-27 09:00 UTC. Courses: HumGeo (final lists C1-C20, F1-F6, R1-R8),
+    APWH (final walk, four repair lanes, close) and APUSH (native-walk repairs, PR #53 and #54); the fourth window was the
+    ap-one main guard, which landed 31 pull requests for them. Sources: each window's retro written to one template on 2026-09-27, a digest of ten earlier retro files,
+    the compute handover and the compute window's notes. This entry names mechanisms, not people.
+    <a href="lessons.html#compute-v2-lessons-20260927">Lessons into practice</a>.</p>
+    <h3>Where the time went</h3>
+    <ul class="work-list">
+      <li><b>CPU was not the wall clock.</b> Idle CPU read 40-64% during the load spikes of 28, 44 and 62. The long
+      poles were remote: the ap-one BFF pytest job at 26-30 minutes per pull request (31 PRs, about 14 hours of landing
+      queue), hosted Course QC at 20-30 minutes a run, a Codex student walk at about an hour, video renders at 25-34
+      minutes (one sat 151 minutes), and judge rounds. A step estimated at 30 minutes took 2. The builder now measures
+      hours per step from each build's receipts (<code>clock.py</code>) against a budget instead of asserting them.</li>
+      <li><b>The local drains were our own tools, and each had a fix with a number.</b> The ledger post-sweep hook walked
+      1.85M files (about 60 s) on every shell command until it was scoped to the command's own paths (0.06-0.42 s). A
+      macOS media-analysis agent ran 1.6-2.5 cores for 11.5 hours until it was turned off (load 18.8 to 8.2 in two
+      minutes). Two gate pytest runs in one window ran 4-5 workers against a 2-core rule until the governor learned
+      <code>--cores 2</code>. An uncapped Whisper on two clips pushed load to 62 (<code>--threads 2</code>, then the GPU
+      route: 16.7 s to 4.1 s per clip). A 21-minute Gemini grep outlived its 4-minute cap until the timeout killed the
+      whole process group. Spotlight indexing 75 lane clones and 309 worktrees fell from 54% to 0% with never-index
+      markers. Tree-identity receipts cut a repeat pre-push check from about 290 s to 4-5 s.</li>
+      <li><b>Frontier labs use plain pytest too.</b> The public Python SDKs of both large labs run pytest with xdist,
+      Ruff, Pyright and uv; nothing replaces the test run. The published "run fewer tests" levers found were Google's and Meta's
+      internal test selection. The factory's own CI already matches that shape, so the honest lever for Python here is
+      not repeating a run, and scoping every scan.</li>
+    </ul>
+    <h3>What the four windows did by hand that the builder should do</h3>
+    <ul class="work-list">
+      <li><b>Landing.</b> 21 kit heads hand-checked (1-6 minutes each); disjoint-vs-rebase decided by eye about 15 times;
+      lanes' pins combined by cherry-pick with a human resolver (10-39 minutes per kit); the after-landing gate run by
+      hand after 31 merges; a 30-minute watch loop re-armed five times; about 90 relay messages carrying rulings to four
+      windows; three red-CI classes fixed by adding pre-push rules during the night (<a href="https://github.com/InceptTrilogy/ap-one/pull/1274">#1274</a>,
+      <a href="https://github.com/InceptTrilogy/ap-one/pull/1278">#1278</a>, <a href="https://github.com/InceptTrilogy/ap-one/pull/1282">#1282</a>).</li>
+      <li><b>Content.</b> Exam-form membership rebuilt by lanes (and wrong); an exam-difficulty audit reconstructed from
+      writes (about 4 hours); a teach-before-test scan written on the night (1,808 hits read by hand); video swaps with no
+      receipt (24) and one published over a failed visual check; an internal-label leak scan written after four leaks
+      reached students; a source-honesty scan over 359 stems after a walk found "A history of U.S. policy states";
+      excerpts cut at "v." and "D."; one article rebuild chain run by hand after <code>--only</code> rewrote a manifest to
+      1 of 26 rows; the XP wave and the served-page check triggered by hand; hosted QC re-run by hand after page waves
+      (six unchanged items failed on context alone).</li>
+      <li><b>Keys.</b> A drafting key showed in the process list (curl argument) and three service keys were printed by a
+      <code>zsh -x</code> trace; rotations were filed for both exposures (four keys); the rotation receipts are the owner's.</li>
+    </ul>
+    <h3>What failed, why, and the correction that worked</h3>
+    <ul class="work-list">
+      <li><b>Pending pytest merged red.</b> <a href="https://github.com/InceptTrilogy/ap-one/pull/1248">#1248</a> and <a href="https://github.com/InceptTrilogy/ap-one/pull/1250">#1250</a> reached main red
+      because merge-gate refused only a finished red job. Correction: the <code>pytest-pending</code> row refuses a
+      running or queued job; the one exception is the owner's own deliberate no-wait, given as a written reason that the
+      merge receipt records (rule 58).</li>
+      <li><b>A push-path hook shipped broken.</b> A tree-receipt edit imported <code>json</code> only inside a function;
+      every push was refused for eight minutes. Correction: a real-sha run and a heads-up to the landing window before
+      any push- or merge-path hook change (rule 57).</li>
+      <li><b>A lane's exam list missed PowerPath 100 items on unit tests.</b> Four exam stems changed without a named
+      error; the lane's ALL PASS was withdrawn. Correction: membership from the course's own function only (rule 59).</li>
+      <li><b>29 topic sections dropped with no record.</b> 14 concepts went untaught while 94 items tested them.
+      Correction: a page-replacing write lists every dropped heading with a reason (rule 64).</li>
+      <li><b>A dictionary filter hid a bare CERN.</b> The acronym scanner dropped any all-caps dictionary word before
+      classifying; 181 tokens were rescanned and COVID and IRA were also found. Correction: the dictionary is a
+      tie-breaker, and every exclusion list carries a per-reason count (rule 65).</li>
+      <li><b>Quoted sources no search could place.</b> AI-authored items carried a 1522 letter, a Payne passage and Ibn Battuta lines
+      with no edition named, which a search of the named sources did not find. Correction: every quote names author, work, edition and page, checked against a fetched copy
+      (rule 68).</li>
+    </ul>
+    <h3>What worked and must survive</h3>
+    <ul class="work-list">
+      <li>One landing shape for every PR (announce, hand-check, pre-push gate, BFF green on the exact head, merge-gate,
+      merge, after-landing gate, LANDED post): the 31 ap-one PRs landed under it on the night of 09-26/27 merged with zero red; the two red merges named below (#1248, #1250) came earlier on 09-26, before the pending-pytest rule.</li>
+      <li>Frozen done lists with one runnable check per row, pre-approved by the owner, checked by one script until ALL
+      PASS: HumGeo C1-C20 + F1-F6 + R1-R8, APWH A1-A8 + F1-F4 + G1-G5, APUSH D1-D10; no invented work, a stopping point
+      each time.</li>
+      <li>Every gate change with a control run, a mutant that fails by name, and a real-plan probe.</li>
+      <li>Sealed slices of 50 rows or fewer under a per-course writer lock; capture = execute, read back, replay 0.</li>
+      <li>Reading the factory's own code before spending: a hosted judge that could not accept the request shape, and a
+      successor-test pattern two courses already used, both found for free.</li>
+    </ul>
+    <h3>How the next course reuses this</h3>
+    <ul class="work-list">
+      <li>Release 2.0.0 adds <code>genesis.py</code>: the design compiles from the factory's own framework files for the
+      subject (units, topics, learning objectives, essential knowledge, exam shape) into the course map, DOK floors per
+      row, a coverage matrix with zero orphans, volume estimates with every number's basis, a sixteen-key blueprint,
+      titles and coverage files, and a receipt. Measured on the factory's APUSH framework: 9 units, 105 topics, 291
+      essential-knowledge rows, 0 orphans, under a second; the factory's curriculum analyzer returned PASS on unit
+      count, names and weights; the course oracle certifies the built course later, at step 1.</li>
+      <li><code>clock.py</code> prints hours per step against a budget (default 14 h to live, a course rule can override
+      it), so the hours toward a live course are read from each build's receipts, up to the steps it has closed.</li>
+      <li>Rules 51-82 in NEW-COURSE.md carry the thirty-two lessons above into the package, each with its receipt.</li>
+    </ul>
+  </section>
   <section id="agent-runbook"><h2>Incept Course Builder</h2><p>Install the local dashboard on macOS. Setup and agent selection happen in Terminal.</p><pre style="white-space:pre-wrap;overflow-wrap:anywhere"><code>curl -fsSL https://joshuadurey-del.github.io/incept-course-builder/install.sh | bash</code></pre><p>Works with Claude Code, Codex, Hermes and tool-capable local agents. GitHub OAuth confirms a verified @alpha.school email and private-repository access. <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/blob/main/course-runbook/START.md">Read the private agent entry point</a>.</p></section>
   <h1>Publication runbook, ASAP edition, 2026-09-01</h1>
   <p class="sub">Installed Course Builder release 2026-09-15.66 (dashboard main 9636d23d), checked 2026-09-22. Two publication routes since .63 (see Current route). Version .8 restored two write controls the 2026-09-01 cut list had removed, on measured HumGeo evidence: every native write now carries a capture, an execute-with-readback and a zero-write replay receipt under one sealed digest, with one writer per course surface. The current model cuts ceremony while preserving quality bars. Current course positions are re-earned from the dated plans; historical execution language is retained only as an explicit mapping in <a href="crosswalk.json">crosswalk.json</a>.</p>
