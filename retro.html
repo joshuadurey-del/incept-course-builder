@@ -6,6 +6,67 @@
 <header class="site-header"><a class="site-identity" href="index.html"><img src="incept-mark.svg" width="36" height="36" alt=""><strong>INCEPT <span>Course Builder</span></strong></a><div class="site-header-actions"><a href="https://github.com/joshuadurey-del/incept-course-builder">GitHub ↗</a><a href="about.html#install" class="header-install">Install <span aria-hidden="true">↗</span></a></div></header>
 <nav aria-label="Main navigation"><a href="courses.html">Courses</a><a href="docs.html" class="active">Docs</a><a href="economics.html">Impact</a></nav><nav class="section-nav" aria-label="Documentation navigation"><a href="docs.html">Docs home</a><a href="about.html#install">Quickstart</a><a href="spec.html">Spec sheet</a><a href="retro.html" aria-current="page" class="active">Runbook</a><a href="lessons.html">Lessons</a><a href="agents.html">Agent data</a></nav>
 <main id="main-content" tabindex="-1">
+  <section id="course-builder-2-1-to-2-4-20260928"><h2>September 27 to 28: from 2.0 to 2.4 in one night, and what seventeen review rounds taught the review itself</h2>
+    <p>Evidence window: 2026-09-27 14:00 UTC to 2026-09-28 03:30 UTC. Four private package releases landed on the builder's main
+    (<a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/14">2.1.0</a>, <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/15">2.2.0</a>, <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/16">2.3.0</a>, <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/17">2.4.0</a>) and the shared install
+    moved with each one under the landing guard's clearance. Sources: the overnight log, the four landing kits and their review
+    records, the merged pull requests. This entry names mechanisms, not people.
+    <a href="lessons.html#v21-v24-lessons-20260928">Lessons into practice</a>.</p>
+    <h3>What the review loop did wrong, and the correction</h3>
+    <ul class="work-list">
+      <li><b>Seventeen rounds on one rule.</b> The 2.0.0 package took seventeen second-model review rounds. Round one returned
+      twelve findings on wording precision (depth-of-knowledge claims, test counts, certification and authority language); rounds two to
+      thirteen returned one or two each, mostly real edge cases in how the blueprint marks an assessment dimension unresolved (a
+      missing exam file, a shapeless one, a canon seed with no test shape). Rounds fourteen to seventeen ran under a written contract and
+      found seven, four, three and four more, almost all on inputs the reviewer constructed (a boolean item count, a string where
+      a list belongs, nested nulls) against universal claims the author had written into the contract ("no canon byte is
+      dropped"). The owner's rulings: the definition of done is the frozen witness list, never a reviewer's approval; a finding
+      counts only when it names a real input at a pinned sha or a production record; constructed inputs are listed as hypothetical
+      and never folded; one exhaustive round, one fold, then adjudicate; never invent work and never invent a gate to stop
+      invented work. The reviewer brief template now carries the input-bound rule, and the round-cap gate written the same hour
+      was removed the same hour.</li>
+      <li><b>Every later release took one or two rounds.</b> 2.1, 2.2 and 2.3 each ran one review round under the input-bound
+      brief; 2.4 ran two, the second on the folded head. The rounds returned one to seven findings bound to committed files (2.1 one,
+      2.2 two, 2.3 two, 2.4 seven then two wording findings), every one was folded or fixed in the body, and each verdict was
+      recorded with what changed. No round eighteen anywhere.</li>
+    </ul>
+    <h3>What the four releases changed</h3>
+    <ul class="work-list">
+      <li><b>2.1.0: type a title, approve the rest.</b> "AP Psych" proposes AP Psychology, its Course and Exam Description as the
+      standard, the learners line and a brief with unit, topic and exam-shape counts, each with its factory source, for
+      Return-to-accept or a typed change. Measured live: AP Psychology, 5 units, 35 topics, 75 multiple-choice items and two FRQ
+      types; AP United States History (Effective Fall 2026), 9 units, 105 topics. A title matching no single factory subject falls
+      back to the plain prompts.</li>
+      <li><b>2.2.0: articles and videos are written to their assessment by dependency.</b> On both routes a lesson's article target
+      depends on that lesson's judged checks, so no article is authored before the items that test it exist and have passed the
+      judge; the article work order lists every judged item; the lesson-complete step refuses an untied article and a video
+      lesson with nothing judged. The dependency makes an article that was never written to its items unproducible; whether the article
+      teaches them stays the judge's and cold QC's call. The receipts behind it: 14 concepts untaught across 94 items and 8 video
+      checks with no teaching narration on one course (09-27), writing drills asked before the skill was taught on another (09-24),
+      a teach-before-assess repair lane on a third (09-24). Four remediation lanes from one missing edge.</li>
+      <li><b>2.3.0: lesson videos on two routes at once.</b> A narration target depends on the judged checks and the article
+      record; jobs use the fleet's own prompt and narration cleaning; the local route (about 190 seconds and about one dollar a
+      video, twelve at a time) and the fleet route (thirty in flight, 25 to 34 minutes a render) run through the house slot
+      filler at the same time with the fleet taking 0.3 of the rows by default, from those measured rates; every row carries the
+      defining sentence the check battery requires; a video-complete gate holds the step receipt. The four 2026 courses carry an
+      empty route list because their videos were made outside the builder.</li>
+      <li><b>2.4.0: every model or paid call on a ledger; drafts climb a ladder.</b> One row per call with tier, provider, model,
+      wall clock and price when stated; a repeated judge request and any draft past the ladder's first rung are inefficiency rows;
+      an exporter ships rows to Langfuse and holds its cursor on any per-event error. The ladder is script, then local model, then
+      cheap model, then frontier: DeepSeek twice with the judge's findings fed back, then Sol, from the measured pass rates (Sol
+      about 90 percent, DeepSeek about 67). No cap: the owner tracks spend and inefficiency. The Sol seat is keyed by a credential
+      name in the owner-only credential file, never a path in the repository.</li>
+    </ul>
+    <h3>Install moves and one incident</h3>
+    <ul class="work-list">
+      <li><b>Four shared-install moves, each cleared first.</b> The landing guard held every move while course windows were
+      writing and cleared each after reading the diff under the runbook folder (the key resolver those windows import was
+      byte-identical every time); the three course windows got the before and after shas and the behavior changes before each
+      swap.</li>
+      <li><b>A scratch install repointed the shared launcher for 95 seconds.</b> The installer writes the launcher into the shared
+      bin even when a scratch home is given; the launcher was restored by hand and the defect is recorded as residue, not built.</li>
+    </ul>
+  </section>
   <section id="compute-and-four-windows-20260927"><h2>September 26 to 27: where the machine's hours went, three courses' retros and the landing guard's in one night, and the 2.0 compiler</h2>
     <p>Evidence window: 2026-09-26 13:00 UTC to 2026-09-27 09:00 UTC. Courses: HumGeo (final lists C1-C20, F1-F6, R1-R8),
     APWH (final walk, four repair lanes, close) and APUSH (native-walk repairs, PR #53 and #54); the fourth window was the
