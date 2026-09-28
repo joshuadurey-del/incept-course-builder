@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 2.0.0 (package); contract 2026-09-15.1 |
+| **Version** | 2.4.0 (package); contract 2026-09-15.1 |
 | **Direction** | Create and launch new courses through native factory tools. The small test exercises the real TimeBack pipeline with bounded content. Paid calls, course creation, learner acceptance and launch have explicit owner decisions; elapsed time and live success are measured per run. |
 | **Status** | Working spec. Changes after the first course ships through it. |
 | **Product** | One command installs the builder on macOS and creates and launches new courses, offers a small full-pipeline test, and resumes only its own builds. Existing courses are never imported or monitored. |
@@ -307,6 +307,17 @@ The standard: a known-bad fixture proves each gate fires.
 - R14.12 Two local cores per window as governor slots, every heavy tool capped, every scan scoped, CI as the test bar; hours per step measured against a budget with remote waits in parallel. (rules 80-81)
 - R14.13 A new course design compiles from the factory framework with DOK floors and zero orphans; unresolved dimensions are written UNRESOLVED, never invented; the factory analyzer checks unit count, names and weights, and the course oracle certifies the built course at step 1. (rule 82)
 
+### R15. Rules learned on 2026-09-27 to 28 (releases 2.1.0 to 2.4.0)
+
+- R15.1 A typed course title yields the factory's subject, standards, learners and brief for approval, each with its source; no match falls back to the plain prompts. (2.1.0)
+- R15.2 An article target depends on its lesson's judged checks; the article work order lists every judged item; the lesson-complete step refuses an untied article and a video lesson with nothing judged. (2.2.0, NEW-COURSE rule 83)
+- R15.3 Lesson video narration depends on the judged checks and the article record; jobs use the fleet's own prompt and cleaning; the local and fleet routes run at once through the house slot filler; a video-complete gate holds the step receipt. (2.3.0, rule 84)
+- R15.4 Every model or paid call appends one ledger row (tier, provider, model, wall clock, price when stated); a repeated judge request and a draft past the first rung are inefficiency rows; no cap. (2.4.0, rule 85)
+- R15.5 Drafts climb script, local, cheap, frontier; the default is DeepSeek twice with findings fed back, then Sol; a rung with no seat is skipped; the Sol seat is keyed by a credential name, never a path. (2.4.0, rule 85)
+- R15.6 A review finding counts only when it names a real input at a pinned sha or a production record; constructed inputs are hypothetical and never folded; one exhaustive round, one fold, then the operator adjudicates. (owner 2026-09-28)
+- R15.7 The definition of done is the frozen witness list; a reviewer's approval is a hook receipt. Releases post as they are ready; no strict order unless it would break something. (owner 2026-09-28)
+- R15.8 A shared-install move waits for the landing guard's clearance while course windows write, and every course window gets the before and after shas and the behavior changes first. (2026-09-28)
+
 ## 2b. Where the build stands and what remains
 
 Measured on 2026-09-15 by running the build unattended on the owner's install after release .20 (goal-fit reviews by Codex and Grok on the make, the write layer and the graph layer were folded before each was built).
@@ -342,6 +353,19 @@ Where the hours go today, measured: BFF CI 26-30 minutes per ap-one PR; hosted C
 
 Not in 2.0.0, named: creating the course repository from `design/` is still the builder's next verb (today the design seeds the repository's `conformance/` files by hand); canon dimensions the framework cannot resolve need a same-species blueprint passed with `--canon`; an evidence harvester over released exam materials waits on a rights review (the factory's framework projection withholds official wording pending clearance); the shared install on the build machine moves to 2.0.0 only after main carries it and every course window has been told.
 
+## 2d. Versions 2.1.0 to 2.4.0: from a typed title to a metered build
+
+| Version | What it adds | Check | Landed |
+|---|---|---|---|
+| 2.1.0 | `genesis.propose(title)`: subject, standards, learners and brief from the factory at one pinned sha, for approval | `test_genesis.py` drives both menu paths | [PR #14](https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/14) 816a1df3 |
+| 2.2.0 | article targets depend on the lesson's `judge.json`; `assessment_items` and `tied_to_assessment` on the article record; `complete()` refuses untied articles and unjudged video lessons | `test_assessment_tie.py` | [PR #15](https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/15) 22813900 |
+| 2.3.0 | `video.py`: narration order to the judged items, ap-video `make_jobs` rows, local and fleet routes in tandem (fleet share 0.3 from measured rates), `defining_sentence` on every row, `video/.complete` gate | `test_video_step.py`; the offline fixture learns the video hold | [PR #16](https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/16) f80451f6 |
+| 2.4.0 | `ledger.py` (rows, inefficiencies, Langfuse export with a cursor), the author ladder and per-rung seats, ledger rows in drafts, judge and video | `test_ledger.py` | [PR #17](https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/17) 96c7ad6a |
+
+Measured on the way: seventeen review rounds on 2.0.0 versus one or two per later release; the local video route at about 190 seconds and about one dollar a video against 25 to 34 minutes on the fleet; Sol passing about 90 percent of drafted items against DeepSeek's 67, which sets the ladder default.
+
+Not in 2.4.0, named: provider price tables (no seat states a price on the call today; Langfuse prices the rows that carry token usage); Langfuse scores and datasets for the Sol-versus-DeepSeek comparison (the rows carry tier, attempt and target for it); the installer writing the launcher into the shared bin even with a scratch home.
+
 ## 3. Evidence behind the spec
 
 - Nine sealed native operations on the HumGeo v3 course, 2026-09-12 to 2026-09-14, each with capture, execute and zero-write replay receipts; the final census capture listed every replay receipt as a precondition.
@@ -355,11 +379,13 @@ Not in 2.0.0, named: creating the course repository from `design/` is still the 
 
 ```json
 {
-  "spec_version": "2.0.0",
+  "spec_version": "2.4.0",
   "tool_rule": "every shared tool takes --rules <course-rules.json>; no course list in any tool",
   "procedure_rule": "rows of run|write with expect and on_fail; exceptions via next.py --exception compose the owner message with why and next step",
   "owner_message_rule": "composed by next.py: what is needed, how to give it; no ids, hashes, codes or paths",
   "drafting_rule": "draft locally, prescreen free, judge in parallel batches; paid calls are judge calls only",
+  "ledger_rule": "every model or paid call is one ledger row with tier, wall clock and price when stated; no cap; drafts climb script, local, cheap, frontier",
+  "assessment_tie_rule": "an article or video target depends on its lesson's judged checks; an untied article never completes",
   "ask_rule": "resolve_from sources read at live main and cited per field before any owner request; next.py --request gates it",
   "route": ["content", "p3", "p5", "p6", "p7", "p8"],
   "route_names": {"p12": "align", "content": "content", "p3": "bank gates", "p5": "publish dark", "p6": "cold QC", "p7": "walk and accept", "p8": "demo and open"},

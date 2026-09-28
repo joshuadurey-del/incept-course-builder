@@ -1,5 +1,29 @@
 [
   {
+    "ts": "2026-09-28T03:30Z",
+    "course": "all",
+    "writer": "dashboard curation",
+    "text": "Retro R15, lessons and spec R15 + 2d: releases 2.1.0 to 2.4.0 folded; site at 2.4.0. Course Builder 2.4.0 landed as 96c7ad6a (PR #17): spend ledger, Langfuse export, author ladder."
+  },
+  {
+    "ts": "2026-09-28T02:11Z",
+    "course": "all",
+    "writer": "dashboard curation",
+    "text": "Course Builder 2.3.0 landed as f80451f6 (PR #16): lesson videos written to the judged assessment, rendered on the local and fleet routes in tandem; video-complete gate."
+  },
+  {
+    "ts": "2026-09-28T01:30Z",
+    "course": "all",
+    "writer": "dashboard curation",
+    "text": "Course Builder 2.2.0 landed as 22813900 (PR #15): article targets depend on the lesson's judged checks; complete() refuses untied articles and unjudged video lessons."
+  },
+  {
+    "ts": "2026-09-28T01:08Z",
+    "course": "all",
+    "writer": "dashboard curation",
+    "text": "Course Builder 2.1.0 landed as 816a1df3 (PR #14): a typed title yields the factory's subject, standards, learners and brief for approval."
+  },
+  {
     "ts": "2026-09-28T02:46Z",
     "course": "All",
     "writer": "repository-event automation",
