@@ -1466,14 +1466,14 @@
   ],
   "population_coverage": {
     "schema": "population-evidence/v1",
-    "observed_at": "2026-09-29T10:34:18Z",
+    "observed_at": "2026-09-29T10:49:33Z",
     "courses": {
       "humgeo": {
         "Gate MCQs": {
           "value": "2,448 MCQs · 204 forms",
           "detail": "68 gates; 612 written responses excluded from MCQs. Committed snapshot, not live acceptance.",
           "next_step": "Final-cut QC and live readback still need their own evidence.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1486,14 +1486,14 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Practice": {
           "value": "3,633 keyed records",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Reconcile the required practice set and its current QC.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1506,14 +1506,14 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Videos / media": {
           "value": "1,113 lesson mappings",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Verify required media, upload availability and playback.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1526,14 +1526,14 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Writing activities": {
           "value": "120 activities",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Confirm final served activity coverage and scoring.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1546,14 +1546,14 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Mock / exam forms": {
           "value": "1 assembled exam form(s)",
           "detail": "Committed mock-bank inventory; not exam acceptance.",
           "next_step": "Verify the complete exam and its learner route.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1566,14 +1566,14 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Articles": {
           "value": "72 article overlays",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Reconcile the complete article population and acceptance.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1586,14 +1586,14 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "PowerPath / PP100": {
           "value": "1,715 ingest inventory entries",
           "detail": "Base PP100 list; exclusions, replacements and final admission are separate inputs.",
           "next_step": "Reconcile the effective admitted set at the final cut.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1606,14 +1606,14 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Writing scoring": {
           "value": "Historical calibration: FAIL",
           "detail": "Committed report, not a fresh calibration. A newer governing receipt must be reconciled separately.",
           "next_step": "Reconcile with current calibration and scoring evidence.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Committed report",
           "evidence": [
             {
@@ -1626,7 +1626,7 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Train Your Eye": {
@@ -1634,7 +1634,7 @@
           "value": "34 items · 15 paired sets",
           "detail": "Paired-stimulus bank used by native host-lesson practice; not a Know A / Know B sequence or live-acceptance verdict.",
           "next_step": "Match the emitted practice package and native validation receipt to this bank.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1646,7 +1646,7 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Unit assessments": {
@@ -1654,7 +1654,7 @@
           "value": "84 forms · 7 units",
           "detail": "Stored source alternatives. The native publisher selects forms per unit separately; this is not a publication count.",
           "next_step": "Match selected forms and their accepted item receipts to the publication package.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1666,7 +1666,7 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Embedded checks": {
@@ -1674,7 +1674,7 @@
           "value": "1,215 sync-check records",
           "detail": "Actual sync-bank records. Authored article checks and final video/article placement use additional native inputs; not combined acceptance.",
           "next_step": "Join article-check acceptance manifests and the native assets validation receipt.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1686,7 +1686,7 @@
             "InceptTrilogy/ap-one",
             "ilmych/humgeo-rebuild"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         }
       },
@@ -1695,7 +1695,7 @@
           "value": "1,988 MCQs · 142 forms",
           "detail": "71 gates; 0 written responses excluded from MCQs. Committed snapshot, not live acceptance.",
           "next_step": "Final-cut QC and live readback still need their own evidence.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1709,14 +1709,14 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Practice": {
           "value": "645 keyed records",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Reconcile the required practice set and its current QC.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1730,14 +1730,14 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Videos / media": {
           "value": "171 lesson mappings",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Verify required media, upload availability and playback.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1751,14 +1751,14 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Writing activities": {
           "value": "231 activities",
           "detail": "Committed source inventory only. Effective admission, complete population scope and learner readback require native evidence.",
           "next_step": "Confirm final served activity coverage and scoring.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1772,14 +1772,14 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Mock / exam forms": {
           "value": "1 assembled exam form(s)",
           "detail": "Committed mock-bank inventory; not exam acceptance.",
           "next_step": "Verify the complete exam and its learner route.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Source inventory",
           "evidence": [
             {
@@ -1793,7 +1793,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "PowerPath / PP100": {
@@ -1804,7 +1804,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Unit assessments": {
@@ -1815,7 +1815,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Articles": {
@@ -1826,7 +1826,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Embedded checks": {
@@ -1837,7 +1837,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Writing scoring": {
@@ -1848,7 +1848,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Train Your Eye": {
@@ -1859,7 +1859,7 @@
             "ilmych/apwh-blueprint-build",
             "ilmych/apwh-build-outputs"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         }
       },
@@ -1868,7 +1868,7 @@
           "value": "49 / 249 positions accepted",
           "detail": "200 pending in this named build-only ledger. Presence on current main does not establish it as the latest successor or prove publication.",
           "next_step": "200 positions pending in this ledger; publication remains separate.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Acceptance ledger",
           "evidence": [
             {
@@ -1881,7 +1881,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Gate MCQs": {
@@ -1891,7 +1891,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Practice": {
@@ -1901,7 +1901,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "PowerPath / PP100": {
@@ -1911,7 +1911,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Unit assessments": {
@@ -1921,7 +1921,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Mock / exam forms": {
@@ -1931,7 +1931,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Embedded checks": {
@@ -1941,7 +1941,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Videos / media": {
@@ -1951,7 +1951,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Writing activities": {
@@ -1961,7 +1961,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Writing scoring": {
@@ -1971,7 +1971,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Train Your Eye": {
@@ -1981,7 +1981,7 @@
             "ilmych/apush-build-outputs",
             "ilmych/apush-course-build"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         }
       },
@@ -1990,7 +1990,7 @@
           "value": "Unit 3: 3 FRQs matched",
           "detail": "Committed Unit 3 readback only; no fresh platform probe or full-course verdict.",
           "next_step": "Reconcile the remaining units and refresh live acceptance.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Subset readback",
           "evidence": [
             {
@@ -2002,14 +2002,14 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Videos / media": {
           "value": "Unit 3: 46 image URLs checked",
           "detail": "Committed Unit 3 image check; neither current media availability nor video coverage.",
           "next_step": "Reconcile other units, video coverage and current media availability.",
-          "observed_at": "2026-09-29T10:34:18Z",
+          "observed_at": "2026-09-29T10:49:33Z",
           "level": "Subset readback",
           "evidence": [
             {
@@ -2021,7 +2021,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "CHECKED"
         },
         "Gate MCQs": {
@@ -2030,7 +2030,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Practice": {
@@ -2039,7 +2039,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "PowerPath / PP100": {
@@ -2048,7 +2048,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Unit assessments": {
@@ -2057,7 +2057,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Mock / exam forms": {
@@ -2066,7 +2066,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Articles": {
@@ -2075,7 +2075,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Embedded checks": {
@@ -2084,7 +2084,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Writing scoring": {
@@ -2093,7 +2093,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         },
         "Train Your Eye": {
@@ -2102,7 +2102,7 @@
           "source_repositories": [
             "InceptTrilogy/ap-psychology-fall-2025-v1"
           ],
-          "sync_checked_at": "2026-09-29T10:34:18Z",
+          "sync_checked_at": "2026-09-29T10:49:33Z",
           "sync_status": "MAPPING_REQUIRED"
         }
       }
@@ -2116,42 +2116,42 @@
   },
   "source_sync": {
     "schema": "dashboard-source-sync/v1",
-    "checked_at": "2026-09-29T10:34:18Z",
+    "checked_at": "2026-09-29T10:49:33Z",
     "status": "CHECKED",
     "repositories": {
       "InceptTrilogy/ap-one": {
         "sha": "f4d16c386fadf9c66757df32c52e8c5537116769",
-        "checked_at": "2026-09-29T10:34:18Z",
+        "checked_at": "2026-09-29T10:49:33Z",
         "status": "CHECKED"
       },
       "InceptTrilogy/ap-psychology-fall-2025-v1": {
         "sha": "99f4fc67bcd01eace2aebf5da78b6025f3f3fafd",
-        "checked_at": "2026-09-29T10:34:18Z",
+        "checked_at": "2026-09-29T10:49:33Z",
         "status": "CHECKED"
       },
       "ilmych/apush-build-outputs": {
         "sha": "98842f41d90138846ca8a584e2d60d8d54719e0f",
-        "checked_at": "2026-09-29T10:34:18Z",
+        "checked_at": "2026-09-29T10:49:33Z",
         "status": "CHECKED"
       },
       "ilmych/apush-course-build": {
         "sha": "5461c573a9839fe7352eabcf5922a7fac3819413",
-        "checked_at": "2026-09-29T10:34:18Z",
+        "checked_at": "2026-09-29T10:49:33Z",
         "status": "CHECKED"
       },
       "ilmych/apwh-blueprint-build": {
         "sha": "7501371e37293711a1153593ae3652d23056e9f2",
-        "checked_at": "2026-09-29T10:34:18Z",
+        "checked_at": "2026-09-29T10:49:33Z",
         "status": "CHECKED"
       },
       "ilmych/apwh-build-outputs": {
         "sha": "0a355d92809702d41b06e986261601ec56d5ac84",
-        "checked_at": "2026-09-29T10:34:18Z",
+        "checked_at": "2026-09-29T10:49:33Z",
         "status": "CHECKED"
       },
       "ilmych/humgeo-rebuild": {
         "sha": "63946ac36aef03634feee9857155589a21bc484a",
-        "checked_at": "2026-09-29T10:34:18Z",
+        "checked_at": "2026-09-29T10:49:33Z",
         "status": "CHECKED"
       }
     },
@@ -2362,7 +2362,7 @@
       }
     },
     "workflow_url": "https://github.com/InceptTrilogy/ap-four-course-dashboard/actions/workflows/dashboard-repo-poll.yml",
-    "run_url": "https://github.com/InceptTrilogy/ap-four-course-dashboard/actions/runs/36556324117",
+    "run_url": "https://github.com/InceptTrilogy/ap-four-course-dashboard/actions/runs/36557891761",
     "scope": "Configured source files on remote main only. Unmapped populations and claims remain unverified; unchanged bytes do not renew QC or learner acceptance."
   }
 }
