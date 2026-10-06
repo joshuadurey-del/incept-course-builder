@@ -12,6 +12,12 @@
     "text": "Source sync checked remote main revisions and refreshed configured population evidence. Unmapped scope and formal course claims remain separate."
   },
   {
+    "ts": "2026-10-06T01:58Z",
+    "course": "all",
+    "writer": "dashboard curation",
+    "text": "Retro R16 and lessons: the October 5 to 6 four-course night. 231 to 337 lessons live in place across four dark courses, nine windows, 29 half-hour reports, nine post-mortem notes. The owner stopped course work at the end and opened the next session on a workflow decision; the candidates and the evidence per window shape are in the retro."
+  },
+  {
     "ts": "2026-10-06T01:45Z",
     "course": "All",
     "writer": "repository-event automation",

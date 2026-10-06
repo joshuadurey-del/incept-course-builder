@@ -6,6 +6,80 @@
 <header class="site-header"><a class="site-identity" href="index.html"><img src="incept-mark.svg" width="36" height="36" alt=""><strong>INCEPT <span>Course Builder</span></strong></a><div class="site-header-actions"><a href="https://github.com/joshuadurey-del/incept-course-builder">GitHub ↗</a><a href="about.html#install" class="header-install">Install <span aria-hidden="true">↗</span></a></div></header>
 <nav aria-label="Main navigation"><a href="courses.html">Courses</a><a href="docs.html" class="active">Docs</a><a href="economics.html">Impact</a></nav><nav class="section-nav" aria-label="Documentation navigation"><a href="docs.html">Docs home</a><a href="about.html#install">Quickstart</a><a href="spec.html">Spec sheet</a><a href="retro.html" aria-current="page" class="active">Runbook</a><a href="lessons.html">Lessons</a><a href="agents.html">Agent data</a></nav>
 <main id="main-content" tabindex="-1">
+  <section id="four-course-night-20261006"><h2>October 5 to 6: four courses updated live in place on one night, 231 to 337 lessons served, and what fourteen hours of a nine-window fleet taught the workflow</h2>
+    <p>Evidence window: 2026-10-05 11:05 UTC to 2026-10-06 01:36 UTC, when the owner stopped all course work and asked for a
+    full post-mortem before clearing every window. Sources: the 29 half-hour owner reports, the publish-run standard (every
+    event stamped from the same clock), the six per-lesson completeness tables, two guard monitor passes, the read-only live
+    measure at the stop, and nine eight-section post-mortem notes, one per window. Counts name the file they came from. This
+    entry names mechanisms, not people.
+    <a href="lessons.html#four-course-night-lessons-20261006">Lessons into practice</a>.</p>
+    <h3>What landed</h3>
+    <ul class="work-list">
+      <li><b>337 of 1,011 scope-and-sequence lessons live at the stop, from 231 at the morning check-in.</b> Measured from each
+      published spec and checkpoint, not from a table: APUSH 85 of 279, APWH 143 of 313, HumGeo 45 of 121, Psych 64 of 298. All
+      four courses stayed dark and were updated in place; every publish ran a table gate first and read back every component.
+      Every batch landed with a complete END line (APUSH NB14 to NB20, APWH REN10 to REN15, HumGeo RE1 to RE14, Psych 10 to
+      15). The two monitor passes on the night's last hours found no shipped false accept in any course.</li>
+      <li><b>Throughput by course, and the shape behind it.</b> APWH gained 35 (2.4 an hour) on a main window plus a back window
+      cutting an hourly re-entry batch from COMPLETE rows, with the guard waiving desk misreads by ruling instead of a fifth cut.
+      HumGeo gained 31 (2.2 an hour) on small hourly cuts, zero-cost record fixes and rule shapes ruled once before any paid call.
+      APUSH gained 22 (1.5 an hour) with its front covering a silent back window for seven hours. Psych gained 16 (1.1 an hour)
+      with its back window silent about eight hours at its context limit. The best fleet hour was 23:00 to 00:00 UTC, plus 20,
+      with the table gate and the desk pre-run both in place; the worst was 13:11 to 14:11, plus 1, on planner yield.</li>
+      <li><b>The bar held.</b> Accept at critique 0/0/0, a signed frame read, a census under the 12.0 second still line by version
+      name, a builder video-script gate, a fact table read newest row per id, an ear record in the folder. Every hold was quoted
+      with its rule line and the lesson dropped from the cut, never patched by hand. Thirty-four lessons sat COMPLETE and unserved
+      at the stop (HumGeo 24, APUSH 5, APWH 5), ready for one cut each.</li>
+    </ul>
+    <h3>Where the fleet lost time</h3>
+    <ul class="work-list">
+      <li><b>The biggest host sat under-filled in 24 of 29 reports.</b> Thirteen to fifteen renders ran with 45 slots open for
+      hours. Causes found in bytes: ready lines that were not launchable, waves that only pre-checked, a scan that only globbed one
+      render root per course, and a shared scratch script overwritten by a window's one-off copy of the same name.</li>
+      <li><b>A back window went silent in 14 reports.</b> The owner's finding at the stop: the windows were waiting on a
+      permission prompt for a shell command while the owner was away, across more than one course window, and that caused the
+      stalls. The windows' own first explanations (a kill line with an empty pid, a context limit) were wrong. The permission
+      settings read no-prompt in every settings file, and no hook answers ask, so one window traced its own transcript: five shell
+      calls had waited 107 to 612 minutes, the longest on a command that began with an rm over a glob and ended in a process-group
+      kill, and three of the five held an rm with a glob or a recursive force flag. The tool itself raised the prompt on the rm.
+      Rule since: no rm with a glob or recursive force in an unattended command; move files aside into a dated folder, or remove
+      them by exact name. While the windows waited, a timed sync loop ended on its own clock with nothing to catch it. The fronts covered their tables, roots and kit verbs on a fifteen-minute clock, and the
+      covered courses were the two slowest.</li>
+      <li><b>The same batch gated again and again in 11 reports.</b> One batch ran its gate seven times, another six: a skipped
+      desk pre-run, network resets, and a lesson staged on a window's own checks that no table had read COMPLETE. The fix that
+      held: the table gate refuses any lesson not COMPLETE at the staged sha, and the pre-run is a gate step.</li>
+      <li><b>Planner yield in 10 reports.</b> Template rules did not change the planner's habits (one canary set passed 0 of 3);
+      pre-check refusals built from the failing shapes did (the next set passed 3 of 5). The critique rejected most renders the
+      pre-check had passed, so renders were paid for that could not ship.</li>
+      <li><b>Writer false accepts in 8 reports.</b> A PASS cell on a lookup miss, a substring test that matched a longer verdict,
+      review-UNREAD fact rows read as PASS, and readers scanning an append-only file instead of taking the newest row per id. Each
+      was fixed in the writer with a mutant test, never as a cell edit.</li>
+      <li><b>The guard's own wrong rulings, about 20.</b> A 10.0 second still bar taken from a window's note when the owner's words
+      and the pilot videos say 12.0; a route to recolour a spelling the builder's own check already covers; a bank wording that
+      was one course's shape applied to four; bank slots drafted after the owner had closed drafting (ten void). Each was
+      withdrawn in the standard with the byte that corrected it.</li>
+      <li><b>Tool landings broke the fleet five times.</b> Two in-place edits to a shared fact checker, one repo-to-disk sync that
+      undid disk-only landings, one scratch overwrite, and four helper scripts that picked a tool version by the clock and fell
+      back to an old version after midnight. Rule since: edit a tested copy and move it into place; pin versions by name.</li>
+    </ul>
+    <h3>What the nine post-mortems agree on</h3>
+    <ul class="work-list">
+      <li><b>One queue per course, read from the table, with a claim per lesson, run by one launcher.</b> Four of nine windows
+      asked for this in different words. Two windows worked one lesson at once; three hundred pre-checks ran on duplicate lanes;
+      launches were hand-picked from stale ready lists. A claim file with owner, heartbeat and expiry also lets a silent window's
+      lessons move to another window in minutes, not hours.</li>
+      <li><b>One accept, one pre-read check, each reading records from bytes and refusing anything missing.</b> Three windows
+      asked for this. The frame read is the second half of the bar and caught what census and critique passed (a thirteen-second
+      picture with labels on nothing, an off-picture label), but most review loops came from requests sent before the record set
+      was whole: census version, critique, pre-check READY, builder gate, ear record, voice hash.</li>
+      <li><b>Make the critique's common faults into pre-check refusals before paying for more renders.</b> One window's
+      measured ask; the canary numbers above back it.</li>
+      <li><b>The next session opens on a workflow decision, not on course work.</b> Candidates named by the owner: one course,
+      lesson by lesson; one course, many windows; all courses, one lesson at a time; all courses, article checks only. The per-course
+      throughput table, the silence record and the one-change asks are the evidence for that choice. The main-plus-back hourly
+      re-entry shape on one course was the fastest measured; its author rates it "in a good place".</li>
+    </ul>
+  </section>
   <section id="course-builder-2-1-to-2-4-20260928"><h2>September 27 to 28: from 2.0 to 2.4 in one night, and what seventeen review rounds taught the review itself</h2>
     <p>Evidence window: 2026-09-27 14:00 UTC to 2026-09-28 03:30 UTC. Four private package releases landed on the builder's main
     (<a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/14">2.1.0</a>, <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/15">2.2.0</a>, <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/16">2.3.0</a>, <a href="https://github.com/InceptTrilogy/ap-four-course-dashboard/pull/17">2.4.0</a>) and the shared install
